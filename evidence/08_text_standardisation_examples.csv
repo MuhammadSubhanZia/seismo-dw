@@ -1,0 +1,22 @@
+raw_area_token,country,state_province,location_code,events
+south of the Fiji Islands,Fiji,N/A,FIJI,1331
+Fiji,Fiji,N/A,FIJI,867
+Fiji region,Fiji,N/A,FIJI,741
+Japan,Japan,N/A,JAPAN,3910
+Japan region,Japan,N/A,JAPAN,984
+Japan Earthquake,Japan,N/A,JAPAN,5
+Mexico,Mexico,N/A,MEXICO,1402
+MX,Mexico,N/A,MEXICO,349
+southern Mid-Atlantic Ridge,Mid-Atlantic Ridge,N/A,MID_ATLANTIC_RIDGE,325
+northern Mid-Atlantic Ridge,Mid-Atlantic Ridge,N/A,MID_ATLANTIC_RIDGE,289
+central Mid-Atlantic Ridge,Mid-Atlantic Ridge,N/A,MID_ATLANTIC_RIDGE,281
+Burma (Myanmar),Myanmar,N/A,MYANMAR,236
+Myanmar,Myanmar,N/A,MYANMAR,53
+Burma (Myanmar) Earthquake,Myanmar,N/A,MYANMAR,1
+Timor Leste,Timor-Leste,N/A,TIMOR_LESTE,729
+CA,United States,California,UNITED_STATES:CALIFORNIA,4284
+California,United States,California,UNITED_STATES:CALIFORNIA,245
+California Earthquake,United States,California,UNITED_STATES:CALIFORNIA,2
+Nevada,United States,Nevada,UNITED_STATES:NEVADA,1150
+NV,United States,Nevada,UNITED_STATES:NEVADA,6
+Nevada Earthquake,United States,Nevada,UNITED_STATES:NEVADA,2

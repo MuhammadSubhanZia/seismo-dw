@@ -1,0 +1,19 @@
+network_code,network_name,operator,region_served,network_type
+us,USGS National Earthquake Information Center (NEIC),U.S. Geological Survey,Global,National / Global
+ak,Alaska Earthquake Center,University of Alaska Fairbanks,Alaska,Regional
+av,Alaska Volcano Observatory,USGS / University of Alaska Fairbanks,Alaska volcanoes,Volcano Observatory
+at,National Tsunami Warning Center,NOAA,North America coasts,Tsunami Warning
+pt,Pacific Tsunami Warning Center,NOAA,Pacific Basin,Tsunami Warning
+ci,Southern California Seismic Network,Caltech / USGS Pasadena,Southern California,Regional
+nc,Northern California Seismic System,USGS Menlo Park / UC Berkeley,Northern California,Regional
+nn,Nevada Seismological Laboratory,University of Nevada Reno,Nevada,Regional
+hv,Hawaiian Volcano Observatory,U.S. Geological Survey,Hawaii,Volcano Observatory
+uw,Pacific Northwest Seismic Network,University of Washington / University of Oregon,Washington and Oregon,Regional
+uu,University of Utah Seismograph Stations,University of Utah,Utah and Yellowstone,Regional
+mb,Montana Regional Seismic Network,Montana Bureau of Mines and Geology,Montana,Regional
+nm,New Madrid Seismic Network,Saint Louis University / CERI,Central United States,Regional
+se,Southeastern U.S. Seismic Network,CERI University of Memphis,Southeastern United States,Regional
+tx,Texas Seismological Network (TexNet),Bureau of Economic Geology UT Austin,Texas,Regional
+ok,Oklahoma Seismic Network,Oklahoma Geological Survey,Oklahoma,Regional
+pr,Puerto Rico Seismic Network,University of Puerto Rico Mayaguez,Puerto Rico and Virgin Islands,Regional
+ld,Lamont-Doherty Cooperative Seismographic Network,Lamont-Doherty Earth Observatory,Northeastern United States,Regional

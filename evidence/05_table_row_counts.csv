@@ -1,0 +1,13 @@
+schema,table_name,row_count
+project_staging,rejected_event,67
+project_dw,dim_location,299
+project_dw,dim_network,20
+project_dw,dim_magnitude_type,17
+project_dw,dim_depth_class,4
+project_dw,dim_magnitude_class,7
+project_dw,dim_event_type,12
+project_dw,dim_date,1096
+project_reporting,mv_daily_location_activity,28788
+project_dw,fact_seismic_event,79975
+project_staging,raw_usgs_event,109030
+project_staging,stg_seismic_event,109029

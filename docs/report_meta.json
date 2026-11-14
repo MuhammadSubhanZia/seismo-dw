@@ -1,0 +1,9 @@
+{
+  "course": "DL3004 Data Warehousing & Business Intelligence Lab",
+  "semester": "Fall 2026",
+  "institution": "FAST-NUCES Lahore",
+  "phase": "Phase 2 - Physical Data Warehouse Implementation & ETL Pipeline",
+  "project": "Seismo DW - Global Seismic Event Data Warehouse",
+  "team": ["Muhammad Subhan Zia"],
+  "repository": "https://github.com/MuhammadSubhanZia/seismo-dw"
+}

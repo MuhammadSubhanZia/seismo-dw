@@ -1,0 +1,72 @@
+step_id,batch_id,step_name,target_table,rows_processed,rows_inserted,rows_updated,rows_rejected,note,logged_at
+1,1,clean_reference,project_staging.stg_us_state,52,52,0,0,,2026-11-14 17:48:25.723050+05:00
+2,1,clean_reference,project_staging.stg_us_state,52,0,0,0,,2026-11-14 17:48:25.793222+05:00
+3,2,clean_reference,project_staging.stg_country_alias,6,6,0,0,,2026-11-14 17:48:25.795648+05:00
+4,3,clean_reference,project_staging.stg_seismic_network,18,18,0,0,,2026-11-14 17:48:25.859123+05:00
+5,1,clean_reference,project_staging.stg_us_state,52,0,0,0,,2026-11-14 17:48:25.864052+05:00
+6,2,clean_reference,project_staging.stg_country_alias,6,0,0,0,,2026-11-14 17:48:25.865999+05:00
+7,3,clean_reference,project_staging.stg_seismic_network,18,0,0,0,,2026-11-14 17:48:25.928557+05:00
+8,4,clean_reference,project_staging.stg_magnitude_type,16,16,0,0,,2026-11-14 17:48:25.932036+05:00
+9,1,clean_reference,project_staging.stg_us_state,52,0,0,0,,2026-11-14 17:48:25.934433+05:00
+10,2,clean_reference,project_staging.stg_country_alias,6,0,0,0,,2026-11-14 17:48:25.936292+05:00
+11,5,clean_events,project_staging.stg_seismic_event,54439,54439,0,0,"validation rejects=0, in-batch duplicates=0",2026-11-14 17:49:16.926811+05:00
+12,5,load_dimension,project_dw.dim_date,1096,1096,0,0,,2026-11-14 17:49:17.844031+05:00
+13,5,load_dimension,project_dw.dim_magnitude_class,6,6,0,0,,2026-11-14 17:49:17.850471+05:00
+14,5,load_dimension,project_dw.dim_depth_class,3,3,0,0,,2026-11-14 17:49:17.857590+05:00
+15,5,load_dimension,project_dw.dim_event_type,9,9,0,0,,2026-11-14 17:49:17.891435+05:00
+16,5,load_dimension,project_dw.dim_magnitude_type,16,16,0,0,reference members,2026-11-14 17:49:17.910382+05:00
+17,5,load_dimension,project_dw.dim_magnitude_type,0,0,0,0,inferred members,2026-11-14 17:49:18.007574+05:00
+18,5,load_dimension,project_dw.dim_network,18,18,0,0,reference members,2026-11-14 17:49:18.040495+05:00
+19,5,load_dimension,project_dw.dim_network,0,1,0,0,inferred members,2026-11-14 17:49:18.151489+05:00
+20,5,load_dimension,project_dw.dim_location,276,276,0,0,,2026-11-14 17:49:18.270127+05:00
+21,5,load_fact,project_dw.fact_seismic_event,54439,54438,0,1,"inserted=54438, updated (newer version)=0, soft-deleted=0, aliases deactivated=0, unchanged (same/older version)=0, rejected=1",2026-11-14 17:49:25.382385+05:00
+22,5,data_quality,project_staging.dq_check_result,40,0,0,0,PASS=33 FAIL=0 INFO=7,2026-11-14 17:49:28.189109+05:00
+23,6,clean_events,project_staging.stg_seismic_event,25533,25533,0,0,"validation rejects=0, in-batch duplicates=0",2026-11-14 17:49:54.185328+05:00
+24,6,load_dimension,project_dw.dim_date,1096,0,0,0,,2026-11-14 17:49:54.905843+05:00
+25,6,load_dimension,project_dw.dim_magnitude_class,6,0,0,0,,2026-11-14 17:49:54.912294+05:00
+26,6,load_dimension,project_dw.dim_depth_class,3,0,0,0,,2026-11-14 17:49:54.919245+05:00
+27,6,load_dimension,project_dw.dim_event_type,7,2,0,0,,2026-11-14 17:49:54.985394+05:00
+28,6,load_dimension,project_dw.dim_magnitude_type,16,0,0,0,reference members,2026-11-14 17:49:54.995515+05:00
+29,6,load_dimension,project_dw.dim_magnitude_type,0,0,0,0,inferred members,2026-11-14 17:49:55.053675+05:00
+30,6,load_dimension,project_dw.dim_network,18,0,0,0,reference members,2026-11-14 17:49:55.065583+05:00
+31,6,load_dimension,project_dw.dim_network,0,0,0,0,inferred members,2026-11-14 17:49:55.123775+05:00
+32,6,load_dimension,project_dw.dim_location,236,22,0,0,,2026-11-14 17:49:55.213040+05:00
+33,6,load_fact,project_dw.fact_seismic_event,25533,25533,0,0,"inserted=25533, updated (newer version)=0, soft-deleted=0, aliases deactivated=0, unchanged (same/older version)=0, rejected=0",2026-11-14 17:49:59.481222+05:00
+34,6,data_quality,project_staging.dq_check_result,40,0,0,0,PASS=33 FAIL=0 INFO=7,2026-11-14 17:50:04.530224+05:00
+35,7,clean_events,project_staging.stg_seismic_event,932,931,0,1,"validation rejects=1, in-batch duplicates=0",2026-11-14 17:50:05.650719+05:00
+36,7,load_dimension,project_dw.dim_date,1096,0,0,0,,2026-11-14 17:50:05.746607+05:00
+37,7,load_dimension,project_dw.dim_magnitude_class,6,0,0,0,,2026-11-14 17:50:05.755212+05:00
+38,7,load_dimension,project_dw.dim_depth_class,3,0,0,0,,2026-11-14 17:50:05.760271+05:00
+39,7,load_dimension,project_dw.dim_event_type,2,0,0,0,,2026-11-14 17:50:05.792708+05:00
+40,7,load_dimension,project_dw.dim_magnitude_type,16,0,0,0,reference members,2026-11-14 17:50:05.802296+05:00
+41,7,load_dimension,project_dw.dim_magnitude_type,0,0,0,0,inferred members,2026-11-14 17:50:05.826015+05:00
+42,7,load_dimension,project_dw.dim_network,18,0,0,0,reference members,2026-11-14 17:50:05.856301+05:00
+43,7,load_dimension,project_dw.dim_network,0,0,0,0,inferred members,2026-11-14 17:50:05.879535+05:00
+44,7,load_dimension,project_dw.dim_location,93,0,0,0,,2026-11-14 17:50:05.910502+05:00
+45,7,load_fact,project_dw.fact_seismic_event,931,4,0,65,"inserted=4, updated (newer version)=0, soft-deleted=0, aliases deactivated=0, unchanged (same/older version)=862, rejected=65",2026-11-14 17:50:06.202715+05:00
+46,7,data_quality,project_staging.dq_check_result,40,0,0,0,PASS=33 FAIL=0 INFO=7,2026-11-14 17:50:09.006657+05:00
+47,8,clean_events,project_staging.stg_seismic_event,2593,2593,0,0,"validation rejects=0, in-batch duplicates=0",2026-11-14 17:50:11.981290+05:00
+48,8,load_dimension,project_dw.dim_date,1096,0,0,0,,2026-11-14 17:50:12.065448+05:00
+49,8,load_dimension,project_dw.dim_magnitude_class,6,0,0,0,,2026-11-14 17:50:12.068743+05:00
+50,8,load_dimension,project_dw.dim_depth_class,3,0,0,0,,2026-11-14 17:50:12.071345+05:00
+51,8,load_dimension,project_dw.dim_event_type,3,0,0,0,,2026-11-14 17:50:12.108090+05:00
+52,8,load_dimension,project_dw.dim_magnitude_type,16,0,0,0,reference members,2026-11-14 17:50:12.113697+05:00
+53,8,load_dimension,project_dw.dim_magnitude_type,0,0,0,0,inferred members,2026-11-14 17:50:12.141627+05:00
+54,8,load_dimension,project_dw.dim_network,18,0,0,0,reference members,2026-11-14 17:50:12.147897+05:00
+55,8,load_dimension,project_dw.dim_network,0,0,0,0,inferred members,2026-11-14 17:50:12.179992+05:00
+56,8,load_dimension,project_dw.dim_location,129,0,0,0,,2026-11-14 17:50:12.213450+05:00
+57,8,load_fact,project_dw.fact_seismic_event,2593,0,0,0,"inserted=0, updated (newer version)=0, soft-deleted=0, aliases deactivated=0, unchanged (same/older version)=2593, rejected=0",2026-11-14 17:50:12.653677+05:00
+58,8,data_quality,project_staging.dq_check_result,40,0,0,0,PASS=33 FAIL=0 INFO=7,2026-11-14 17:50:18.110292+05:00
+59,9,clean_events,project_staging.stg_seismic_event,25533,25533,0,0,"validation rejects=0, in-batch duplicates=0",2026-11-14 17:50:50.065149+05:00
+60,9,load_dimension,project_dw.dim_date,1096,0,0,0,,2026-11-14 17:50:50.980267+05:00
+61,9,load_dimension,project_dw.dim_magnitude_class,6,0,0,0,,2026-11-14 17:50:51.010979+05:00
+62,9,load_dimension,project_dw.dim_depth_class,3,0,0,0,,2026-11-14 17:50:51.087556+05:00
+63,9,load_dimension,project_dw.dim_event_type,7,0,0,0,,2026-11-14 17:50:51.192519+05:00
+64,9,load_dimension,project_dw.dim_magnitude_type,16,0,0,0,reference members,2026-11-14 17:50:51.202765+05:00
+65,9,load_dimension,project_dw.dim_magnitude_type,0,0,0,0,inferred members,2026-11-14 17:50:51.289337+05:00
+66,9,load_dimension,project_dw.dim_network,18,0,0,0,reference members,2026-11-14 17:50:51.306099+05:00
+67,9,load_dimension,project_dw.dim_network,0,0,0,0,inferred members,2026-11-14 17:50:51.397933+05:00
+68,9,load_dimension,project_dw.dim_location,236,0,0,0,,2026-11-14 17:50:51.504878+05:00
+69,9,load_fact,project_dw.fact_seismic_event,25533,0,0,0,"inserted=0, updated (newer version)=0, soft-deleted=0, aliases deactivated=0, unchanged (same/older version)=25533, rejected=0",2026-11-14 17:50:54.006393+05:00
+70,9,data_quality,project_staging.dq_check_result,40,0,0,0,PASS=33 FAIL=0 INFO=7,2026-11-14 17:51:02.967755+05:00
+71,9,data_quality,project_staging.dq_check_result,40,0,0,0,PASS=33 FAIL=0 INFO=7,2026-11-14 17:51:10.157080+05:00

@@ -1,0 +1,7 @@
+alias,country,note
+MX,Mexico,ISO-style code used by USGS regional networks
+B.C.,Mexico,Baja California written as a trailing token
+U.S. Virgin Islands,U.S. Virgin Islands,Kept as its own territory
+Burma (Myanmar),Myanmar,Normalise dual name to the current short name
+Timor Leste,Timor-Leste,Official spelling
+Fiji Islands,Fiji,USGS writes the oceanic area south of Fiji as Fiji Islands

@@ -1,0 +1,14 @@
+-- FOREIGN KEY (unknown location_key 999999)
+INSERT INTO project_dw.fact_seismic_event (event_id, date_key, location_key, network_key, magnitude_type_key, event_type_key, magnitude_class_key, depth_class_key, event_time, event_hour_utc, latitude, longitude, review_status, alert_level, tsunami_flag, is_significant, is_active, magnitude, depth_km, energy_joules, energy_tnt_tons, felt_reports, significance, source_updated_at, inserted_batch_id, updated_batch_id) VALUES ('TEST_ONLY', 20250101, 999999, -1, -1, -1, -1, -1, '2025-01-01', 0, 0, 0, 'reviewed', 'none', false, false, true, 4.0, 10, 1, 1, 0, 0, now(), 0, 0)
+=> REJECTED by PostgreSQL: 23503 insert or update on table "fact_seismic_event" violates foreign key constraint "fact_seismic_event_location_key_fkey"
+   Key (location_key)=(999999) is not present in table "dim_location".
+
+-- UNIQUE (duplicate business key in dim_network)
+INSERT INTO project_dw.dim_network (network_code, network_name, operator, region_served, network_type) VALUES ('us', 'duplicate', 'x', 'x', 'x')
+=> REJECTED by PostgreSQL: 23505 duplicate key value violates unique constraint "uq_dim_network_code"
+   Key (network_code)=(us) already exists.
+
+-- UNIQUE (same event_id loaded twice)
+INSERT INTO project_dw.fact_seismic_event (event_id, date_key, location_key, network_key, magnitude_type_key, event_type_key, magnitude_class_key, depth_class_key, event_time, event_hour_utc, latitude, longitude, review_status, alert_level, tsunami_flag, is_significant, is_active, magnitude, depth_km, energy_joules, energy_tnt_tons, felt_reports, significance, source_updated_at, inserted_batch_id, updated_batch_id) SELECT event_id, date_key, location_key, network_key, magnitude_type_key, event_type_key, magnitude_class_key, depth_class_key, event_time, event_hour_utc, latitude, longitude, review_status, alert_level, tsunami_flag, is_significant, is_active, magnitude, depth_km, energy_joules, energy_tnt_tons, felt_reports, significance, source_updated_at, inserted_batch_id, updated_batch_id FROM project_dw.fact_seismic_event LIMIT 1
+=> REJECTED by PostgreSQL: 23505 duplicate key value violates unique constraint "uq_fact_seismic_event_event_id"
+   Key (event_id)=(ak02410h1tlw) already exists.

@@ -1,0 +1,9 @@
+check_code,check_name,expected_value,actual_value,status,details
+A01,Row-count reconciliation (distinct eligible events vs fact rows),79975,79975,PASS,expected=79975 fact=79975 difference=0
+A02,Measure reconciliation: SUM(magnitude),308687.25,308687.25,PASS,staging=308687.25 warehouse=308687.25 difference=0.00
+A03,Energy reconciliation (revenue-equivalent): SUM(energy_joules),1489535980054440000,1489535980054430000,PASS,staging=1489535980054440000 warehouse=1489535980054430000 difference=-10000
+A04,Measure reconciliation: SUM(felt_reports),1184210,1184210,PASS,staging=1184210 warehouse=1184210 difference=0
+A05,Measure reconciliation: SUM(significance),19446615,19446615,PASS,staging=19446615 warehouse=19446615 difference=0
+A06,Inactive events match USGS deletions + superseded alias ids,0,0,PASS,
+A07,Fact values differ from the raw source feature they came from,0,0,PASS,compares fact magnitude/depth/lat/lon/event_time with the raw GeoJSON of the loaded version
+A08,Derived energy_joules / energy_tnt_tons recomputation errors,0,0,PASS,Gutenberg-Richter energy relation

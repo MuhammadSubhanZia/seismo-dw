@@ -1,0 +1,190 @@
+[17:48:24] dropped existing schemas (--reset)
+[17:48:24]     ran 01_create_schemas.sql                              0.01s
+[17:48:25]     ran staging/02_staging_schema.sql                      0.24s
+[17:48:25]     ran dw/03_dw_schema.sql                                0.07s
+[17:48:25]     ran reporting/04_reporting_schema.sql                  0.04s
+[17:48:25] schemas and tables ready
+[17:48:25] batch 1 [REFERENCE] ref_us_states.csv: 52 raw rows loaded in 0.0s
+[17:48:25]     ran staging/11_clean_reference_to_staging.sql          0.04s
+[17:48:25]     clean_reference  project_staging.stg_us_state             processed=52      ins=52      upd=0      rej=0     
+[17:48:25] batch 2 [REFERENCE] ref_country_aliases.csv: 6 raw rows loaded in 0.0s
+[17:48:25]     ran staging/11_clean_reference_to_staging.sql          0.01s
+[17:48:25]     clean_reference  project_staging.stg_country_alias        processed=6       ins=6       upd=0      rej=0     
+[17:48:25] batch 3 [REFERENCE] ref_seismic_networks.csv: 18 raw rows loaded in 0.0s
+[17:48:25]     ran staging/11_clean_reference_to_staging.sql          0.01s
+[17:48:25]     clean_reference  project_staging.stg_seismic_network      processed=18      ins=18      upd=0      rej=0     
+[17:48:25] batch 4 [REFERENCE] ref_magnitude_types.csv: 16 raw rows loaded in 0.0s
+[17:48:25]     ran staging/11_clean_reference_to_staging.sql          0.01s
+[17:48:25]     clean_reference  project_staging.stg_magnitude_type       processed=16      ins=16      upd=0      rej=0     
+[17:48:31] batch 5 [FULL_LOAD] usgs_events_2024_2025_full.geojson.gz: 54,439 raw rows loaded in 5.4s
+[17:49:17]     ran staging/12_clean_events_to_staging.sql            46.34s
+[17:49:17]     ran dimensions/20_load_dim_date.sql                    0.08s
+[17:49:17]     ran dimensions/21_load_dim_magnitude_class.sql         0.00s
+[17:49:17]     ran dimensions/22_load_dim_depth_class.sql             0.01s
+[17:49:17]     ran dimensions/23_load_dim_event_type.sql              0.03s
+[17:49:18]     ran dimensions/24_load_dim_magnitude_type.sql          0.13s
+[17:49:18]     ran dimensions/25_load_dim_network.sql                 0.14s
+[17:49:18]     ran dimensions/26_load_dim_location.sql                0.13s
+[17:49:25]     ran facts/30_load_fact_seismic_event.sql               7.10s
+[17:49:28]     ran quality/40_data_quality_checks.sql                 2.79s
+[17:49:28]     clean_events     project_staging.stg_seismic_event        processed=54439   ins=54439   upd=0      rej=0     validation rejects=0, in-batch duplicates=0
+[17:49:28]     load_dimension   project_dw.dim_date                      processed=1096    ins=1096    upd=0      rej=0     
+[17:49:28]     load_dimension   project_dw.dim_magnitude_class           processed=6       ins=6       upd=0      rej=0     
+[17:49:28]     load_dimension   project_dw.dim_depth_class               processed=3       ins=3       upd=0      rej=0     
+[17:49:28]     load_dimension   project_dw.dim_event_type                processed=9       ins=9       upd=0      rej=0     
+[17:49:28]     load_dimension   project_dw.dim_magnitude_type            processed=16      ins=16      upd=0      rej=0     reference members
+[17:49:28]     load_dimension   project_dw.dim_magnitude_type            processed=0       ins=0       upd=0      rej=0     inferred members
+[17:49:28]     load_dimension   project_dw.dim_network                   processed=18      ins=18      upd=0      rej=0     reference members
+[17:49:28]     load_dimension   project_dw.dim_network                   processed=0       ins=1       upd=0      rej=0     inferred members
+[17:49:28]     load_dimension   project_dw.dim_location                  processed=276     ins=276     upd=0      rej=0     
+[17:49:28]     load_fact        project_dw.fact_seismic_event            processed=54439   ins=54438   upd=0      rej=1     inserted=54438, updated (newer version)=0, soft-deleted=0, aliases deactivated=0, unchanged (same/older version)=0, rejected=1
+[17:49:28]     data_quality     project_staging.dq_check_result          processed=40      ins=0       upd=0      rej=0     PASS=33 FAIL=0 INFO=7
+[17:49:30] batch 6 [INCREMENTAL] usgs_events_2026_incremental.geojson.gz: 25,533 raw rows loaded in 2.4s
+[17:49:54]     ran staging/12_clean_events_to_staging.sql            23.97s
+[17:49:54]     ran dimensions/20_load_dim_date.sql                    0.08s
+[17:49:54]     ran dimensions/21_load_dim_magnitude_class.sql         0.00s
+[17:49:54]     ran dimensions/22_load_dim_depth_class.sql             0.00s
+[17:49:54]     ran dimensions/23_load_dim_event_type.sql              0.06s
+[17:49:55]     ran dimensions/24_load_dim_magnitude_type.sql          0.07s
+[17:49:55]     ran dimensions/25_load_dim_network.sql                 0.07s
+[17:49:55]     ran dimensions/26_load_dim_location.sql                0.09s
+[17:49:59]     ran facts/30_load_fact_seismic_event.sql               4.31s
+[17:50:04]     ran quality/40_data_quality_checks.sql                 5.00s
+[17:50:04]     clean_events     project_staging.stg_seismic_event        processed=25533   ins=25533   upd=0      rej=0     validation rejects=0, in-batch duplicates=0
+[17:50:04]     load_dimension   project_dw.dim_date                      processed=1096    ins=0       upd=0      rej=0     
+[17:50:04]     load_dimension   project_dw.dim_magnitude_class           processed=6       ins=0       upd=0      rej=0     
+[17:50:04]     load_dimension   project_dw.dim_depth_class               processed=3       ins=0       upd=0      rej=0     
+[17:50:04]     load_dimension   project_dw.dim_event_type                processed=7       ins=2       upd=0      rej=0     
+[17:50:04]     load_dimension   project_dw.dim_magnitude_type            processed=16      ins=0       upd=0      rej=0     reference members
+[17:50:04]     load_dimension   project_dw.dim_magnitude_type            processed=0       ins=0       upd=0      rej=0     inferred members
+[17:50:04]     load_dimension   project_dw.dim_network                   processed=18      ins=0       upd=0      rej=0     reference members
+[17:50:04]     load_dimension   project_dw.dim_network                   processed=0       ins=0       upd=0      rej=0     inferred members
+[17:50:04]     load_dimension   project_dw.dim_location                  processed=236     ins=22      upd=0      rej=0     
+[17:50:04]     load_fact        project_dw.fact_seismic_event            processed=25533   ins=25533   upd=0      rej=0     inserted=25533, updated (newer version)=0, soft-deleted=0, aliases deactivated=0, unchanged (same/older version)=0, rejected=0
+[17:50:04]     data_quality     project_staging.dq_check_result          processed=40      ins=0       upd=0      rej=0     PASS=33 FAIL=0 INFO=7
+[17:50:05] batch 7 [INCREMENTAL] usgs_events_2026-09-26_change_feed.geojson.gz: 932 raw rows loaded in 0.1s
+[17:50:05]     ran staging/12_clean_events_to_staging.sql             0.61s
+[17:50:05]     ran dimensions/20_load_dim_date.sql                    0.06s
+[17:50:05]     ran dimensions/21_load_dim_magnitude_class.sql         0.01s
+[17:50:05]     ran dimensions/22_load_dim_depth_class.sql             0.00s
+[17:50:05]     ran dimensions/23_load_dim_event_type.sql              0.03s
+[17:50:05]     ran dimensions/24_load_dim_magnitude_type.sql          0.03s
+[17:50:05]     ran dimensions/25_load_dim_network.sql                 0.05s
+[17:50:05]     ran dimensions/26_load_dim_location.sql                0.03s
+[17:50:06]     ran facts/30_load_fact_seismic_event.sql               0.31s
+[17:50:09]     ran quality/40_data_quality_checks.sql                 2.78s
+[17:50:09]     clean_events     project_staging.stg_seismic_event        processed=932     ins=931     upd=0      rej=1     validation rejects=1, in-batch duplicates=0
+[17:50:09]     load_dimension   project_dw.dim_date                      processed=1096    ins=0       upd=0      rej=0     
+[17:50:09]     load_dimension   project_dw.dim_magnitude_class           processed=6       ins=0       upd=0      rej=0     
+[17:50:09]     load_dimension   project_dw.dim_depth_class               processed=3       ins=0       upd=0      rej=0     
+[17:50:09]     load_dimension   project_dw.dim_event_type                processed=2       ins=0       upd=0      rej=0     
+[17:50:09]     load_dimension   project_dw.dim_magnitude_type            processed=16      ins=0       upd=0      rej=0     reference members
+[17:50:09]     load_dimension   project_dw.dim_magnitude_type            processed=0       ins=0       upd=0      rej=0     inferred members
+[17:50:09]     load_dimension   project_dw.dim_network                   processed=18      ins=0       upd=0      rej=0     reference members
+[17:50:09]     load_dimension   project_dw.dim_network                   processed=0       ins=0       upd=0      rej=0     inferred members
+[17:50:09]     load_dimension   project_dw.dim_location                  processed=93      ins=0       upd=0      rej=0     
+[17:50:09]     load_fact        project_dw.fact_seismic_event            processed=931     ins=4       upd=0      rej=65    inserted=4, updated (newer version)=0, soft-deleted=0, aliases deactivated=0, unchanged (same/older version)=862, rejected=65
+[17:50:09]     data_quality     project_staging.dq_check_result          processed=40      ins=0       upd=0      rej=0     PASS=33 FAIL=0 INFO=7
+[17:50:09] batch 8 [INCREMENTAL] usgs_events_2024-12_snapshot.geojson.gz: 2,593 raw rows loaded in 0.2s
+[17:50:12]     ran staging/12_clean_events_to_staging.sql             2.20s
+[17:50:12]     ran dimensions/20_load_dim_date.sql                    0.04s
+[17:50:12]     ran dimensions/21_load_dim_magnitude_class.sql         0.00s
+[17:50:12]     ran dimensions/22_load_dim_depth_class.sql             0.00s
+[17:50:12]     ran dimensions/23_load_dim_event_type.sql              0.04s
+[17:50:12]     ran dimensions/24_load_dim_magnitude_type.sql          0.03s
+[17:50:12]     ran dimensions/25_load_dim_network.sql                 0.04s
+[17:50:12]     ran dimensions/26_load_dim_location.sql                0.03s
+[17:50:12]     ran facts/30_load_fact_seismic_event.sql               0.49s
+[17:50:18]     ran quality/40_data_quality_checks.sql                 5.41s
+[17:50:18]     clean_events     project_staging.stg_seismic_event        processed=2593    ins=2593    upd=0      rej=0     validation rejects=0, in-batch duplicates=0
+[17:50:18]     load_dimension   project_dw.dim_date                      processed=1096    ins=0       upd=0      rej=0     
+[17:50:18]     load_dimension   project_dw.dim_magnitude_class           processed=6       ins=0       upd=0      rej=0     
+[17:50:18]     load_dimension   project_dw.dim_depth_class               processed=3       ins=0       upd=0      rej=0     
+[17:50:18]     load_dimension   project_dw.dim_event_type                processed=3       ins=0       upd=0      rej=0     
+[17:50:18]     load_dimension   project_dw.dim_magnitude_type            processed=16      ins=0       upd=0      rej=0     reference members
+[17:50:18]     load_dimension   project_dw.dim_magnitude_type            processed=0       ins=0       upd=0      rej=0     inferred members
+[17:50:18]     load_dimension   project_dw.dim_network                   processed=18      ins=0       upd=0      rej=0     reference members
+[17:50:18]     load_dimension   project_dw.dim_network                   processed=0       ins=0       upd=0      rej=0     inferred members
+[17:50:18]     load_dimension   project_dw.dim_location                  processed=129     ins=0       upd=0      rej=0     
+[17:50:18]     load_fact        project_dw.fact_seismic_event            processed=2593    ins=0       upd=0      rej=0     inserted=0, updated (newer version)=0, soft-deleted=0, aliases deactivated=0, unchanged (same/older version)=2593, rejected=0
+[17:50:18]     data_quality     project_staging.dq_check_result          processed=40      ins=0       upd=0      rej=0     PASS=33 FAIL=0 INFO=7
+[17:50:18] RERUN DEMO - before: rows=79,975 sum_mag=308687.25 sum_energy=1.489536e+18 felt=1184210
+[17:50:24] batch 9 [INCREMENTAL RERUN] usgs_events_2026_incremental.geojson.gz: 25,533 raw rows loaded in 5.9s
+[17:50:50]     ran staging/12_clean_events_to_staging.sql            26.14s
+[17:50:50]     ran dimensions/20_load_dim_date.sql                    0.12s
+[17:50:51]     ran dimensions/21_load_dim_magnitude_class.sql         0.03s
+[17:50:51]     ran dimensions/22_load_dim_depth_class.sql             0.07s
+[17:50:51]     ran dimensions/23_load_dim_event_type.sql              0.10s
+[17:50:51]     ran dimensions/24_load_dim_magnitude_type.sql          0.10s
+[17:50:51]     ran dimensions/25_load_dim_network.sql                 0.11s
+[17:50:51]     ran dimensions/26_load_dim_location.sql                0.11s
+[17:50:54]     ran facts/30_load_fact_seismic_event.sql               2.54s
+[17:51:02]     ran quality/40_data_quality_checks.sql                 8.91s
+[17:51:03]     clean_events     project_staging.stg_seismic_event        processed=25533   ins=25533   upd=0      rej=0     validation rejects=0, in-batch duplicates=0
+[17:51:03]     load_dimension   project_dw.dim_date                      processed=1096    ins=0       upd=0      rej=0     
+[17:51:03]     load_dimension   project_dw.dim_magnitude_class           processed=6       ins=0       upd=0      rej=0     
+[17:51:03]     load_dimension   project_dw.dim_depth_class               processed=3       ins=0       upd=0      rej=0     
+[17:51:03]     load_dimension   project_dw.dim_event_type                processed=7       ins=0       upd=0      rej=0     
+[17:51:03]     load_dimension   project_dw.dim_magnitude_type            processed=16      ins=0       upd=0      rej=0     reference members
+[17:51:03]     load_dimension   project_dw.dim_magnitude_type            processed=0       ins=0       upd=0      rej=0     inferred members
+[17:51:03]     load_dimension   project_dw.dim_network                   processed=18      ins=0       upd=0      rej=0     reference members
+[17:51:03]     load_dimension   project_dw.dim_network                   processed=0       ins=0       upd=0      rej=0     inferred members
+[17:51:03]     load_dimension   project_dw.dim_location                  processed=236     ins=0       upd=0      rej=0     
+[17:51:03]     load_fact        project_dw.fact_seismic_event            processed=25533   ins=0       upd=0      rej=0     inserted=0, updated (newer version)=0, soft-deleted=0, aliases deactivated=0, unchanged (same/older version)=25533, rejected=0
+[17:51:03]     data_quality     project_staging.dq_check_result          processed=40      ins=0       upd=0      rej=0     PASS=33 FAIL=0 INFO=7
+[17:51:04] RERUN DEMO - after:  rows=79,975 sum_mag=308687.25 sum_energy=1.489536e+18 felt=1184210
+[17:51:04] RERUN DEMO - fact step: inserted=0 updated=0 (inserted=0, updated (newer version)=0, soft-deleted=0, aliases deactivated=0, unchanged (same/older version)=25533, rejected=0)
+[17:51:04] RERUN DEMO PASSED - identical row count and totals after re-running the batch
+[17:51:10]     ran quality/40_data_quality_checks.sql                 5.97s
+[17:51:10]   A01  PASS Row-count reconciliation (distinct eligible events vs fact rows)            expected=79975 actual=79975
+[17:51:10]   A02  PASS Measure reconciliation: SUM(magnitude)                                      expected=308687.25 actual=308687.25
+[17:51:10]   A03  PASS Energy reconciliation (revenue-equivalent): SUM(energy_joules)              expected=1489535980054440000 actual=1489535980054430000
+[17:51:10]   A04  PASS Measure reconciliation: SUM(felt_reports)                                   expected=1184210 actual=1184210
+[17:51:10]   A05  PASS Measure reconciliation: SUM(significance)                                   expected=19446615 actual=19446615
+[17:51:10]   A06  PASS Inactive events match USGS deletions + superseded alias ids                 expected=0 actual=0
+[17:51:10]   A07  PASS Fact values differ from the raw source feature they came from               expected=0 actual=0
+[17:51:10]   A08  PASS Derived energy_joules / energy_tnt_tons recomputation errors                expected=0 actual=0
+[17:51:10]   A09  PASS Out-of-range values (lat, lon, magnitude, depth, future time)               expected=0 actual=0
+[17:51:10]   C01  PASS Raw rows accounted for (raw = staged + rejected at staging)                 expected=109030 actual=109030
+[17:51:10]   C02  PASS Missing values in required fact columns                                     expected=0 actual=0
+[17:51:10]   C03  PASS Eligible staged events missing from the fact                                expected=0 actual=0
+[17:51:10]   C04  INFO Missing values in source attribute: felt                                    expected=None actual=85.86
+[17:51:10]   C05  INFO Missing values in source attribute: cdi                                     expected=None actual=85.86
+[17:51:10]   C06  INFO Missing values in source attribute: mmi                                     expected=None actual=91.91
+[17:51:10]   C07  INFO Missing values in source attribute: alert                                   expected=None actual=97.01
+[17:51:10]   C08  INFO Missing values in source attribute: nst / gap                               expected=None actual=2.76
+[17:51:10]   C09  INFO Missing values in source attribute: magType                                 expected=None actual=0.00
+[17:51:10]   I01  PASS Fact rows without matching dimension: dim_date                              expected=0 actual=0
+[17:51:10]   I02  PASS Fact rows without matching dimension: dim_location                          expected=0 actual=0
+[17:51:10]   I03  PASS Fact rows without matching dimension: dim_network                           expected=0 actual=0
+[17:51:10]   I04  PASS Fact rows without matching dimension: dim_magnitude_type                    expected=0 actual=0
+[17:51:10]   I05  PASS Fact rows without matching dimension: dim_event_type                        expected=0 actual=0
+[17:51:10]   I06  PASS Fact rows without matching dimension: dim_magnitude_class                   expected=0 actual=0
+[17:51:10]   I07  PASS Fact rows without matching dimension: dim_depth_class                       expected=0 actual=0
+[17:51:10]   I08  PASS Declared FOREIGN KEY constraints on the fact table                          expected=7 actual=7
+[17:51:10]   I09  INFO Fact rows mapped to an Unknown (-1) member                                  expected=None actual=0
+[17:51:10]   K01  PASS Class band disagrees with magnitude or depth value                          expected=0 actual=0
+[17:51:10]   K02  PASS date_key disagrees with event_time (UTC)                                    expected=0 actual=0
+[17:51:10]   K03  PASS dim_date is contiguous and covers every event date                          expected=1096 actual=1096
+[17:51:10]   U01  PASS Duplicate business keys: dim_date (full_date)                               expected=0 actual=0
+[17:51:10]   U02  PASS Duplicate business keys: dim_location (location_code)                       expected=0 actual=0
+[17:51:10]   U03  PASS Duplicate business keys: dim_network (network_code)                         expected=0 actual=0
+[17:51:10]   U04  PASS Duplicate business keys: dim_magnitude_type (magnitude_type_code)           expected=0 actual=0
+[17:51:10]   U05  PASS Duplicate business keys: dim_event_type (event_type_code)                   expected=0 actual=0
+[17:51:10]   U06  PASS Duplicate business keys: dim_magnitude_class (magnitude_class)              expected=0 actual=0
+[17:51:10]   U07  PASS Duplicate business keys: dim_depth_class (depth_class)                      expected=0 actual=0
+[17:51:10]   U08  PASS Duplicate business keys: fact_seismic_event (event_id)                      expected=0 actual=0
+[17:51:10]   U09  PASS Duplicate business keys: stg_seismic_event (batch_id, event_id)             expected=0 actual=0
+[17:51:10]   U10  PASS Active fact events that are an alias id of another active event             expected=0 actual=0
+[17:51:10] 40 checks, 0 FAIL
+[17:51:11]   wrote evidence/01_batch_summary.csv (9 rows)
+[17:51:11]   wrote evidence/02_etl_step_log.csv (71 rows)
+[17:51:11]   wrote evidence/03_rejected_rows_by_reason.csv (4 rows)
+[17:51:11]   wrote evidence/04_data_quality_results.csv (40 rows)
+[17:51:11]   wrote evidence/05_table_row_counts.csv (12 rows)
+[17:51:11]   wrote evidence/06_surrogate_key_mapping_trace.csv (4 rows)
+[17:51:11]   wrote evidence/07_reconciliation.csv (8 rows)
+[17:51:12]   wrote evidence/08_text_standardisation_examples.csv (21 rows)
+[17:51:12]   wrote evidence/10_dimension_samples.csv (32 rows)
+[17:51:13]   wrote evidence/11_constraint_test.txt
+[17:51:13] done in 168.6s

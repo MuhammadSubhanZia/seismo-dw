@@ -1,0 +1,53 @@
+state_code,state_name,match_by_name
+AL,Alabama,Y
+AK,Alaska,Y
+AZ,Arizona,Y
+AR,Arkansas,Y
+CA,California,Y
+CO,Colorado,Y
+CT,Connecticut,Y
+DE,Delaware,Y
+FL,Florida,Y
+GA,Georgia,N
+HI,Hawaii,Y
+ID,Idaho,Y
+IL,Illinois,Y
+IN,Indiana,Y
+IA,Iowa,Y
+KS,Kansas,Y
+KY,Kentucky,Y
+LA,Louisiana,Y
+ME,Maine,Y
+MD,Maryland,Y
+MA,Massachusetts,Y
+MI,Michigan,Y
+MN,Minnesota,Y
+MS,Mississippi,Y
+MO,Missouri,Y
+MT,Montana,Y
+NE,Nebraska,Y
+NV,Nevada,Y
+NH,New Hampshire,Y
+NJ,New Jersey,Y
+NM,New Mexico,Y
+NY,New York,Y
+NC,North Carolina,Y
+ND,North Dakota,Y
+OH,Ohio,Y
+OK,Oklahoma,Y
+OR,Oregon,Y
+PA,Pennsylvania,Y
+RI,Rhode Island,Y
+SC,South Carolina,Y
+SD,South Dakota,Y
+TN,Tennessee,Y
+TX,Texas,Y
+UT,Utah,Y
+VT,Vermont,Y
+VA,Virginia,Y
+WA,Washington,Y
+WV,West Virginia,Y
+WI,Wisconsin,Y
+WY,Wyoming,Y
+PR,Puerto Rico,Y
+DC,District of Columbia,Y

@@ -1,0 +1,33 @@
+dimension,surrogate_key,business_key,label
+dim_location,-1,UNKNOWN,Unknown
+dim_location,1001,2025_DRAKE_PASSAGE,2025 Drake Passage
+dim_location,1002,2025_HUBBARD_GLACIER,2025 Hubbard Glacier
+dim_location,1003,2025_SOUTHERN_DRAKE_PASSAGE,2025 Southern Drake Passage
+dim_location,1004,2025_SOUTHERN_TIBETAN_PLATEAU,2025 Southern Tibetan Plateau
+dim_location,1005,AFGHANISTAN,Afghanistan
+dim_location,1006,AFRICA,Africa
+dim_location,1007,ALBANIA,Albania
+dim_network,-1,unknown,Unknown
+dim_network,1001,ak,Alaska Earthquake Center
+dim_network,1002,at,National Tsunami Warning Center
+dim_network,1003,av,Alaska Volcano Observatory
+dim_network,1004,ci,Southern California Seismic Network
+dim_network,1005,hv,Hawaiian Volcano Observatory
+dim_network,1006,ld,Lamont-Doherty Cooperative Seismographic Network
+dim_network,1007,mb,Montana Regional Seismic Network
+dim_magnitude_type,-1,unknown,Unknown
+dim_magnitude_type,1001,mb,Body-wave magnitude
+dim_magnitude_type,1002,mb_lg,Lg-wave magnitude
+dim_magnitude_type,1003,md,Duration magnitude
+dim_magnitude_type,1004,me,Energy magnitude
+dim_magnitude_type,1005,mh,Hand magnitude
+dim_magnitude_type,1006,mi,Integrated p-wave magnitude
+dim_magnitude_type,1007,ml,Local magnitude
+dim_event_type,-1,unknown,Unknown
+dim_event_type,1001,earthquake,Earthquake
+dim_event_type,1002,explosion,Explosion
+dim_event_type,1003,ice quake,Ice Quake
+dim_event_type,1004,landslide,Landslide
+dim_event_type,1005,mine collapse,Mine Collapse
+dim_event_type,1006,mining explosion,Mining Explosion
+dim_event_type,1007,other event,Other Event

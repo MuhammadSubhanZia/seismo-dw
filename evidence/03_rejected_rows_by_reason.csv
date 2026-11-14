@@ -1,0 +1,5 @@
+batch_id,source_file,stage,reason_code,rejected_rows
+5,usgs_events_2024_2025_full.geojson.gz,FACT_LOAD,SUPERSEDED_EVENT_ID,1
+7,usgs_events_2026-09-26_change_feed.geojson.gz,FACT_LOAD,DELETED_EVENT_NOT_IN_DW,1
+7,usgs_events_2026-09-26_change_feed.geojson.gz,FACT_LOAD,SUPERSEDED_EVENT_ID,64
+7,usgs_events_2026-09-26_change_feed.geojson.gz,STAGING,MISSING_EVENT_TIME,1

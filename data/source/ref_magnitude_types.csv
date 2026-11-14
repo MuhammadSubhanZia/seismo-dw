@@ -1,0 +1,17 @@
+magnitude_type_code,magnitude_type_name,scale_family,description
+mww,Moment magnitude (W-phase),Moment,Moment magnitude from W-phase inversion; preferred for large global events
+mwc,Moment magnitude (centroid),Moment,Moment magnitude from centroid moment tensor inversion of long-period waves
+mwb,Moment magnitude (body wave),Moment,Moment magnitude from long-period body-wave inversion
+mwr,Moment magnitude (regional),Moment,Moment magnitude from regional waveform inversion
+mw,Moment magnitude,Moment,Generic moment magnitude reported by a contributing network
+ms,Surface-wave magnitude,Surface wave,Magnitude from 20-second surface-wave amplitude
+ms_20,Surface-wave magnitude (20 s),Surface wave,Surface-wave magnitude measured at a 20 second period
+ms_vx,Surface-wave magnitude (vertical),Surface wave,Surface-wave magnitude from vertical-component records
+mb,Body-wave magnitude,Body wave,Short-period body-wave magnitude for teleseismic events
+mb_lg,Lg-wave magnitude,Body wave,Magnitude from short-period Lg waves (regional eastern North America)
+ml,Local magnitude,Local,Original Richter local magnitude for regional events
+mlr,Local magnitude (revised),Local,Local magnitude computed with a regionally revised attenuation relation
+md,Duration magnitude,Duration,Magnitude from the duration of the seismic signal (small local events)
+mh,Hand magnitude,Other,Non-standard magnitude assigned manually by an analyst
+mi,Integrated p-wave magnitude,Other,Magnitude from integrated P-wave displacement (Mwp)
+me,Energy magnitude,Other,Magnitude from radiated seismic energy
