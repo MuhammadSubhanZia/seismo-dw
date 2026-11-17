@@ -12,7 +12,7 @@ SET search_path TO project_dw, project_staging, public;
 -- name: dimension_uniqueness
 -- Task 5.3: total rows vs distinct business keys in every dimension
 SELECT 'dim_location' AS dimension, count(*) AS total_rows, count(DISTINCT location_code) AS distinct_business_keys FROM dim_location
-UNION ALL SELECT 'dim_network', count(*), count(DISTINCT network_code) FROM dim_network
+UNION ALL SELECT 'dim_network (current versions)', count(*) FILTER (WHERE is_current), count(DISTINCT network_code) FROM dim_network
 UNION ALL SELECT 'dim_magnitude_type', count(*), count(DISTINCT magnitude_type_code) FROM dim_magnitude_type
 UNION ALL SELECT 'dim_event_type', count(*), count(DISTINCT event_type_code) FROM dim_event_type
 UNION ALL SELECT 'dim_magnitude_class', count(*), count(DISTINCT magnitude_class) FROM dim_magnitude_class
@@ -105,9 +105,9 @@ FROM src JOIN dw USING (quarter) ORDER BY quarter;
 -- Challenge C / Lab 07 applied challenge: duplicate ONE dimension mapping in a CTE and
 -- show how the fact row count and energy inflate when the join key is not unique.
 WITH broken_dim_network AS (
-    SELECT network_key, network_code FROM dim_network
+    SELECT network_key, network_code FROM dim_network WHERE is_current
     UNION ALL
-    SELECT network_key, network_code FROM dim_network WHERE network_code = 'ak'   -- duplicate business key
+    SELECT network_key, network_code FROM dim_network WHERE is_current AND network_code = 'ak'   -- duplicate business key
 ), latest AS (
     SELECT DISTINCT ON (s.event_id) s.*
     FROM stg_seismic_event s
@@ -117,7 +117,7 @@ WITH broken_dim_network AS (
 )
 SELECT 'correct load (unique dim_network)' AS scenario, count(*) AS fact_rows,
        sum(power(10::DOUBLE PRECISION, 1.5 * l.magnitude::DOUBLE PRECISION + 4.8)) AS total_energy_j
-FROM latest l JOIN dim_network n ON n.network_code = l.network_code
+FROM latest l JOIN dim_network n ON n.network_code = l.network_code AND n.is_current
 UNION ALL
 SELECT 'broken load (network ak duplicated)', count(*),
        sum(power(10::DOUBLE PRECISION, 1.5 * l.magnitude::DOUBLE PRECISION + 4.8))
@@ -127,7 +127,7 @@ FROM latest l JOIN broken_dim_network n ON n.network_code = l.network_code;
 -- Section 10 diagnostics: each cause of "more fact rows / more energy than the source"
 SELECT 'dimension business keys with >1 row (many-to-many mapping)' AS diagnostic,
        (SELECT count(*) FROM (SELECT location_code FROM dim_location GROUP BY 1 HAVING count(*) > 1) a)
-     + (SELECT count(*) FROM (SELECT network_code FROM dim_network GROUP BY 1 HAVING count(*) > 1) b)
+     + (SELECT count(*) FROM (SELECT network_code FROM dim_network WHERE is_current GROUP BY 1 HAVING count(*) > 1) b)
      + (SELECT count(*) FROM (SELECT magnitude_type_code FROM dim_magnitude_type GROUP BY 1 HAVING count(*) > 1) c)
      + (SELECT count(*) FROM (SELECT event_type_code FROM dim_event_type GROUP BY 1 HAVING count(*) > 1) d) AS offending_rows
 UNION ALL

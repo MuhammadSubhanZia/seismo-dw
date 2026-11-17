@@ -226,7 +226,8 @@ SELECT (SELECT run_id FROM _dq), code, 'UNIQUENESS', 'Duplicate business keys: '
 FROM (
     SELECT 'U01' AS code, 'dim_date (full_date)' AS obj, count(*) AS total, count(DISTINCT full_date) AS distinct_keys FROM dim_date
     UNION ALL SELECT 'U02', 'dim_location (location_code)', count(*), count(DISTINCT location_code) FROM dim_location
-    UNION ALL SELECT 'U03', 'dim_network (network_code)', count(*), count(DISTINCT network_code) FROM dim_network
+    UNION ALL SELECT 'U03', 'dim_network (network_code, current versions - SCD2)', count(*) FILTER (WHERE is_current),
+                     count(DISTINCT network_code) FROM dim_network
     UNION ALL SELECT 'U04', 'dim_magnitude_type (magnitude_type_code)', count(*), count(DISTINCT magnitude_type_code) FROM dim_magnitude_type
     UNION ALL SELECT 'U05', 'dim_event_type (event_type_code)', count(*), count(DISTINCT event_type_code) FROM dim_event_type
     UNION ALL SELECT 'U06', 'dim_magnitude_class (magnitude_class)', count(*), count(DISTINCT magnitude_class) FROM dim_magnitude_class

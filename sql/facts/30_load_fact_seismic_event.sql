@@ -58,6 +58,7 @@ LEFT JOIN project_dw.dim_location l
        ON l.location_code = s.location_code
 LEFT JOIN project_dw.dim_network n
        ON n.network_code = s.network_code
+      AND n.is_current                          -- SCD Type 2: map to the version valid at load time
 LEFT JOIN project_dw.dim_magnitude_type mt
        ON mt.magnitude_type_code = s.magnitude_type
 LEFT JOIN project_dw.dim_event_type et
