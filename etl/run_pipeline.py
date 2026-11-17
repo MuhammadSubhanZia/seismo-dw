@@ -36,8 +36,9 @@ import psycopg
 from psycopg import sql
 
 from . import load_raw
-from .config import (DB_NAME, DDL_SCRIPTS, EVENT_BATCH_SCRIPTS, EVIDENCE_DIR, MANIFEST, QUALITY_SCRIPT,
-                     REFERENCE_BATCH_SCRIPTS, SOURCE_DIR, SQL_DIR, connect, source_name_for)
+from .config import (DB_NAME, DDL_SCRIPTS, EVENT_BATCH_SCRIPTS, EVIDENCE_DIR, LINEAGE_SCRIPT, MANIFEST,
+                     MATERIALIZED_VIEWS, QUALITY_SCRIPT, REFERENCE_BATCH_SCRIPTS, SOURCE_DIR, SQL_DIR, connect,
+                     source_name_for)
 
 
 def log(msg: str) -> None:
@@ -113,7 +114,9 @@ def process_file(path: Path, load_type: str, force: bool = False) -> int | None:
             for script in scripts:
                 run_sql_file(conn, script)
             if source == "usgs_events":
-                conn.execute("REFRESH MATERIALIZED VIEW project_reporting.mv_daily_location_activity")
+                for mv in MATERIALIZED_VIEWS:
+                    conn.execute(f"REFRESH MATERIALIZED VIEW {mv}")
+                run_sql_file(conn, LINEAGE_SCRIPT)
             conn.commit()
         except Exception as exc:
             conn.rollback()

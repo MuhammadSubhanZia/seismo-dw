@@ -7,6 +7,7 @@ Connection settings come from environment variables (or a local .env file, see
 from __future__ import annotations
 
 import os
+import re
 from pathlib import Path
 
 import psycopg
@@ -54,6 +55,11 @@ DDL_SCRIPTS = [
     "staging/02_staging_schema.sql",
     "dw/03_dw_schema.sql",
     "reporting/04_reporting_schema.sql",
+    # Phase 3 extensions
+    "dw/05_scd2_dim_network.sql",
+    "dw/06_snapshot_and_factless_facts.sql",
+    "dw/07_lineage_metadata.sql",
+    "reporting/52_reporting_views.sql",
 ]
 
 # Transformation scripts executed for every USGS events batch (dimensions BEFORE facts)
@@ -67,9 +73,18 @@ EVENT_BATCH_SCRIPTS = [
     "dimensions/25_load_dim_network.sql",
     "dimensions/26_load_dim_location.sql",
     "facts/30_load_fact_seismic_event.sql",
+    "facts/31_load_fact_location_monthly_snapshot.sql",
+    "facts/32_load_fact_network_location_coverage.sql",
 ]
-REFERENCE_BATCH_SCRIPTS = ["staging/11_clean_reference_to_staging.sql"]
+# reference batches also refresh the reference-driven dimensions (SCD2 versions appear immediately)
+REFERENCE_BATCH_SCRIPTS = [
+    "staging/11_clean_reference_to_staging.sql",
+    "dimensions/24_load_dim_magnitude_type.sql",
+    "dimensions/25_load_dim_network.sql",
+]
 QUALITY_SCRIPT = "quality/40_data_quality_checks.sql"
+LINEAGE_SCRIPT = "quality/42_capture_lineage.sql"
+MATERIALIZED_VIEWS = ["project_reporting.mv_daily_location_activity"]
 
 # ---------------------------------------------------------------------------
 # Source files: CSV header -> raw table column mapping (raw columns == CSV headers)
@@ -95,6 +110,10 @@ MANIFEST = [
     ("usgs_events_2026-09-26_change_feed.geojson.gz", "INCREMENTAL"),
     # Batch: older December-2024 snapshot (taken by Seismo) overlapping the full load
     ("usgs_events_2024-12_snapshot.geojson.gz",       "INCREMENTAL"),
+    # Phase 3: reference update (two networks changed) -> SCD Type 2 versions in dim_network
+    ("ref_seismic_networks_v2.csv",                   "REFERENCE"),
+    # Phase 3: live change feed pulled 2026-11-21 (new events, revisions and deletions since 2026-11-14)
+    ("usgs_events_2026-11-21_change_feed.geojson.gz", "INCREMENTAL"),
 ]
 
 
@@ -102,7 +121,7 @@ def source_name_for(path: Path) -> str:
     name = path.name
     if name.endswith((".geojson.gz", ".geojson", ".json", ".json.gz")):
         return "usgs_events"
-    stem = name.removesuffix(".csv")
+    stem = re.sub(r"_v\d+$", "", name.removesuffix(".csv"))   # ref_x_v2.csv is a new version of ref_x
     if stem in REFERENCE_SOURCES:
         return stem
     raise ValueError(f"Unknown source file: {name}")
