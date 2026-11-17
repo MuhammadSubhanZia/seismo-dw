@@ -27,6 +27,7 @@
                                  "MX" / "B.C., MX"                    -> Mexico
                                  "Japan region"                       -> Japan
                                  "south of the Fiji Islands"          -> Fiji Islands
+                                 "2025 Drake Passage Earthquake"      -> Drake Passage (named-event prefix)
    ============================================================================ */
 
 SET search_path TO project_staging, public;
@@ -130,7 +131,8 @@ WITH base AS (
            btrim(regexp_replace(
              regexp_replace(
                regexp_replace(
-                 regexp_replace(COALESCE(b.area_raw, ''),
+                 regexp_replace(regexp_replace(COALESCE(b.area_raw, ''),
+                   '^(19|20)[0-9]{2}\s+', ''),                                      -- "2025 Drake Passage Earthquake"
                    '^(.*\s)?(north|south|east|west|northeast|northwest|southeast|southwest|northern|southern|eastern|western|central)\s+of\s+(the\s+)?', '', 'i'),
                  '^(off|near)\s+the\s+(.*\s+)?coast\s+of\s+(the\s+)?', '', 'i'),
                '^((northern|southern|eastern|western|central)\s+)+', ''),          -- lower-case USGS qualifiers only
