@@ -149,3 +149,106 @@ JOIN dim_depth_class dc ON dc.depth_class_key = f.depth_class_key
 WHERE f.is_active
 GROUP BY GROUPING SETS ((d.year), (et.event_origin), (dc.depth_class), ())
 ORDER BY breakdown, events DESC;
+
+-- name: o08_drilldown_year
+-- O08  Drill-down step 1 (executive level): 2025 by year
+SELECT d.year, count(*) AS events, round(sum(f.energy_tnt_tons)::NUMERIC, 0) AS energy_tnt_tons
+FROM fact_seismic_event f JOIN dim_date d ON d.date_key = f.date_key
+WHERE f.is_active AND d.year = 2025
+GROUP BY d.year;
+
+-- name: o09_drilldown_quarter
+-- O09  Drill-down step 2: 2025 by quarter (one more GROUP BY column = one level deeper)
+SELECT d.year, d.quarter_label, count(*) AS events, round(sum(f.energy_tnt_tons)::NUMERIC, 0) AS energy_tnt_tons
+FROM fact_seismic_event f JOIN dim_date d ON d.date_key = f.date_key
+WHERE f.is_active AND d.year = 2025
+GROUP BY d.year, d.quarter_label
+ORDER BY d.quarter_label;
+
+-- name: o10_drilldown_month
+-- O10  Drill-down step 3: 2025 by month (analyst level); July holds the M8.8 Kamchatka event
+SELECT d.year, d.quarter_label, d.month, d.month_name, count(*) AS events,
+       round(sum(f.energy_tnt_tons)::NUMERIC, 0) AS energy_tnt_tons
+FROM fact_seismic_event f JOIN dim_date d ON d.date_key = f.date_key
+WHERE f.is_active AND d.year = 2025
+GROUP BY d.year, d.quarter_label, d.month, d.month_name
+ORDER BY d.month;
+
+-- name: o11_cross_grain
+-- O11  Cross-dimensional grain (Lab 04 Task 8.3): one row = one quarter x one magnitude class
+SELECT d.year, d.quarter_label, mc.magnitude_class, count(*) AS events
+FROM fact_seismic_event f
+JOIN dim_date d             ON d.date_key = f.date_key
+JOIN dim_magnitude_class mc ON mc.magnitude_class_key = f.magnitude_class_key
+WHERE f.is_active AND mc.magnitude_class IN ('Strong', 'Major', 'Great')
+GROUP BY d.year, d.quarter, d.quarter_label, mc.magnitude_class, mc.sort_order
+ORDER BY d.year, d.quarter, mc.sort_order;
+
+/* ---------------------------------------------------------------------------
+   MOLAP simulation (Lab 04 section 9): a physically stored pre-aggregate.
+   Grain: one row per year + month + location type + magnitude class.
+   --------------------------------------------------------------------------- */
+DROP TABLE IF EXISTS project_reporting.agg_month_region_class;
+CREATE TABLE project_reporting.agg_month_region_class AS
+SELECT d.year, d.month, l.location_type AS region, mc.magnitude_class,
+       count(*)                  AS events,
+       sum(f.energy_tnt_tons)    AS energy_tnt_tons,
+       sum(f.felt_reports)       AS felt_reports
+FROM fact_seismic_event f
+JOIN dim_date d             ON d.date_key = f.date_key
+JOIN dim_location l         ON l.location_key = f.location_key
+JOIN dim_magnitude_class mc ON mc.magnitude_class_key = f.magnitude_class_key
+WHERE f.is_active
+GROUP BY d.year, d.month, l.location_type, mc.magnitude_class;
+ALTER TABLE project_reporting.agg_month_region_class
+    ADD PRIMARY KEY (year, month, region, magnitude_class);
+
+-- name: o12_molap_compression
+-- O12  Compression of detail: fact rows / aggregate rows
+SELECT (SELECT count(*) FROM fact_seismic_event WHERE is_active)            AS fact_rows,
+       (SELECT count(*) FROM project_reporting.agg_month_region_class)      AS aggregate_rows,
+       round((SELECT count(*) FROM fact_seismic_event WHERE is_active)::NUMERIC
+             / (SELECT count(*) FROM project_reporting.agg_month_region_class), 1) AS compression_ratio;
+
+-- name: o13_rolap_vs_molap
+-- O13  Same question, two storage approaches: 2026 energy by region and magnitude class.
+--      ROLAP joins and aggregates 3 tables at query time; the MOLAP-like table is read directly.
+WITH rolap AS (
+    SELECT l.location_type AS region, mc.magnitude_class, count(*) AS events, sum(f.energy_tnt_tons) AS energy
+    FROM fact_seismic_event f
+    JOIN dim_date d             ON d.date_key = f.date_key
+    JOIN dim_location l         ON l.location_key = f.location_key
+    JOIN dim_magnitude_class mc ON mc.magnitude_class_key = f.magnitude_class_key
+    WHERE f.is_active AND d.year = 2026
+    GROUP BY l.location_type, mc.magnitude_class
+), molap AS (
+    SELECT region, magnitude_class, sum(events) AS events, sum(energy_tnt_tons) AS energy
+    FROM project_reporting.agg_month_region_class
+    WHERE year = 2026
+    GROUP BY region, magnitude_class
+)
+SELECT r.region, r.magnitude_class, r.events AS rolap_events, m.events AS molap_events,
+       round(r.energy::NUMERIC, 1) AS rolap_energy, round(m.energy::NUMERIC, 1) AS molap_energy,
+       r.events = m.events AND abs(r.energy - m.energy) <= 1e-9 * GREATEST(r.energy, 1) AS identical
+FROM rolap r JOIN molap m USING (region, magnitude_class)
+ORDER BY r.region, r.events DESC;
+
+-- name: o14_detail_lost
+-- O14  Challenge D: a question the aggregate CANNOT answer - which single day of 2025 had the
+--      most strong (M5+) events? Day and magnitude detail were summed away in the aggregate.
+SELECT d.full_date, count(*) AS strong_events
+FROM fact_seismic_event f JOIN dim_date d ON d.date_key = f.date_key
+WHERE f.is_active AND d.year = 2025 AND f.magnitude >= 5
+GROUP BY d.full_date
+ORDER BY strong_events DESC, d.full_date
+LIMIT 5;
+
+/* ---------------------------------------------------------------------------
+   ROLAP vs MOLAP vs HOLAP in this project (Lab 04 Task 9.4)
+     ROLAP  detail in project_dw fact/dimensions; any question, aggregation at query time
+     MOLAP  agg_month_region_class / mv_daily_location_activity: pre-computed, fast,
+            but fixed grain (O14 shows the lost detail)
+     HOLAP  what the warehouse actually does: Power BI and the reporting views read the
+            pre-aggregates for KPI cards and trends, and drill through to the relational
+            fact for detail.
+   --------------------------------------------------------------------------- */
