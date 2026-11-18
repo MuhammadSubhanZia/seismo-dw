@@ -106,3 +106,114 @@ SELECT year_month,
        events_3m_moving_avg
 FROM project_reporting.vw_monthly_sales
 ORDER BY year, month;
+
+-- name: a08_rank_within_type
+-- A08  RANK / DENSE_RANK inside a partition: top 3 locations per location type
+SELECT location_type, location_label, events, rnk
+FROM (
+    SELECT l.location_type, l.location_label, count(*) AS events,
+           dense_rank() OVER (PARTITION BY l.location_type ORDER BY count(*) DESC) AS rnk
+    FROM fact_seismic_event f
+    JOIN dim_location l ON l.location_key = f.location_key
+    WHERE f.is_active AND l.location_key <> -1
+    GROUP BY l.location_type, l.location_label
+) r
+WHERE rnk <= 3
+ORDER BY location_type, rnk;
+
+-- name: a09_depth_percentiles
+-- A09  Distribution statistics per depth class: percentiles and standard deviation
+SELECT dc.depth_class,
+       count(*)                                                                AS events,
+       round(avg(f.magnitude), 2)                                              AS avg_magnitude,
+       round(percentile_cont(0.5) WITHIN GROUP (ORDER BY f.magnitude)::NUMERIC, 2) AS median_magnitude,
+       round(percentile_cont(0.9) WITHIN GROUP (ORDER BY f.magnitude)::NUMERIC, 2) AS p90_magnitude,
+       round(stddev_samp(f.magnitude), 3)                                      AS stddev_magnitude,
+       round(avg(f.felt_reports), 2)                                           AS avg_felt_reports
+FROM fact_seismic_event f
+JOIN dim_depth_class dc ON dc.depth_class_key = f.depth_class_key
+WHERE f.is_active
+GROUP BY dc.depth_class, dc.sort_order
+ORDER BY dc.sort_order;
+
+-- name: a10_network_contribution
+-- A10  "Channel" analysis: which network types author the catalogue, with average review quality
+SELECT n.network_type,
+       count(*)                                                       AS events,
+       round(100.0 * count(*) / sum(count(*)) OVER (), 2)             AS share_pct,
+       round(avg(f.station_count), 1)                                 AS avg_stations,
+       round(avg(f.azimuthal_gap), 1)                                 AS avg_azimuthal_gap,
+       round(100.0 * count(*) FILTER (WHERE f.review_status = 'reviewed') / count(*), 2) AS reviewed_pct
+FROM fact_seismic_event f
+JOIN dim_network n ON n.network_key = f.network_key
+WHERE f.is_active
+GROUP BY n.network_type
+ORDER BY events DESC;
+
+-- name: a11_hour_of_day
+-- A11  Time-of-day profile (natural events are uniform; blasts cluster in working hours)
+SELECT et.event_origin,
+       f.event_hour_utc,
+       count(*) AS events
+FROM fact_seismic_event f
+JOIN dim_event_type et ON et.event_type_key = f.event_type_key
+WHERE f.is_active AND et.event_origin IN ('Natural', 'Anthropogenic')
+GROUP BY et.event_origin, f.event_hour_utc
+ORDER BY et.event_origin, f.event_hour_utc;
+
+-- name: a12_quarter_growth_by_type
+-- A12  Quarter-over-quarter growth per location type (LAG partitioned by type)
+SELECT location_type, year, quarter_label, events,
+       round(100.0 * (events - lag(events) OVER w) / NULLIF(lag(events) OVER w, 0), 2) AS qoq_growth_pct
+FROM (
+    SELECT l.location_type, d.year, d.quarter, d.quarter_label, count(*) AS events
+    FROM fact_seismic_event f
+    JOIN dim_date d     ON d.date_key = f.date_key
+    JOIN dim_location l ON l.location_key = f.location_key
+    WHERE f.is_active AND l.location_key <> -1
+    GROUP BY l.location_type, d.year, d.quarter, d.quarter_label
+) q
+WINDOW w AS (PARTITION BY location_type ORDER BY year, quarter)
+ORDER BY location_type, year, quarter;
+
+-- name: a13_strongest_events
+-- A13  The 10 strongest events with their full dimensional context
+SELECT f.event_id, d.full_date, l.location_label, f.magnitude, mt.magnitude_type_code,
+       f.depth_km, round(f.energy_tnt_tons::NUMERIC, 0) AS energy_tnt_tons, f.alert_level, f.tsunami_flag
+FROM fact_seismic_event f
+JOIN dim_date d             ON d.date_key = f.date_key
+JOIN dim_location l         ON l.location_key = f.location_key
+JOIN dim_magnitude_type mt  ON mt.magnitude_type_key = f.magnitude_type_key
+WHERE f.is_active
+ORDER BY f.magnitude DESC, d.full_date
+LIMIT 10;
+
+-- name: a14_semi_additive_snapshot
+-- A14  Periodic snapshot: semi-additive cumulative_events_ytd may be summed across locations
+--      (one month) but not across months; December snapshot = full-year totals
+SELECT d.year, d.month_name,
+       sum(s.events_in_month)          AS events_in_month,           -- additive
+       sum(s.cumulative_events_ytd)    AS cumulative_events_ytd,     -- semi-additive: OK across locations
+       count(*) FILTER (WHERE s.is_active_month) AS active_locations,
+       round(avg(s.days_since_last_event), 1)    AS avg_days_since_last_event  -- non-additive: average only
+FROM fact_location_monthly_snapshot s
+JOIN dim_date d ON d.date_key = s.snapshot_date_key
+WHERE d.month = 12
+   OR d.date_key = (SELECT max(snapshot_date_key) FROM fact_location_monthly_snapshot)   -- latest (partial) month
+GROUP BY d.year, d.month, d.month_name
+ORDER BY d.year, d.month;
+
+-- name: a15_coverage_gaps
+-- A15  Factless fact: locations covered by more than one network, and active locations with
+--      only a single network (coverage-redundancy gap) in the latest year
+SELECT CASE WHEN networks = 1 THEN 'single network' ELSE 'two or more networks' END AS coverage,
+       count(*) AS locations
+FROM (
+    SELECT c.location_key, count(DISTINCT n.network_code) AS networks
+    FROM fact_network_location_coverage c
+    JOIN dim_network n ON n.network_key = c.network_key
+    WHERE c.month_date_key >= 20260101
+    GROUP BY c.location_key
+) x
+GROUP BY 1
+ORDER BY 1;
