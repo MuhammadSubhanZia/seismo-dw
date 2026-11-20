@@ -106,6 +106,8 @@ def table(cols, rows, status_col: str | None = None, cls: str = "") -> str:
         for c, v in zip(cols, r):
             if c == status_col:
                 cells.append(f'<td><span class="badge {str(v).lower()}">{"&#10003; " if v == "PASS" else ("&#10007; " if v == "FAIL" else "i ")}{v}</span></td>')
+            elif c in ("year", "batch_id", "rank", "priority", "month") and isinstance(v, int):
+                cells.append(f'<td class="num">{v}</td>')          # identifiers: no thousands separator
             else:
                 num = isinstance(v, (int, float, Decimal)) and not isinstance(v, bool)
                 cells.append(f'<td class="{"num" if num else ""}">{fmt(v)}</td>')
