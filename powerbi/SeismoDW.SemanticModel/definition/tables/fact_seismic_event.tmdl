@@ -1,0 +1,196 @@
+table fact_seismic_event
+	lineageTag: 7b9d02c6-5d40-5648-9ea1-98bc32023f89
+
+	/// Orders KPI equivalent: number of seismic events
+	measure 'Total Events' = COUNTROWS ( fact_seismic_event )
+		formatString: #,0
+		lineageTag: c4844efd-8ee0-554c-9597-b29ada1715f8
+
+	/// Revenue KPI equivalent: radiated energy in kilotons of TNT
+	measure 'Energy Released (kt TNT)' = DIVIDE ( SUM ( fact_seismic_event[energy_tnt_tons] ), 1000 )
+		formatString: #,0
+		lineageTag: 266221bb-e278-58e4-9f68-3f79f340912b
+
+	/// Customers KPI equivalent: distinct countries / US states with events
+	measure 'Affected Locations' = DISTINCTCOUNT ( fact_seismic_event[location_key] )
+		formatString: #,0
+		lineageTag: 2515f4d5-0851-51db-811a-547de6435d12
+
+	measure 'Avg Magnitude' = AVERAGE ( fact_seismic_event[magnitude] )
+		formatString: 0.00
+		lineageTag: 8b6abdba-4b78-5736-8aac-4206eff74acb
+
+	measure 'Max Magnitude' = MAX ( fact_seismic_event[magnitude] )
+		formatString: 0.0
+		lineageTag: 28c7af1c-8ba1-5581-a43f-e1b7f32c3687
+
+	measure 'Strong Events (M5+)' = CALCULATE ( [Total Events], fact_seismic_event[magnitude] >= 5 )
+		formatString: #,0
+		lineageTag: 16379f6f-bd01-5031-b15c-31f4ff65bb52
+
+	measure 'Felt Reports' = SUM ( fact_seismic_event[felt_reports] )
+		formatString: #,0
+		lineageTag: 3cb81ceb-a56b-5ca7-a2d6-f38298eda0b4
+
+	/// Events in the latest year to date vs the same calendar window one year earlier
+	measure 'Events YoY % (same period)' =
+			VAR lastDay = CALCULATE ( MAX ( dim_date[full_date] ), fact_seismic_event )
+			VAR y = YEAR ( lastDay )
+			VAR cur = CALCULATE ( [Total Events], DATESBETWEEN ( dim_date[full_date], DATE ( y, 1, 1 ), lastDay ) )
+			VAR prev = CALCULATE ( [Total Events], DATESBETWEEN ( dim_date[full_date], DATE ( y - 1, 1, 1 ), EDATE ( lastDay, -12 ) ) )
+			RETURN DIVIDE ( cur - prev, prev )
+		formatString: +0.0%;-0.0%;0.0%
+		lineageTag: c3b06f85-973b-5390-8794-d1d12499409a
+
+	/// M5+ events in the latest year to date vs the same calendar window one year earlier
+	measure 'Strong Events YoY % (same period)' =
+			VAR lastDay = CALCULATE ( MAX ( dim_date[full_date] ), fact_seismic_event )
+			VAR y = YEAR ( lastDay )
+			VAR cur = CALCULATE ( [Strong Events (M5+)], DATESBETWEEN ( dim_date[full_date], DATE ( y, 1, 1 ), lastDay ) )
+			VAR prev = CALCULATE ( [Strong Events (M5+)], DATESBETWEEN ( dim_date[full_date], DATE ( y - 1, 1, 1 ), EDATE ( lastDay, -12 ) ) )
+			RETURN DIVIDE ( cur - prev, prev )
+		formatString: +0.0%;-0.0%;0.0%
+		lineageTag: 277d69c0-45de-5ec9-8011-529d03a550eb
+
+	measure 'Strong Event Share' = DIVIDE ( [Strong Events (M5+)], [Total Events] )
+		formatString: 0.00%
+		lineageTag: 9d872287-9862-5bfe-9cc4-89ce09063611
+
+	column event_id
+		dataType: string
+		lineageTag: a25f40f7-ffc9-5bf6-8281-47d58368d274
+		summarizeBy: none
+		sourceColumn: event_id
+
+	column date_key
+		dataType: int64
+		isHidden
+		lineageTag: dc606603-e539-5c1c-965a-7348b0f8c480
+		summarizeBy: none
+		sourceColumn: date_key
+
+	column location_key
+		dataType: int64
+		isHidden
+		lineageTag: 700633ab-67df-5740-a871-888cf673821f
+		summarizeBy: none
+		sourceColumn: location_key
+
+	column network_key
+		dataType: int64
+		isHidden
+		lineageTag: ee36b252-dfad-541d-8eb4-c668aa7bb62c
+		summarizeBy: none
+		sourceColumn: network_key
+
+	column magnitude_type_key
+		dataType: int64
+		isHidden
+		lineageTag: d8f29feb-f760-57ae-b25a-91754384cfa7
+		summarizeBy: none
+		sourceColumn: magnitude_type_key
+
+	column event_type_key
+		dataType: int64
+		isHidden
+		lineageTag: 0f5c14ed-74bd-56b6-9233-5ce77cf31b13
+		summarizeBy: none
+		sourceColumn: event_type_key
+
+	column magnitude_class_key
+		dataType: int64
+		isHidden
+		lineageTag: e24ce851-0ac6-58de-93d2-9cc149561ee5
+		summarizeBy: none
+		sourceColumn: magnitude_class_key
+
+	column depth_class_key
+		dataType: int64
+		isHidden
+		lineageTag: 0276d16d-4c1f-5e1f-840f-89c73ae667ab
+		summarizeBy: none
+		sourceColumn: depth_class_key
+
+	column event_hour_utc
+		dataType: int64
+		lineageTag: 21194db2-49e4-5da1-ac2c-a0005c7df652
+		summarizeBy: none
+		sourceColumn: event_hour_utc
+
+	column latitude
+		dataType: double
+		formatString: 0.0000
+		lineageTag: ac186204-d8ba-568f-b5fd-943ef891b462
+		summarizeBy: none
+		sourceColumn: latitude
+
+	column longitude
+		dataType: double
+		formatString: 0.0000
+		lineageTag: 2c4b5e95-2d30-5ceb-8eef-53d698c8a67d
+		summarizeBy: none
+		sourceColumn: longitude
+
+	column magnitude
+		dataType: double
+		formatString: 0.00
+		lineageTag: aa03559d-aad6-5e92-b49e-36eb7de99cd6
+		summarizeBy: average
+		sourceColumn: magnitude
+
+	column depth_km
+		dataType: double
+		formatString: 0.0
+		lineageTag: d6b8d248-0cff-56e0-9c4e-0b1f783cc51e
+		summarizeBy: average
+		sourceColumn: depth_km
+
+	column energy_tnt_tons
+		dataType: double
+		formatString: #,0
+		lineageTag: 1c8a82a6-2698-5adf-a9bd-8e5998684ed1
+		summarizeBy: sum
+		sourceColumn: energy_tnt_tons
+
+	column felt_reports
+		dataType: int64
+		formatString: #,0
+		lineageTag: 52db4ab6-c914-55c9-ab17-e7e8c165b063
+		summarizeBy: sum
+		sourceColumn: felt_reports
+
+	column significance
+		dataType: int64
+		formatString: #,0
+		lineageTag: de737eb3-616a-5493-a3fa-9d50d1c9494d
+		summarizeBy: average
+		sourceColumn: significance
+
+	column alert_level
+		dataType: string
+		lineageTag: c3e6e1b5-6d05-5d24-887d-352043bfb582
+		summarizeBy: none
+		sourceColumn: alert_level
+
+	column tsunami_flag
+		dataType: boolean
+		lineageTag: 8b181c81-6942-5c00-8ab7-2f158b126e21
+		summarizeBy: none
+		sourceColumn: tsunami_flag
+
+	column is_significant
+		dataType: boolean
+		lineageTag: 8c0d357d-3c1c-5b20-915f-0b8de5842ff7
+		summarizeBy: none
+		sourceColumn: is_significant
+
+	partition fact_seismic_event = m
+		mode: import
+		source =
+				let
+					Source = PostgreSQL.Database(PgServer, PgDatabase),
+					Nav = Source{[Schema="project_dw", Item="fact_seismic_event"]}[Data],
+					Active = Table.SelectRows(Nav, each [is_active] = true),
+					Kept = Table.SelectColumns(Active, {"event_id", "date_key", "location_key", "network_key", "magnitude_type_key", "event_type_key", "magnitude_class_key", "depth_class_key", "event_hour_utc", "latitude", "longitude", "magnitude", "depth_km", "energy_tnt_tons", "felt_reports", "significance", "alert_level", "tsunami_flag", "is_significant"})
+				in
+					Kept

@@ -1,0 +1,9 @@
+expression PgServer = "localhost:5433" meta [IsParameterQuery=true, Type="Text", IsParameterQueryRequired=true]
+	lineageTag: 6f42270f-678f-54f5-abf5-464aa416c4f0
+
+	annotation PBI_ResultType = Text
+
+expression PgDatabase = "seismo_dw" meta [IsParameterQuery=true, Type="Text", IsParameterQueryRequired=true]
+	lineageTag: 265872e5-9a56-5933-932d-72052430d223
+
+	annotation PBI_ResultType = Text

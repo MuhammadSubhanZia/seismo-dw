@@ -1,0 +1,33 @@
+table dim_depth_class
+	lineageTag: b4730988-067e-5a48-8146-5e70ebbe8ccc
+
+	column depth_class_key
+		dataType: int64
+		isHidden
+		lineageTag: fa951ecd-fb2a-5a80-8283-de4667c525bb
+		summarizeBy: none
+		sourceColumn: depth_class_key
+
+	column depth_class
+		dataType: string
+		lineageTag: 750a4a76-15ee-5204-b7a0-ddd7ad389d8d
+		summarizeBy: none
+		sourceColumn: depth_class
+		sortByColumn: sort_order
+
+	column sort_order
+		dataType: int64
+		isHidden
+		lineageTag: 8306bf23-5f21-5148-92b9-5a9d6d4e7a6a
+		summarizeBy: none
+		sourceColumn: sort_order
+
+	partition dim_depth_class = m
+		mode: import
+		source =
+				let
+					Source = PostgreSQL.Database(PgServer, PgDatabase),
+					Nav = Source{[Schema="project_dw", Item="dim_depth_class"]}[Data],
+					Kept = Table.SelectColumns(Nav, {"depth_class_key", "depth_class", "sort_order"})
+				in
+					Kept

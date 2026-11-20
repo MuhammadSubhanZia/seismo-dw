@@ -1,0 +1,67 @@
+table vw_monthly_sales
+	lineageTag: c718a15d-3f10-551e-bc37-b04cb935673f
+
+	column month_start
+		dataType: dateTime
+		formatString: mmm yyyy
+		lineageTag: 93c0667c-0893-5853-adc5-513391dee6ff
+		summarizeBy: none
+		sourceColumn: month_start
+
+	column year_month
+		dataType: string
+		lineageTag: 1a9ba5fd-a874-59ae-a459-76a51c480452
+		summarizeBy: none
+		sourceColumn: year_month
+
+	column events
+		dataType: int64
+		formatString: #,0
+		lineageTag: 13e81a0d-da20-5281-b0d7-26eb74e89a4d
+		summarizeBy: sum
+		sourceColumn: events
+
+	column total_energy_tnt_tons
+		dataType: double
+		formatString: #,0
+		lineageTag: fad05dba-3a48-5f0f-a55d-62957cd006f5
+		summarizeBy: sum
+		sourceColumn: total_energy_tnt_tons
+
+	column mom_event_growth_pct
+		dataType: double
+		formatString: 0.0
+		lineageTag: dce69254-ad4e-5572-b5e4-548e868e732f
+		summarizeBy: none
+		sourceColumn: mom_event_growth_pct
+
+	column yoy_event_growth_pct
+		dataType: double
+		formatString: 0.0
+		lineageTag: 32dd6e6c-d617-5826-9d4f-a0a1d63205ec
+		summarizeBy: none
+		sourceColumn: yoy_event_growth_pct
+
+	column events_3m_moving_avg
+		dataType: double
+		formatString: #,0
+		lineageTag: c539aba1-e410-5886-a5e0-df8f0bfa2e46
+		summarizeBy: none
+		sourceColumn: events_3m_moving_avg
+
+	column active_locations
+		dataType: int64
+		formatString: #,0
+		lineageTag: 6557b101-6305-5704-ab6e-04749da19b64
+		summarizeBy: none
+		sourceColumn: active_locations
+
+	partition vw_monthly_sales = m
+		mode: import
+		source =
+				let
+					Source = PostgreSQL.Database(PgServer, PgDatabase),
+					Nav = Source{[Schema="project_reporting", Item="vw_monthly_sales"]}[Data],
+					Kept = Table.SelectColumns(Nav, {"month_start", "year_month", "events", "total_energy_tnt_tons", "mom_event_growth_pct", "yoy_event_growth_pct", "events_3m_moving_avg", "active_locations"})
+				in
+					Kept

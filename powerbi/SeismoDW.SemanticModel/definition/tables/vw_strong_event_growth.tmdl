@@ -1,0 +1,59 @@
+table vw_strong_event_growth
+	lineageTag: 70207267-b92f-57a9-8f8a-f40cc2d18e4d
+
+	measure 'Strong M5+ last year (same period)' = SUM ( vw_strong_event_growth[strong_prev_ytd] )
+		formatString: #,0
+		lineageTag: 759e35ef-593b-5cf9-b529-0003f130c507
+
+	measure 'Strong M5+ this year (to date)' = SUM ( vw_strong_event_growth[strong_curr_ytd] )
+		formatString: #,0
+		lineageTag: 372b26c9-c90f-502a-961b-46272815c422
+
+	column location_label
+		dataType: string
+		lineageTag: 962e3455-5ce0-52f5-ae77-9b15e2f59548
+		summarizeBy: none
+		sourceColumn: location_label
+
+	column location_type
+		dataType: string
+		lineageTag: 5271db11-ed0e-58eb-8ad8-5da7e40046bf
+		summarizeBy: none
+		sourceColumn: location_type
+
+	column strong_prev_ytd
+		dataType: int64
+		formatString: #,0
+		lineageTag: 8c3018aa-44d6-5542-85b4-8e4cab3eb1dc
+		summarizeBy: sum
+		sourceColumn: strong_prev_ytd
+
+	column strong_curr_ytd
+		dataType: int64
+		formatString: #,0
+		lineageTag: 32611649-95cf-547a-877c-b2cd5505d0aa
+		summarizeBy: sum
+		sourceColumn: strong_curr_ytd
+
+	column growth_pct
+		dataType: double
+		formatString: 0.0
+		lineageTag: f49daf13-e7f7-5000-903c-5b100f4bac71
+		summarizeBy: none
+		sourceColumn: growth_pct
+
+	column is_material
+		dataType: boolean
+		lineageTag: e5f00842-8054-5657-8e4e-f854f218517d
+		summarizeBy: none
+		sourceColumn: is_material
+
+	partition vw_strong_event_growth = m
+		mode: import
+		source =
+				let
+					Source = PostgreSQL.Database(PgServer, PgDatabase),
+					Nav = Source{[Schema="project_reporting", Item="vw_strong_event_growth"]}[Data],
+					Kept = Table.SelectColumns(Nav, {"location_label", "location_type", "strong_prev_ytd", "strong_curr_ytd", "growth_pct", "is_material"})
+				in
+					Kept

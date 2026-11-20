@@ -1,0 +1,23 @@
+relationship 5a555dd3-7f70-58d1-906b-a153767bd7f5
+	fromColumn: fact_seismic_event.date_key
+	toColumn: dim_date.date_key
+
+relationship e2ec573f-4be5-5ad5-a6c6-2807c623a01c
+	fromColumn: fact_seismic_event.location_key
+	toColumn: dim_location.location_key
+
+relationship ed43b4f2-c098-59e4-80b4-97d24a6c317c
+	fromColumn: fact_seismic_event.network_key
+	toColumn: dim_network.network_key
+
+relationship 4605419f-cebd-5277-acf6-a90997777bbd
+	fromColumn: fact_seismic_event.magnitude_class_key
+	toColumn: dim_magnitude_class.magnitude_class_key
+
+relationship e9299b0c-fe3e-5df7-a818-a90bc456e121
+	fromColumn: fact_seismic_event.event_type_key
+	toColumn: dim_event_type.event_type_key
+
+relationship f2850d24-83be-5c1f-b2d8-9249479b77a8
+	fromColumn: fact_seismic_event.depth_class_key
+	toColumn: dim_depth_class.depth_class_key

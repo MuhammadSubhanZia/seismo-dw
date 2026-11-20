@@ -1,0 +1,49 @@
+table dim_network
+	lineageTag: 8faa3c45-c384-5ef1-aa44-ad722255d527
+
+	column network_key
+		dataType: int64
+		isHidden
+		lineageTag: c1a4f8c1-fa98-5ff4-b27e-f7308228c63c
+		summarizeBy: none
+		sourceColumn: network_key
+
+	column network_code
+		dataType: string
+		lineageTag: f5d38b5b-ce27-588f-a717-28c79bac2240
+		summarizeBy: none
+		sourceColumn: network_code
+
+	column network_name
+		dataType: string
+		lineageTag: 2da5e1c9-a7c4-599a-9d26-44dba9dfd9b0
+		summarizeBy: none
+		sourceColumn: network_name
+
+	column network_type
+		dataType: string
+		lineageTag: 7bc07fdc-8ed7-59b5-819e-b32e744b435c
+		summarizeBy: none
+		sourceColumn: network_type
+
+	column version_no
+		dataType: int64
+		lineageTag: d3e285a2-792e-55e6-b184-44dbc333bdbe
+		summarizeBy: none
+		sourceColumn: version_no
+
+	column is_current
+		dataType: boolean
+		lineageTag: 6d1e21ab-3643-55ea-a6ac-3e008373eb22
+		summarizeBy: none
+		sourceColumn: is_current
+
+	partition dim_network = m
+		mode: import
+		source =
+				let
+					Source = PostgreSQL.Database(PgServer, PgDatabase),
+					Nav = Source{[Schema="project_dw", Item="dim_network"]}[Data],
+					Kept = Table.SelectColumns(Nav, {"network_key", "network_code", "network_name", "network_type", "version_no", "is_current"})
+				in
+					Kept

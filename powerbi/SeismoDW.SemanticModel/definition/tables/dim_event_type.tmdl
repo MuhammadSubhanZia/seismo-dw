@@ -1,0 +1,31 @@
+table dim_event_type
+	lineageTag: bc5fbf7c-55f1-5098-9f8e-968dd0698e0d
+
+	column event_type_key
+		dataType: int64
+		isHidden
+		lineageTag: d577ebb1-ddc5-51b2-bb3d-0f9ecef05b39
+		summarizeBy: none
+		sourceColumn: event_type_key
+
+	column event_type_label
+		dataType: string
+		lineageTag: 200fb6a8-8eff-50fd-ace1-6139f20df786
+		summarizeBy: none
+		sourceColumn: event_type_label
+
+	column event_origin
+		dataType: string
+		lineageTag: e21ec4cd-7c95-504e-9535-27efa562acbc
+		summarizeBy: none
+		sourceColumn: event_origin
+
+	partition dim_event_type = m
+		mode: import
+		source =
+				let
+					Source = PostgreSQL.Database(PgServer, PgDatabase),
+					Nav = Source{[Schema="project_dw", Item="dim_event_type"]}[Data],
+					Kept = Table.SelectColumns(Nav, {"event_type_key", "event_type_label", "event_origin"})
+				in
+					Kept

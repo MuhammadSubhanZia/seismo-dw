@@ -1,0 +1,75 @@
+table vw_customer_analysis
+	lineageTag: b7df2739-d4ed-5cef-8b67-38d5cf569ab0
+
+	measure 'Segment Locations' = COUNTROWS ( vw_customer_analysis )
+		formatString: #,0
+		lineageTag: d8f54949-2920-5d34-9acb-783bf26440a5
+
+	column location_key
+		dataType: int64
+		isHidden
+		lineageTag: daecc893-9978-503f-9543-2a5f5d5a9f0d
+		summarizeBy: none
+		sourceColumn: location_key
+
+	column location_label
+		dataType: string
+		lineageTag: a7837c80-a3ce-5425-bfe9-666e7c105b37
+		summarizeBy: none
+		sourceColumn: location_label
+
+	column location_type
+		dataType: string
+		lineageTag: ce79e03e-db86-5555-8d79-5401758f7d19
+		summarizeBy: none
+		sourceColumn: location_type
+
+	column events
+		dataType: int64
+		formatString: #,0
+		lineageTag: 3e8be4b2-da56-5e37-9452-855755d7e5f3
+		summarizeBy: sum
+		sourceColumn: events
+
+	column total_energy_tnt_tons
+		dataType: double
+		formatString: #,0
+		lineageTag: 4138fe4b-9744-57d7-905c-974d806288ec
+		summarizeBy: sum
+		sourceColumn: total_energy_tnt_tons
+
+	column max_magnitude
+		dataType: double
+		formatString: 0.0
+		lineageTag: 2f85c5b9-c877-5851-9890-bcd46a14360b
+		summarizeBy: max
+		sourceColumn: max_magnitude
+
+	column recency_days
+		dataType: int64
+		formatString: #,0
+		lineageTag: f6287dfc-f383-521c-93db-bff4e3d4c4f5
+		summarizeBy: none
+		sourceColumn: recency_days
+
+	column rfm_code
+		dataType: int64
+		lineageTag: f45da0ae-2f52-5984-a211-0e040aa8d007
+		summarizeBy: none
+		sourceColumn: rfm_code
+
+	column activity_segment
+		dataType: string
+		lineageTag: d461c088-55b3-5c17-b394-0ffb2cd6b9f2
+		summarizeBy: none
+		sourceColumn: activity_segment
+
+	partition vw_customer_analysis = m
+		mode: import
+		source =
+				let
+					Source = PostgreSQL.Database(PgServer, PgDatabase),
+					Nav = Source{[Schema="project_reporting", Item="vw_customer_analysis"]}[Data],
+					Kept = Table.SelectColumns(Nav, {"location_key", "location_label", "location_type", "events", "total_energy_tnt_tons", "max_magnitude", "recency_days", "rfm_code", "activity_segment"})
+				in
+					Kept

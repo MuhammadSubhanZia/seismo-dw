@@ -1,0 +1,28 @@
+table Decisions
+	lineageTag: 18aa38bf-038f-5ec6-83c7-1a457060fab9
+
+	column priority
+		dataType: int64
+		lineageTag: 965f3a91-2de3-52d6-916d-ff0e05e5a201
+		summarizeBy: none
+		sourceColumn: priority
+
+	column decision
+		dataType: string
+		lineageTag: 30e848db-3e7d-56fc-9609-8b6dc315bb11
+		summarizeBy: none
+		sourceColumn: decision
+
+	column evidence
+		dataType: string
+		lineageTag: 49bb17b2-7f5d-59f5-a260-6019dcf71166
+		summarizeBy: none
+		sourceColumn: evidence
+
+	partition Decisions = m
+		mode: import
+		source =
+				let
+					Source = #table(type table [priority = Int64.Type, decision = text, evidence = text], {{1, "Increase seismic-monitoring and early-warning investment in Indonesia and the Philippines.", "Strong (M5+) events grew 87% in Indonesia (127 to 238) and 66% in the Philippines (86 to 143), 1 Jan-21 Nov 2026 vs the same period of 2025; both reached M7.8 and are covered by a single (global) network."}, {2, "Fund regional-network partnerships for high-activity locations covered by only one network.", "88.1% of 2026 strong events (1,606 of 1,822) occurred in locations reported by a single network - Indonesia, Philippines, Japan, Vanuatu and Tonga lead the list."}, {3, "Size preparedness and insurance budgets for rare great earthquakes, not for event counts.", "M7+ events are 0.05% of all events but release about 91% of the energy (the M8.8 Kamchatka event of July 2025 alone dominates the 2025 energy total)."}, {4, "Do not treat the +27.5% rise in US event counts as a higher-risk signal.", "The US increase is mostly small events recorded by dense regional networks (59% of Alaska events are below M3); US strong events moved only from 57 to 69."}, {5, "Label the most recent three weeks of the dashboard as provisional.", "8.9% of November 2026 events are still automatic (not analyst-reviewed) versus 0.2% in September, so late revisions are expected."}})
+				in
+					Source

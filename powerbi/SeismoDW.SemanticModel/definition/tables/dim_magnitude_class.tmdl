@@ -1,0 +1,39 @@
+table dim_magnitude_class
+	lineageTag: 1c3c18a1-277c-5ccc-9dfe-01bf31a9a968
+
+	column magnitude_class_key
+		dataType: int64
+		isHidden
+		lineageTag: 5522da10-6a03-539e-88e2-1bd912248a9a
+		summarizeBy: none
+		sourceColumn: magnitude_class_key
+
+	column magnitude_class
+		dataType: string
+		lineageTag: b3e8e6ab-24d8-5ff3-b528-ae6c5b4176e0
+		summarizeBy: none
+		sourceColumn: magnitude_class
+		sortByColumn: sort_order
+
+	column magnitude_range
+		dataType: string
+		lineageTag: 542a5756-262d-5a53-b714-6c501810021a
+		summarizeBy: none
+		sourceColumn: magnitude_range
+
+	column sort_order
+		dataType: int64
+		isHidden
+		lineageTag: 1c1aebcd-2d34-53da-b447-42caef3dd1f8
+		summarizeBy: none
+		sourceColumn: sort_order
+
+	partition dim_magnitude_class = m
+		mode: import
+		source =
+				let
+					Source = PostgreSQL.Database(PgServer, PgDatabase),
+					Nav = Source{[Schema="project_dw", Item="dim_magnitude_class"]}[Data],
+					Kept = Table.SelectColumns(Nav, {"magnitude_class_key", "magnitude_class", "magnitude_range", "sort_order"})
+				in
+					Kept

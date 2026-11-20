@@ -1,0 +1,49 @@
+table dim_location
+	lineageTag: b76603f3-ba04-5284-a112-da3c6bee2441
+
+	column location_key
+		dataType: int64
+		isHidden
+		lineageTag: f8e3656b-bad3-5276-8690-9103ef8cbcac
+		summarizeBy: none
+		sourceColumn: location_key
+
+	column location_code
+		dataType: string
+		lineageTag: 21ce0f4d-e0e7-5e32-8078-ef608b9f8778
+		summarizeBy: none
+		sourceColumn: location_code
+
+	column location_label
+		dataType: string
+		lineageTag: b9c75578-ca1c-599f-8b25-b2e2afd49f24
+		summarizeBy: none
+		sourceColumn: location_label
+
+	column country
+		dataType: string
+		lineageTag: 2202799a-5b9b-5fbb-b1c2-f9edbf6077bd
+		summarizeBy: none
+		sourceColumn: country
+
+	column state_province
+		dataType: string
+		lineageTag: fa5c22c9-467e-543b-b7bf-a150eeaead25
+		summarizeBy: none
+		sourceColumn: state_province
+
+	column location_type
+		dataType: string
+		lineageTag: 349e5f6f-db98-5038-a41d-400a79d0ae33
+		summarizeBy: none
+		sourceColumn: location_type
+
+	partition dim_location = m
+		mode: import
+		source =
+				let
+					Source = PostgreSQL.Database(PgServer, PgDatabase),
+					Nav = Source{[Schema="project_dw", Item="dim_location"]}[Data],
+					Kept = Table.SelectColumns(Nav, {"location_key", "location_code", "location_label", "country", "state_province", "location_type"})
+				in
+					Kept

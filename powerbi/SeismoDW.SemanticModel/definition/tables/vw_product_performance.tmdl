@@ -1,0 +1,60 @@
+table vw_product_performance
+	lineageTag: 77cdf4a2-bee0-5897-867f-9839da54e0a1
+
+	column category
+		dataType: string
+		lineageTag: 3d3c665e-e9e3-54b9-9acc-98e0a22401ce
+		summarizeBy: none
+		sourceColumn: category
+
+	column product
+		dataType: string
+		lineageTag: 59d47d45-d22c-52cc-b696-0718e14703fe
+		summarizeBy: none
+		sourceColumn: product
+		sortByColumn: product_sort
+
+	column product_sort
+		dataType: int64
+		isHidden
+		lineageTag: 02795c00-c264-55ae-a8fe-f7878babe576
+		summarizeBy: none
+		sourceColumn: product_sort
+
+	column events
+		dataType: int64
+		formatString: #,0
+		lineageTag: 743d7b96-0822-5c61-b19c-55c210e872f2
+		summarizeBy: sum
+		sourceColumn: events
+
+	column total_energy_tnt_tons
+		dataType: double
+		formatString: #,0
+		lineageTag: ae639b2b-d2fc-5e42-ba32-9945df139293
+		summarizeBy: sum
+		sourceColumn: total_energy_tnt_tons
+
+	column share_of_energy_pct
+		dataType: double
+		formatString: 0.00
+		lineageTag: 851aba2a-8e22-5200-8f38-6e12974bc37e
+		summarizeBy: sum
+		sourceColumn: share_of_energy_pct
+
+	column avg_depth_km
+		dataType: double
+		formatString: 0.0
+		lineageTag: 68d4a77b-1a8d-5022-9080-1000454c4787
+		summarizeBy: average
+		sourceColumn: avg_depth_km
+
+	partition vw_product_performance = m
+		mode: import
+		source =
+				let
+					Source = PostgreSQL.Database(PgServer, PgDatabase),
+					Nav = Source{[Schema="project_reporting", Item="vw_product_performance"]}[Data],
+					Kept = Table.SelectColumns(Nav, {"category", "product", "product_sort", "events", "total_energy_tnt_tons", "share_of_energy_pct", "avg_depth_km"})
+				in
+					Kept

@@ -1,0 +1,70 @@
+table dim_date
+	dataCategory: Time
+	lineageTag: e6e0a93c-9650-5ee3-b43d-9692362c56a3
+
+	column date_key
+		dataType: int64
+		isHidden
+		lineageTag: 8c3e4774-6503-5915-b04d-690cec95bf04
+		summarizeBy: none
+		sourceColumn: date_key
+
+	column full_date
+		dataType: dateTime
+		formatString: yyyy-mm-dd
+		isKey
+		lineageTag: 277427e7-cda3-55c5-9311-fb71218eba64
+		summarizeBy: none
+		sourceColumn: full_date
+
+	column year
+		dataType: int64
+		lineageTag: 16bd512d-9381-5fd3-a766-eee467075f2c
+		summarizeBy: none
+		sourceColumn: year
+
+	column quarter_label
+		dataType: string
+		lineageTag: 30007140-c66f-512b-89c7-5c41aeeb6121
+		summarizeBy: none
+		sourceColumn: quarter_label
+
+	column month
+		dataType: int64
+		lineageTag: c591c6f5-b69d-509c-a481-5ae661ea2ddc
+		summarizeBy: none
+		sourceColumn: month
+
+	column month_name
+		dataType: string
+		lineageTag: 0a052fd7-807d-5742-8702-3adf72d9fd5b
+		summarizeBy: none
+		sourceColumn: month_name
+
+	column year_month
+		dataType: string
+		lineageTag: 27cc7e95-a83c-5ef9-9dc9-f5f6dd68be27
+		summarizeBy: none
+		sourceColumn: year_month
+
+	column day_name
+		dataType: string
+		lineageTag: 2e339f1e-b9bb-5483-b56b-425c2e9c2bc9
+		summarizeBy: none
+		sourceColumn: day_name
+
+	column is_weekend
+		dataType: boolean
+		lineageTag: 9e83230c-1e7b-53a3-8643-00cd2ac90b84
+		summarizeBy: none
+		sourceColumn: is_weekend
+
+	partition dim_date = m
+		mode: import
+		source =
+				let
+					Source = PostgreSQL.Database(PgServer, PgDatabase),
+					Nav = Source{[Schema="project_dw", Item="dim_date"]}[Data],
+					Kept = Table.SelectColumns(Nav, {"date_key", "full_date", "year", "quarter_label", "month", "month_name", "year_month", "day_name", "is_weekend"})
+				in
+					Kept
