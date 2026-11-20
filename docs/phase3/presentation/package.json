@@ -1,0 +1,6 @@
+{
+  "name": "seismo-dw-presentation",
+  "private": true,
+  "description": "Builds Final_Presentation.pptx from the Phase 3 evidence",
+  "dependencies": { "pptxgenjs": "3.12.0" }
+}

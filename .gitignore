@@ -16,3 +16,10 @@ build/
 .DS_Store
 Thumbs.db
 desktop.ini
+
+# Power BI Desktop local caches (per Microsoft PBIP guidance)
+powerbi/**/.pbi/localSettings.json
+powerbi/**/.pbi/cache.abf
+
+# presentation build dependencies
+docs/phase3/presentation/node_modules/
