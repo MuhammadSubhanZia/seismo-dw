@@ -1,0 +1,128 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
+  "name": "decGrowth",
+  "position": {
+    "x": 652,
+    "y": 160,
+    "z": 4000,
+    "height": 300,
+    "width": 608,
+    "tabOrder": 4000
+  },
+  "visual": {
+    "visualType": "clusteredColumnChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "vw_strong_event_growth"
+                    }
+                  },
+                  "Property": "location_label"
+                }
+              },
+              "queryRef": "vw_strong_event_growth.location_label",
+              "nativeQueryRef": "location_label"
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "vw_strong_event_growth"
+                    }
+                  },
+                  "Property": "Strong M5+ last year (same period)"
+                }
+              },
+              "queryRef": "vw_strong_event_growth.Strong M5+ last year (same period)",
+              "nativeQueryRef": "Strong M5+ last year (same period)"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "vw_strong_event_growth"
+                    }
+                  },
+                  "Property": "Strong M5+ this year (to date)"
+                }
+              },
+              "queryRef": "vw_strong_event_growth.Strong M5+ this year (to date)",
+              "nativeQueryRef": "Strong M5+ this year (to date)"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "vw_strong_event_growth"
+                  }
+                },
+                "Property": "Strong M5+ this year (to date)"
+              }
+            },
+            "direction": "Descending"
+          }
+        ],
+        "isDefaultSort": false
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Evidence: strong (M5+) events, same calendar period, last year vs this year'"
+                }
+              }
+            },
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#17375E'"
+                    }
+                  }
+                }
+              }
+            },
+            "bold": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

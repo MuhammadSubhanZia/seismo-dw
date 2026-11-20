@@ -1,0 +1,49 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
+  "name": "hdr",
+  "position": {
+    "x": 20,
+    "y": 6,
+    "z": 1000,
+    "height": 66,
+    "width": 1000,
+    "tabOrder": 1000
+  },
+  "visual": {
+    "visualType": "textbox",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "Seismo DW - Executive Overview",
+                    "textStyle": {
+                      "fontSize": "20pt",
+                      "color": "#17375E",
+                      "fontWeight": "bold"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Global seismic activity M2.5+ (USGS), Jan 2024 - Nov 2026.  Revenue = energy released, orders = events, customers = affected locations.",
+                    "textStyle": {
+                      "fontSize": "10pt",
+                      "color": "#52514E"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

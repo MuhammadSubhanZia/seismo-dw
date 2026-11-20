@@ -1,0 +1,49 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
+  "name": "hdr",
+  "position": {
+    "x": 20,
+    "y": 6,
+    "z": 1000,
+    "height": 66,
+    "width": 1000,
+    "tabOrder": 1000
+  },
+  "visual": {
+    "visualType": "textbox",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "Detailed Analysis",
+                    "textStyle": {
+                      "fontSize": "20pt",
+                      "color": "#17375E",
+                      "fontWeight": "bold"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Product = magnitude class, category = event type, region = location type, customer segment = RFM activity segment of a location.",
+                    "textStyle": {
+                      "fontSize": "10pt",
+                      "color": "#52514E"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

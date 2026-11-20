@@ -1,0 +1,130 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
+  "name": "decList",
+  "position": {
+    "x": 20,
+    "y": 160,
+    "z": 3000,
+    "height": 300,
+    "width": 620,
+    "tabOrder": 3000
+  },
+  "visual": {
+    "visualType": "textbox",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "Supporting decisions",
+                    "textStyle": {
+                      "fontSize": "12pt",
+                      "color": "#17375E",
+                      "fontWeight": "bold"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "2. Fund regional-network partnerships for high-activity locations covered by only one network.",
+                    "textStyle": {
+                      "fontSize": "11pt",
+                      "color": "#17375E",
+                      "fontWeight": "bold"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "88.1% of 2026 strong events (1,606 of 1,822) occurred in locations reported by a single network - Indonesia, Philippines, Japan, Vanuatu and Tonga lead the list.",
+                    "textStyle": {
+                      "fontSize": "9pt",
+                      "color": "#52514E"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "3. Size preparedness and insurance budgets for rare great earthquakes, not for event counts.",
+                    "textStyle": {
+                      "fontSize": "11pt",
+                      "color": "#17375E",
+                      "fontWeight": "bold"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "M7+ events are 0.05% of all events but release about 91% of the energy (the M8.8 Kamchatka event of July 2025 alone dominates the 2025 energy total).",
+                    "textStyle": {
+                      "fontSize": "9pt",
+                      "color": "#52514E"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "4. Do not treat the +27.5% rise in US event counts as a higher-risk signal.",
+                    "textStyle": {
+                      "fontSize": "11pt",
+                      "color": "#17375E",
+                      "fontWeight": "bold"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "The US increase is mostly small events recorded by dense regional networks (59% of Alaska events are below M3); US strong events moved only from 57 to 69.",
+                    "textStyle": {
+                      "fontSize": "9pt",
+                      "color": "#52514E"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "5. Label the most recent three weeks of the dashboard as provisional.",
+                    "textStyle": {
+                      "fontSize": "11pt",
+                      "color": "#17375E",
+                      "fontWeight": "bold"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "8.9% of November 2026 events are still automatic (not analyst-reviewed) versus 0.2% in September, so late revisions are expected.",
+                    "textStyle": {
+                      "fontSize": "9pt",
+                      "color": "#52514E"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}
