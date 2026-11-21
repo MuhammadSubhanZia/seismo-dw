@@ -1,0 +1,13 @@
+EXPLAIN (ANALYZE, BUFFERS)
+SELECT count(*) FROM project_dw.fact_seismic_event
+WHERE date_key BETWEEN 20260301 AND 20260331
+
+Aggregate  (cost=54.83..54.84 rows=1 width=8) (actual time=0.666..0.667 rows=1.00 loops=1)
+  Buffers: shared hit=5
+  ->  Index Only Scan using ix_fact_event_date on fact_seismic_event  (cost=0.29..50.55 rows=1713 width=0) (actual time=0.024..0.400 rows=2509.00 loops=1)
+        Index Cond: ((date_key >= 20260301) AND (date_key <= 20260331))
+        Heap Fetches: 0
+        Index Searches: 1
+        Buffers: shared hit=5
+Planning Time: 0.241 ms
+Execution Time: 0.695 ms

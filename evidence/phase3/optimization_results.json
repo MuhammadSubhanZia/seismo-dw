@@ -1,0 +1,487 @@
+[
+  {
+    "execution_ms_median": 12.724,
+    "execution_ms_runs": [
+      13.43,
+      12.019,
+      11.143,
+      13.683
+    ],
+    "planning_ms": 0.337,
+    "total_cost": 3968.57,
+    "rows": 2509.0,
+    "top_node": "Seq Scan",
+    "scan_nodes": [
+      "Seq Scan on fact_seismic_event"
+    ],
+    "shared_hit": 2760,
+    "shared_read": 0,
+    "partitions_scanned": [],
+    "experiment": "E1",
+    "phase": "before",
+    "file": "optimization/60_indexing_experiments.sql",
+    "query": "EXPLAIN (ANALYZE, BUFFERS)\nSELECT event_id, event_time, magnitude, depth_km\nFROM project_dw.fact_seismic_event\nWHERE event_time >= TIMESTAMPTZ '2026-03-01 00:00:00+00'\n  AND event_time <  TIMESTAMPTZ '2026-04-01 00:00:00+00'"
+  },
+  {
+    "execution_ms_median": 1.261,
+    "execution_ms_runs": [
+      1.131,
+      1.318,
+      1.299,
+      1.223
+    ],
+    "planning_ms": 0.176,
+    "total_cost": 2885.09,
+    "rows": 2509.0,
+    "top_node": "Bitmap Heap Scan",
+    "scan_nodes": [
+      "Bitmap Heap Scan on fact_seismic_event",
+      "Bitmap Index Scan using ix_fact_event_time"
+    ],
+    "shared_hit": 134,
+    "shared_read": 0,
+    "partitions_scanned": [],
+    "experiment": "E1",
+    "phase": "after",
+    "file": "optimization/60_indexing_experiments.sql",
+    "query": "EXPLAIN (ANALYZE, BUFFERS)\nSELECT event_id, event_time, magnitude, depth_km\nFROM project_dw.fact_seismic_event\nWHERE event_time >= TIMESTAMPTZ '2026-03-01 00:00:00+00'\n  AND event_time <  TIMESTAMPTZ '2026-04-01 00:00:00+00'"
+  },
+  {
+    "execution_ms_median": 3.144,
+    "execution_ms_runs": [
+      3.304,
+      2.233,
+      3.842,
+      2.984
+    ],
+    "planning_ms": 0.34,
+    "total_cost": 824.66,
+    "rows": 1265.0,
+    "top_node": "Bitmap Heap Scan",
+    "scan_nodes": [
+      "Bitmap Heap Scan on fact_seismic_event",
+      "Index Scan on dim_location using uq_dim_location_code",
+      "Bitmap Index Scan using ix_fact_event_location",
+      "Bitmap Index Scan using ix_fact_event_date"
+    ],
+    "shared_hit": 579,
+    "shared_read": 0,
+    "partitions_scanned": [],
+    "experiment": "E2",
+    "phase": "before",
+    "file": "optimization/60_indexing_experiments.sql",
+    "query": "EXPLAIN (ANALYZE, BUFFERS)\nSELECT event_id, date_key, magnitude\nFROM project_dw.fact_seismic_event\nWHERE location_key = (SELECT location_key FROM project_dw.dim_location WHERE location_code = 'JAPAN')\n  AND date_key BETWEEN 20250101 AND 20251231"
+  },
+  {
+    "execution_ms_median": 1.484,
+    "execution_ms_runs": [
+      1.504,
+      1.562,
+      1.315,
+      1.463
+    ],
+    "planning_ms": 0.205,
+    "total_cost": 393.22,
+    "rows": 1265.0,
+    "top_node": "Bitmap Heap Scan",
+    "scan_nodes": [
+      "Bitmap Heap Scan on fact_seismic_event",
+      "Index Scan on dim_location using uq_dim_location_code",
+      "Bitmap Index Scan using ix_fact_event_location_date"
+    ],
+    "shared_hit": 542,
+    "shared_read": 0,
+    "partitions_scanned": [],
+    "experiment": "E2",
+    "phase": "after",
+    "file": "optimization/60_indexing_experiments.sql",
+    "query": "EXPLAIN (ANALYZE, BUFFERS)\nSELECT event_id, date_key, magnitude\nFROM project_dw.fact_seismic_event\nWHERE location_key = (SELECT location_key FROM project_dw.dim_location WHERE location_code = 'JAPAN')\n  AND date_key BETWEEN 20250101 AND 20251231"
+  },
+  {
+    "execution_ms_median": 32.557,
+    "execution_ms_runs": [
+      34.555,
+      30.657,
+      34.458,
+      30.496
+    ],
+    "planning_ms": 0.259,
+    "total_cost": 3978.95,
+    "rows": 276.0,
+    "top_node": "Sort",
+    "scan_nodes": [
+      "Seq Scan on fact_seismic_event"
+    ],
+    "shared_hit": 2760,
+    "shared_read": 0,
+    "partitions_scanned": [],
+    "experiment": "E3",
+    "phase": "before",
+    "file": "optimization/60_indexing_experiments.sql",
+    "query": "EXPLAIN (ANALYZE, BUFFERS)\nSELECT event_id, event_time, magnitude, location_key\nFROM project_dw.fact_seismic_event\nWHERE magnitude >= 6\n  AND event_time >= TIMESTAMPTZ '2025-01-01 00:00:00+00'\nORDER BY event_time"
+  },
+  {
+    "execution_ms_median": 0.387,
+    "execution_ms_runs": [
+      0.38,
+      0.405,
+      0.394,
+      0.357
+    ],
+    "planning_ms": 0.347,
+    "total_cost": 457.59,
+    "rows": 276.0,
+    "top_node": "Index Scan",
+    "scan_nodes": [
+      "Index Scan on fact_seismic_event using ix_fact_event_major_time"
+    ],
+    "shared_hit": 242,
+    "shared_read": 0,
+    "partitions_scanned": [],
+    "experiment": "E3",
+    "phase": "after",
+    "file": "optimization/60_indexing_experiments.sql",
+    "query": "EXPLAIN (ANALYZE, BUFFERS)\nSELECT event_id, event_time, magnitude, location_key\nFROM project_dw.fact_seismic_event\nWHERE magnitude >= 6\n  AND event_time >= TIMESTAMPTZ '2025-01-01 00:00:00+00'\nORDER BY event_time"
+  },
+  {
+    "execution_ms_median": 4.891,
+    "execution_ms_runs": [
+      4.723,
+      6.247,
+      4.899,
+      4.883
+    ],
+    "planning_ms": 0.282,
+    "total_cost": 3010.24,
+    "rows": 90.0,
+    "top_node": "Aggregate",
+    "scan_nodes": [
+      "Bitmap Heap Scan on fact_seismic_event",
+      "Bitmap Index Scan using ix_fact_event_date"
+    ],
+    "shared_hit": 313,
+    "shared_read": 0,
+    "partitions_scanned": [],
+    "experiment": "E4",
+    "phase": "before",
+    "file": "optimization/60_indexing_experiments.sql",
+    "query": "EXPLAIN (ANALYZE, BUFFERS)\nSELECT date_key, count(*) AS events, sum(energy_joules) AS energy\nFROM project_dw.fact_seismic_event\nWHERE date_key BETWEEN 20250101 AND 20250331\nGROUP BY date_key"
+  },
+  {
+    "execution_ms_median": 2.031,
+    "execution_ms_runs": [
+      1.734,
+      2.542,
+      1.789,
+      2.273
+    ],
+    "planning_ms": 0.224,
+    "total_cost": 318.26,
+    "rows": 90.0,
+    "top_node": "Aggregate",
+    "scan_nodes": [
+      "Index Only Scan on fact_seismic_event using ix_fact_event_date_covering"
+    ],
+    "shared_hit": 37,
+    "shared_read": 0,
+    "partitions_scanned": [],
+    "experiment": "E4",
+    "phase": "after",
+    "file": "optimization/60_indexing_experiments.sql",
+    "query": "EXPLAIN (ANALYZE, BUFFERS)\nSELECT date_key, count(*) AS events, sum(energy_joules) AS energy\nFROM project_dw.fact_seismic_event\nWHERE date_key BETWEEN 20250101 AND 20250331\nGROUP BY date_key"
+  },
+  {
+    "execution_ms_median": 0.04,
+    "execution_ms_runs": [
+      0.043,
+      0.076,
+      0.034,
+      0.037
+    ],
+    "planning_ms": 0.198,
+    "total_cost": 8.44,
+    "rows": 1.0,
+    "top_node": "Index Scan",
+    "scan_nodes": [
+      "Index Scan on fact_seismic_event using uq_fact_seismic_event_event_id"
+    ],
+    "shared_hit": 4,
+    "shared_read": 0,
+    "partitions_scanned": [],
+    "experiment": "E5",
+    "phase": "before",
+    "file": "optimization/60_indexing_experiments.sql",
+    "query": "EXPLAIN (ANALYZE, BUFFERS)\nSELECT event_id, event_time, magnitude, place\nFROM project_dw.fact_seismic_event\nWHERE event_id = 'us6000qw60'"
+  },
+  {
+    "execution_ms_median": 0.026,
+    "execution_ms_runs": [
+      0.023,
+      0.041,
+      0.027,
+      0.026
+    ],
+    "planning_ms": 0.156,
+    "total_cost": 8.02,
+    "rows": 1.0,
+    "top_node": "Index Scan",
+    "scan_nodes": [
+      "Index Scan on fact_seismic_event using ix_fact_event_id_hash"
+    ],
+    "shared_hit": 2,
+    "shared_read": 0,
+    "partitions_scanned": [],
+    "experiment": "E5",
+    "phase": "after",
+    "file": "optimization/60_indexing_experiments.sql",
+    "query": "EXPLAIN (ANALYZE, BUFFERS)\nSELECT event_id, event_time, magnitude, place\nFROM project_dw.fact_seismic_event\nWHERE event_id = 'us6000qw60'"
+  },
+  {
+    "execution_ms_median": 0.992,
+    "execution_ms_runs": [
+      1.105,
+      1.011,
+      0.974,
+      0.958
+    ],
+    "planning_ms": 0.092,
+    "total_cost": 2215.77,
+    "rows": 2010.0,
+    "top_node": "Index Scan",
+    "scan_nodes": [
+      "Index Scan on fact_seismic_event_cluster_demo using ix_cluster_demo_date"
+    ],
+    "shared_hit": 380,
+    "shared_read": 0,
+    "partitions_scanned": [],
+    "experiment": "E6",
+    "phase": "before",
+    "file": "optimization/60_indexing_experiments.sql",
+    "query": "EXPLAIN (ANALYZE, BUFFERS)\nSELECT event_id, magnitude, depth_km, felt_reports\nFROM project_dw.fact_seismic_event_cluster_demo\nWHERE date_key BETWEEN 20250601 AND 20250630"
+  },
+  {
+    "execution_ms_median": 0.759,
+    "execution_ms_runs": [
+      0.96,
+      0.686,
+      0.77,
+      0.748
+    ],
+    "planning_ms": 0.074,
+    "total_cost": 96.79,
+    "rows": 2010.0,
+    "top_node": "Index Scan",
+    "scan_nodes": [
+      "Index Scan on fact_seismic_event_cluster_demo using ix_cluster_demo_date"
+    ],
+    "shared_hit": 74,
+    "shared_read": 0,
+    "partitions_scanned": [],
+    "experiment": "E6",
+    "phase": "after",
+    "file": "optimization/60_indexing_experiments.sql",
+    "query": "EXPLAIN (ANALYZE, BUFFERS)\nSELECT event_id, magnitude, depth_km, felt_reports\nFROM project_dw.fact_seismic_event_cluster_demo\nWHERE date_key BETWEEN 20250601 AND 20250630"
+  },
+  {
+    "execution_ms_median": 78.263,
+    "execution_ms_runs": [
+      88.81,
+      77.295,
+      77.175,
+      79.232
+    ],
+    "planning_ms": 0.348,
+    "total_cost": 4822.44,
+    "rows": 35.0,
+    "top_node": "Subquery Scan",
+    "scan_nodes": [
+      "Subquery Scan",
+      "Subquery Scan",
+      "Seq Scan on fact_seismic_event",
+      "Seq Scan on dim_date"
+    ],
+    "shared_hit": 2772,
+    "shared_read": 0,
+    "partitions_scanned": [],
+    "experiment": "E7",
+    "phase": "before",
+    "file": "optimization/60_indexing_experiments.sql",
+    "query": "EXPLAIN (ANALYZE, BUFFERS)\nSELECT year_month, events, total_energy_tnt_tons\nFROM project_reporting.vw_monthly_sales"
+  },
+  {
+    "execution_ms_median": 21.135,
+    "execution_ms_runs": [
+      18.917,
+      21.548,
+      23.601,
+      20.722
+    ],
+    "planning_ms": 0.266,
+    "total_cost": 1093.91,
+    "rows": 35.0,
+    "top_node": "Aggregate",
+    "scan_nodes": [
+      "Seq Scan on mv_daily_location_activity",
+      "Seq Scan on dim_date"
+    ],
+    "shared_hit": 485,
+    "shared_read": 0,
+    "partitions_scanned": [],
+    "experiment": "E7",
+    "phase": "after",
+    "file": "optimization/60_indexing_experiments.sql",
+    "query": "EXPLAIN (ANALYZE, BUFFERS)\nSELECT d.year_month, sum(m.event_count) AS events, sum(m.total_energy_joules) / 4.184e9 AS total_energy_tnt_tons\nFROM project_reporting.mv_daily_location_activity m\nJOIN project_dw.dim_date d ON d.date_key = m.date_key\nGROUP BY d.year_month"
+  },
+  {
+    "execution_ms_median": 0.496,
+    "execution_ms_runs": [
+      0.474,
+      0.519,
+      0.465,
+      0.73
+    ],
+    "planning_ms": 0.173,
+    "total_cost": 54.84,
+    "rows": 1.0,
+    "top_node": "Aggregate",
+    "scan_nodes": [
+      "Index Only Scan on fact_seismic_event using ix_fact_event_date"
+    ],
+    "shared_hit": 5,
+    "shared_read": 0,
+    "partitions_scanned": [],
+    "experiment": "P1",
+    "phase": "before",
+    "file": "optimization/61_partitioning_experiments.sql",
+    "query": "EXPLAIN (ANALYZE, BUFFERS)\nSELECT count(*) FROM project_dw.fact_seismic_event\nWHERE date_key BETWEEN 20260301 AND 20260331"
+  },
+  {
+    "execution_ms_median": 0.72,
+    "execution_ms_runs": [
+      0.899,
+      0.705,
+      0.721,
+      0.72
+    ],
+    "planning_ms": 0.167,
+    "total_cost": 970.7,
+    "rows": 1.0,
+    "top_node": "Aggregate",
+    "scan_nodes": [
+      "Bitmap Heap Scan on fact_seismic_event_y2026",
+      "Bitmap Index Scan using fact_seismic_event_y2026_date_key_idx"
+    ],
+    "shared_hit": 133,
+    "shared_read": 0,
+    "partitions_scanned": [
+      "fact_seismic_event_y2026"
+    ],
+    "experiment": "P1",
+    "phase": "after",
+    "file": "optimization/61_partitioning_experiments.sql",
+    "query": "EXPLAIN (ANALYZE, BUFFERS)\nSELECT count(*) FROM project_dw.fact_seismic_event_by_year\nWHERE date_key BETWEEN 20260301 AND 20260331"
+  },
+  {
+    "execution_ms_median": 19.404,
+    "execution_ms_runs": [
+      15.513,
+      21.126,
+      25.396,
+      17.681
+    ],
+    "planning_ms": 0.252,
+    "total_cost": 3851.43,
+    "rows": 246.0,
+    "top_node": "Aggregate",
+    "scan_nodes": [
+      "Bitmap Heap Scan on fact_seismic_event",
+      "Bitmap Index Scan using ix_fact_event_date"
+    ],
+    "shared_hit": 1091,
+    "shared_read": 0,
+    "partitions_scanned": [],
+    "experiment": "P2",
+    "phase": "before",
+    "file": "optimization/61_partitioning_experiments.sql",
+    "query": "EXPLAIN (ANALYZE, BUFFERS)\nSELECT location_key, count(*), sum(energy_tnt_tons)\nFROM project_dw.fact_seismic_event\nWHERE date_key BETWEEN 20250101 AND 20251231\nGROUP BY location_key"
+  },
+  {
+    "execution_ms_median": 16.229,
+    "execution_ms_runs": [
+      14.994,
+      15.441,
+      17.016,
+      18.179
+    ],
+    "planning_ms": 0.269,
+    "total_cost": 1664.42,
+    "rows": 246.0,
+    "top_node": "Aggregate",
+    "scan_nodes": [
+      "Seq Scan on fact_seismic_event_y2025"
+    ],
+    "shared_hit": 1003,
+    "shared_read": 0,
+    "partitions_scanned": [
+      "fact_seismic_event_y2025"
+    ],
+    "experiment": "P2",
+    "phase": "after",
+    "file": "optimization/61_partitioning_experiments.sql",
+    "query": "EXPLAIN (ANALYZE, BUFFERS)\nSELECT location_key, count(*), sum(energy_tnt_tons)\nFROM project_dw.fact_seismic_event_by_year\nWHERE date_key BETWEEN 20250101 AND 20251231\nGROUP BY location_key"
+  },
+  {
+    "execution_ms_median": 0.448,
+    "execution_ms_runs": [
+      0.963,
+      0.422,
+      0.413,
+      0.474
+    ],
+    "planning_ms": 0.33,
+    "total_cost": 660.1,
+    "rows": 1.0,
+    "top_node": "Aggregate",
+    "scan_nodes": [
+      "Index Scan on fact_seismic_event using ix_fact_event_major_time"
+    ],
+    "shared_hit": 331,
+    "shared_read": 0,
+    "partitions_scanned": [],
+    "experiment": "P3",
+    "phase": "before",
+    "file": "optimization/61_partitioning_experiments.sql",
+    "query": "EXPLAIN (ANALYZE, BUFFERS)\nSELECT count(*) FROM project_dw.fact_seismic_event WHERE magnitude >= 7"
+  },
+  {
+    "execution_ms_median": 29.234,
+    "execution_ms_runs": [
+      29.896,
+      32.757,
+      27.726,
+      28.572
+    ],
+    "planning_ms": 0.37,
+    "total_cost": 3757.61,
+    "rows": 1.0,
+    "top_node": "Aggregate",
+    "scan_nodes": [
+      "Seq Scan on fact_seismic_event_y2024",
+      "Seq Scan on fact_seismic_event_y2025",
+      "Seq Scan on fact_seismic_event_y2026",
+      "Seq Scan on fact_seismic_event_ydefault"
+    ],
+    "shared_hit": 2750,
+    "shared_read": 0,
+    "partitions_scanned": [
+      "fact_seismic_event_y2024",
+      "fact_seismic_event_y2025",
+      "fact_seismic_event_y2026",
+      "fact_seismic_event_ydefault"
+    ],
+    "experiment": "P3",
+    "phase": "after",
+    "file": "optimization/61_partitioning_experiments.sql",
+    "query": "EXPLAIN (ANALYZE, BUFFERS)\nSELECT count(*) FROM project_dw.fact_seismic_event_by_year WHERE magnitude >= 7"
+  }
+]

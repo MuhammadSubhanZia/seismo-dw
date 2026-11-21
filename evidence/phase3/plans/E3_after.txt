@@ -1,0 +1,13 @@
+EXPLAIN (ANALYZE, BUFFERS)
+SELECT event_id, event_time, magnitude, location_key
+FROM project_dw.fact_seismic_event
+WHERE magnitude >= 6
+  AND event_time >= TIMESTAMPTZ '2025-01-01 00:00:00+00'
+ORDER BY event_time
+
+Index Scan using ix_fact_event_major_time on fact_seismic_event  (cost=0.27..457.59 rows=261 width=29) (actual time=0.036..0.496 rows=276.00 loops=1)
+  Index Cond: (event_time >= '2025-01-01 05:00:00+05'::timestamp with time zone)
+  Index Searches: 1
+  Buffers: shared hit=242
+Planning Time: 0.321 ms
+Execution Time: 0.538 ms

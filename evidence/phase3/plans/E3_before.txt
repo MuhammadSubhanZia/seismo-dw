@@ -1,0 +1,17 @@
+EXPLAIN (ANALYZE, BUFFERS)
+SELECT event_id, event_time, magnitude, location_key
+FROM project_dw.fact_seismic_event
+WHERE magnitude >= 6
+  AND event_time >= TIMESTAMPTZ '2025-01-01 00:00:00+00'
+ORDER BY event_time
+
+Sort  (cost=3978.33..3978.95 rows=246 width=29) (actual time=31.170..31.184 rows=276.00 loops=1)
+  Sort Key: event_time
+  Sort Method: quicksort  Memory: 40kB
+  Buffers: shared hit=2760
+  ->  Seq Scan on fact_seismic_event  (cost=0.00..3968.57 rows=246 width=29) (actual time=0.901..31.018 rows=276.00 loops=1)
+        Filter: ((magnitude >= '6'::numeric) AND (event_time >= '2025-01-01 05:00:00+05'::timestamp with time zone))
+        Rows Removed by Filter: 80295
+        Buffers: shared hit=2760
+Planning Time: 0.237 ms
+Execution Time: 31.216 ms

@@ -1,0 +1,28 @@
+EXPLAIN (ANALYZE, BUFFERS)
+SELECT year_month, events, total_energy_tnt_tons
+FROM project_reporting.vw_monthly_sales
+
+Subquery Scan on vw_monthly_sales  (cost=4821.36..4822.44 rows=36 width=48) (actual time=72.313..72.338 rows=35.00 loops=1)
+  Buffers: shared hit=2772
+  ->  Subquery Scan on m  (cost=4821.36..4822.08 rows=36 width=360) (actual time=72.312..72.332 rows=35.00 loops=1)
+        Buffers: shared hit=2772
+        ->  HashAggregate  (cost=4821.36..4821.72 rows=36 width=184) (actual time=72.310..72.321 rows=35.00 loops=1)
+              Group Key: d.year, d.month
+              Batches: 1  Memory Usage: 32kB
+              Buffers: shared hit=2772
+              ->  Hash Join  (cost=36.66..3814.60 rows=80541 width=20) (actual time=0.365..47.341 rows=80537.00 loops=1)
+                    Hash Cond: (f.date_key = d.date_key)
+                    Buffers: shared hit=2772
+                    ->  Seq Scan on fact_seismic_event f  (cost=0.00..3565.71 rows=80541 width=12) (actual time=0.019..23.543 rows=80537.00 loops=1)
+                          Filter: is_active
+                          Rows Removed by Filter: 34
+                          Buffers: shared hit=2760
+                    ->  Hash  (cost=22.96..22.96 rows=1096 width=16) (actual time=0.339..0.340 rows=1096.00 loops=1)
+                          Buckets: 2048  Batches: 1  Memory Usage: 68kB
+                          Buffers: shared hit=12
+                          ->  Seq Scan on dim_date d  (cost=0.00..22.96 rows=1096 width=16) (actual time=0.009..0.183 rows=1096.00 loops=1)
+                                Buffers: shared hit=12
+Planning:
+  Buffers: shared hit=11
+Planning Time: 0.549 ms
+Execution Time: 72.398 ms

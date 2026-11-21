@@ -1,0 +1,16 @@
+EXPLAIN (ANALYZE, BUFFERS)
+SELECT date_key, count(*) AS events, sum(energy_joules) AS energy
+FROM project_dw.fact_seismic_event
+WHERE date_key BETWEEN 20250101 AND 20250331
+GROUP BY date_key
+
+GroupAggregate  (cost=0.42..318.26 rows=1054 width=20) (actual time=0.139..2.680 rows=90.00 loops=1)
+  Group Key: date_key
+  Buffers: shared hit=37
+  ->  Index Only Scan using ix_fact_event_date_covering on fact_seismic_event  (cost=0.42..260.40 rows=6310 width=12) (actual time=0.027..1.216 rows=6682.00 loops=1)
+        Index Cond: ((date_key >= 20250101) AND (date_key <= 20250331))
+        Heap Fetches: 0
+        Index Searches: 1
+        Buffers: shared hit=37
+Planning Time: 0.314 ms
+Execution Time: 2.720 ms

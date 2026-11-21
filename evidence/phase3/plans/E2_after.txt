@@ -1,0 +1,21 @@
+EXPLAIN (ANALYZE, BUFFERS)
+SELECT event_id, date_key, magnitude
+FROM project_dw.fact_seismic_event
+WHERE location_key = (SELECT location_key FROM project_dw.dim_location WHERE location_code = 'JAPAN')
+  AND date_key BETWEEN 20250101 AND 20251231
+
+Bitmap Heap Scan on fact_seismic_event  (cost=14.02..393.22 rows=113 width=21) (actual time=0.271..1.307 rows=1265.00 loops=1)
+  Recheck Cond: ((location_key = (InitPlan 1).col1) AND (date_key >= 20250101) AND (date_key <= 20251231))
+  Heap Blocks: exact=535
+  Buffers: shared hit=542
+  InitPlan 1
+    ->  Index Scan using uq_dim_location_code on dim_location  (cost=0.27..8.29 rows=1 width=4) (actual time=0.020..0.021 rows=1.00 loops=1)
+          Index Cond: (location_code = 'JAPAN'::text)
+          Index Searches: 1
+          Buffers: shared hit=3
+  ->  Bitmap Index Scan on ix_fact_event_location_date  (cost=0.00..5.71 rows=113 width=0) (actual time=0.176..0.176 rows=1265.00 loops=1)
+        Index Cond: ((location_key = (InitPlan 1).col1) AND (date_key >= 20250101) AND (date_key <= 20251231))
+        Index Searches: 1
+        Buffers: shared hit=7
+Planning Time: 0.294 ms
+Execution Time: 1.453 ms

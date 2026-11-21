@@ -1,0 +1,20 @@
+EXPLAIN (ANALYZE, BUFFERS)
+SELECT date_key, count(*) AS events, sum(energy_joules) AS energy
+FROM project_dw.fact_seismic_event
+WHERE date_key BETWEEN 20250101 AND 20250331
+GROUP BY date_key
+
+HashAggregate  (cost=2999.70..3010.24 rows=1054 width=20) (actual time=7.011..7.068 rows=90.00 loops=1)
+  Group Key: date_key
+  Batches: 1  Memory Usage: 65kB
+  Buffers: shared hit=313
+  ->  Bitmap Heap Scan on fact_seismic_event  (cost=97.21..2952.20 rows=6333 width=12) (actual time=0.379..2.326 rows=6682.00 loops=1)
+        Recheck Cond: ((date_key >= 20250101) AND (date_key <= 20250331))
+        Heap Blocks: exact=302
+        Buffers: shared hit=313
+        ->  Bitmap Index Scan on ix_fact_event_date  (cost=0.00..95.62 rows=6333 width=0) (actual time=0.310..0.310 rows=6683.00 loops=1)
+              Index Cond: ((date_key >= 20250101) AND (date_key <= 20250331))
+              Index Searches: 1
+              Buffers: shared hit=11
+Planning Time: 0.294 ms
+Execution Time: 7.156 ms

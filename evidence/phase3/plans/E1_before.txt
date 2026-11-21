@@ -1,0 +1,12 @@
+EXPLAIN (ANALYZE, BUFFERS)
+SELECT event_id, event_time, magnitude, depth_km
+FROM project_dw.fact_seismic_event
+WHERE event_time >= TIMESTAMPTZ '2026-03-01 00:00:00+00'
+  AND event_time <  TIMESTAMPTZ '2026-04-01 00:00:00+00'
+
+Seq Scan on fact_seismic_event  (cost=0.00..3968.57 rows=2495 width=31) (actual time=7.238..12.921 rows=2509.00 loops=1)
+  Filter: ((event_time >= '2026-03-01 05:00:00+05'::timestamp with time zone) AND (event_time < '2026-04-01 05:00:00+05'::timestamp with time zone))
+  Rows Removed by Filter: 78062
+  Buffers: shared hit=2760
+Planning Time: 0.239 ms
+Execution Time: 13.099 ms

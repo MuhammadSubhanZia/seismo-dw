@@ -1,0 +1,4 @@
+partition,rows,first_date_key,last_date_key
+fact_seismic_event_y2024,25153,20240101,20241231
+fact_seismic_event_y2025,29285,20250101,20251231
+fact_seismic_event_y2026,26133,20260101,20261121

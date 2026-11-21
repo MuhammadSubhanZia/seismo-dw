@@ -1,0 +1,25 @@
+EXPLAIN (ANALYZE, BUFFERS)
+SELECT count(*) FROM project_dw.fact_seismic_event_by_year WHERE magnitude >= 7
+
+Aggregate  (cost=3757.59..3757.61 rows=1 width=8) (actual time=29.326..29.328 rows=1.00 loops=1)
+  Buffers: shared hit=2750
+  ->  Append  (cost=0.00..3757.44 rows=61 width=0) (actual time=1.345..29.295 rows=39.00 loops=1)
+        Buffers: shared hit=2750
+        ->  Seq Scan on fact_seismic_event_y2024 fact_seismic_event_by_year_1  (cost=0.00..1168.41 rows=16 width=0) (actual time=1.344..8.698 rows=10.00 loops=1)
+              Filter: (magnitude >= '7'::numeric)
+              Rows Removed by Filter: 25143
+              Buffers: shared hit=854
+        ->  Seq Scan on fact_seismic_event_y2025 fact_seismic_event_by_year_2  (cost=0.00..1369.06 rows=24 width=0) (actual time=2.012..10.598 rows=16.00 loops=1)
+              Filter: (magnitude >= '7'::numeric)
+              Rows Removed by Filter: 29269
+              Buffers: shared hit=1003
+        ->  Seq Scan on fact_seismic_event_y2026 fact_seismic_event_by_year_3  (cost=0.00..1219.66 rows=20 width=0) (actual time=2.962..9.944 rows=13.00 loops=1)
+              Filter: (magnitude >= '7'::numeric)
+              Rows Removed by Filter: 26120
+              Buffers: shared hit=893
+        ->  Seq Scan on fact_seismic_event_ydefault fact_seismic_event_by_year_4  (cost=0.00..0.00 rows=1 width=0) (actual time=0.029..0.029 rows=0.00 loops=1)
+              Filter: (magnitude >= '7'::numeric)
+Planning:
+  Buffers: shared hit=3
+Planning Time: 0.518 ms
+Execution Time: 29.372 ms

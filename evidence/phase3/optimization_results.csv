@@ -1,0 +1,21 @@
+experiment,phase,execution_ms_median,planning_ms,total_cost,rows,top_node,scan_nodes,shared_hit,shared_read,partitions_scanned
+E1,before,12.724,0.337,3968.57,2509.0,Seq Scan,Seq Scan on fact_seismic_event,2760,0,
+E1,after,1.261,0.176,2885.09,2509.0,Bitmap Heap Scan,Bitmap Heap Scan on fact_seismic_event | Bitmap Index Scan using ix_fact_event_time,134,0,
+E2,before,3.144,0.34,824.66,1265.0,Bitmap Heap Scan,Bitmap Heap Scan on fact_seismic_event | Index Scan on dim_location using uq_dim_location_code | Bitmap Index Scan using ix_fact_event_location | Bitmap Index Scan using ix_fact_event_date,579,0,
+E2,after,1.484,0.205,393.22,1265.0,Bitmap Heap Scan,Bitmap Heap Scan on fact_seismic_event | Index Scan on dim_location using uq_dim_location_code | Bitmap Index Scan using ix_fact_event_location_date,542,0,
+E3,before,32.557,0.259,3978.95,276.0,Sort,Seq Scan on fact_seismic_event,2760,0,
+E3,after,0.387,0.347,457.59,276.0,Index Scan,Index Scan on fact_seismic_event using ix_fact_event_major_time,242,0,
+E4,before,4.891,0.282,3010.24,90.0,Aggregate,Bitmap Heap Scan on fact_seismic_event | Bitmap Index Scan using ix_fact_event_date,313,0,
+E4,after,2.031,0.224,318.26,90.0,Aggregate,Index Only Scan on fact_seismic_event using ix_fact_event_date_covering,37,0,
+E5,before,0.04,0.198,8.44,1.0,Index Scan,Index Scan on fact_seismic_event using uq_fact_seismic_event_event_id,4,0,
+E5,after,0.026,0.156,8.02,1.0,Index Scan,Index Scan on fact_seismic_event using ix_fact_event_id_hash,2,0,
+E6,before,0.992,0.092,2215.77,2010.0,Index Scan,Index Scan on fact_seismic_event_cluster_demo using ix_cluster_demo_date,380,0,
+E6,after,0.759,0.074,96.79,2010.0,Index Scan,Index Scan on fact_seismic_event_cluster_demo using ix_cluster_demo_date,74,0,
+E7,before,78.263,0.348,4822.44,35.0,Subquery Scan,Subquery Scan | Subquery Scan | Seq Scan on fact_seismic_event | Seq Scan on dim_date,2772,0,
+E7,after,21.135,0.266,1093.91,35.0,Aggregate,Seq Scan on mv_daily_location_activity | Seq Scan on dim_date,485,0,
+P1,before,0.496,0.173,54.84,1.0,Aggregate,Index Only Scan on fact_seismic_event using ix_fact_event_date,5,0,
+P1,after,0.72,0.167,970.7,1.0,Aggregate,Bitmap Heap Scan on fact_seismic_event_y2026 | Bitmap Index Scan using fact_seismic_event_y2026_date_key_idx,133,0,fact_seismic_event_y2026
+P2,before,19.404,0.252,3851.43,246.0,Aggregate,Bitmap Heap Scan on fact_seismic_event | Bitmap Index Scan using ix_fact_event_date,1091,0,
+P2,after,16.229,0.269,1664.42,246.0,Aggregate,Seq Scan on fact_seismic_event_y2025,1003,0,fact_seismic_event_y2025
+P3,before,0.448,0.33,660.1,1.0,Aggregate,Index Scan on fact_seismic_event using ix_fact_event_major_time,331,0,
+P3,after,29.234,0.37,3757.61,1.0,Aggregate,Seq Scan on fact_seismic_event_y2024 | Seq Scan on fact_seismic_event_y2025 | Seq Scan on fact_seismic_event_y2026 | Seq Scan on fact_seismic_event_ydefault,2750,0,fact_seismic_event_y2024 fact_seismic_event_y2025 fact_seismic_event_y2026 fact_seismic_event_ydefault

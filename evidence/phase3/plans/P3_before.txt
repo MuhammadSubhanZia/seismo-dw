@@ -1,0 +1,12 @@
+EXPLAIN (ANALYZE, BUFFERS)
+SELECT count(*) FROM project_dw.fact_seismic_event WHERE magnitude >= 7
+
+Aggregate  (cost=660.09..660.10 rows=1 width=8) (actual time=0.440..0.440 rows=1.00 loops=1)
+  Buffers: shared hit=331
+  ->  Index Scan using ix_fact_event_major_time on fact_seismic_event  (cost=0.27..659.96 rows=52 width=0) (actual time=0.023..0.431 rows=39.00 loops=1)
+        Filter: (magnitude >= '7'::numeric)
+        Rows Removed by Filter: 336
+        Index Searches: 1
+        Buffers: shared hit=331
+Planning Time: 0.273 ms
+Execution Time: 0.469 ms

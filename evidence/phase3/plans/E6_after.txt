@@ -1,0 +1,11 @@
+EXPLAIN (ANALYZE, BUFFERS)
+SELECT event_id, magnitude, depth_km, felt_reports
+FROM project_dw.fact_seismic_event_cluster_demo
+WHERE date_key BETWEEN 20250601 AND 20250630
+
+Index Scan using ix_cluster_demo_date on fact_seismic_event_cluster_demo  (cost=0.29..96.79 rows=1575 width=27) (actual time=0.012..0.660 rows=2010.00 loops=1)
+  Index Cond: ((date_key >= 20250601) AND (date_key <= 20250630))
+  Index Searches: 1
+  Buffers: shared hit=74
+Planning Time: 0.067 ms
+Execution Time: 0.764 ms

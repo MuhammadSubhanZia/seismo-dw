@@ -1,0 +1,11 @@
+EXPLAIN (ANALYZE, BUFFERS)
+SELECT event_id, event_time, magnitude, place
+FROM project_dw.fact_seismic_event
+WHERE event_id = 'us6000qw60'
+
+Index Scan using ix_fact_event_id_hash on fact_seismic_event  (cost=0.00..8.02 rows=1 width=56) (actual time=0.010..0.011 rows=1.00 loops=1)
+  Index Cond: (event_id = 'us6000qw60'::text)
+  Index Searches: 1
+  Buffers: shared hit=2
+Planning Time: 0.150 ms
+Execution Time: 0.024 ms

@@ -1,0 +1,17 @@
+EXPLAIN (ANALYZE, BUFFERS)
+SELECT location_key, count(*), sum(energy_tnt_tons)
+FROM project_dw.fact_seismic_event_by_year
+WHERE date_key BETWEEN 20250101 AND 20251231
+GROUP BY location_key
+
+HashAggregate  (cost=1661.91..1664.42 rows=251 width=20) (actual time=15.618..15.668 rows=246.00 loops=1)
+  Group Key: fact_seismic_event_by_year.location_key
+  Batches: 1  Memory Usage: 56kB
+  Buffers: shared hit=1003
+  ->  Seq Scan on fact_seismic_event_y2025 fact_seismic_event_by_year  (cost=0.00..1442.28 rows=29285 width=12) (actual time=0.019..10.101 rows=29285.00 loops=1)
+        Filter: ((date_key >= 20250101) AND (date_key <= 20251231))
+        Buffers: shared hit=1003
+Planning:
+  Buffers: shared hit=6
+Planning Time: 0.271 ms
+Execution Time: 15.720 ms

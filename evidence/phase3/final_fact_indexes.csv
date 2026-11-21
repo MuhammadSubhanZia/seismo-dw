@@ -1,0 +1,14 @@
+indexname,size
+fact_seismic_event_pkey,1808 kB
+ix_fact_event_date,784 kB
+ix_fact_event_date_covering,3208 kB
+ix_fact_event_depth,528 kB
+ix_fact_event_location,728 kB
+ix_fact_event_location_date,1120 kB
+ix_fact_event_magclass,536 kB
+ix_fact_event_magtype,568 kB
+ix_fact_event_major_time,32 kB
+ix_fact_event_network,728 kB
+ix_fact_event_time,1784 kB
+ix_fact_event_type,536 kB
+uq_fact_seismic_event_event_id,3256 kB

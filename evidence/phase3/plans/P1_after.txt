@@ -1,0 +1,16 @@
+EXPLAIN (ANALYZE, BUFFERS)
+SELECT count(*) FROM project_dw.fact_seismic_event_by_year
+WHERE date_key BETWEEN 20260301 AND 20260331
+
+Aggregate  (cost=970.69..970.70 rows=1 width=8) (actual time=1.708..1.710 rows=1.00 loops=1)
+  Buffers: shared hit=133
+  ->  Bitmap Heap Scan on fact_seismic_event_y2026 fact_seismic_event_by_year  (cost=36.45..964.80 rows=2357 width=0) (actual time=0.193..1.227 rows=2509.00 loops=1)
+        Recheck Cond: ((date_key >= 20260301) AND (date_key <= 20260331))
+        Heap Blocks: exact=129
+        Buffers: shared hit=133
+        ->  Bitmap Index Scan on fact_seismic_event_y2026_date_key_idx  (cost=0.00..35.86 rows=2357 width=0) (actual time=0.121..0.121 rows=2509.00 loops=1)
+              Index Cond: ((date_key >= 20260301) AND (date_key <= 20260331))
+              Index Searches: 1
+              Buffers: shared hit=4
+Planning Time: 0.224 ms
+Execution Time: 1.748 ms

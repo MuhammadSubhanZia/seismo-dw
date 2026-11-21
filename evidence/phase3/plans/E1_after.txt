@@ -1,0 +1,16 @@
+EXPLAIN (ANALYZE, BUFFERS)
+SELECT event_id, event_time, magnitude, depth_km
+FROM project_dw.fact_seismic_event
+WHERE event_time >= TIMESTAMPTZ '2026-03-01 00:00:00+00'
+  AND event_time <  TIMESTAMPTZ '2026-04-01 00:00:00+00'
+
+Bitmap Heap Scan on fact_seismic_event  (cost=53.35..2885.09 rows=2445 width=31) (actual time=0.385..1.258 rows=2509.00 loops=1)
+  Recheck Cond: ((event_time >= '2026-03-01 05:00:00+05'::timestamp with time zone) AND (event_time < '2026-04-01 05:00:00+05'::timestamp with time zone))
+  Heap Blocks: exact=126
+  Buffers: shared hit=134
+  ->  Bitmap Index Scan on ix_fact_event_time  (cost=0.00..52.74 rows=2445 width=0) (actual time=0.341..0.342 rows=2509.00 loops=1)
+        Index Cond: ((event_time >= '2026-03-01 05:00:00+05'::timestamp with time zone) AND (event_time < '2026-04-01 05:00:00+05'::timestamp with time zone))
+        Index Searches: 1
+        Buffers: shared hit=8
+Planning Time: 0.190 ms
+Execution Time: 1.403 ms

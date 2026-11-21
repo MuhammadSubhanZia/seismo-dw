@@ -1,0 +1,24 @@
+EXPLAIN (ANALYZE, BUFFERS)
+SELECT d.year_month, sum(m.event_count) AS events, sum(m.total_energy_joules) / 4.184e9 AS total_energy_tnt_tons
+FROM project_reporting.mv_daily_location_activity m
+JOIN project_dw.dim_date d ON d.date_key = m.date_key
+GROUP BY d.year_month
+
+HashAggregate  (cost=1093.37..1093.91 rows=36 width=48) (actual time=22.039..22.048 rows=35.00 loops=1)
+  Group Key: d.year_month
+  Batches: 1  Memory Usage: 40kB
+  Buffers: shared hit=485
+  ->  Hash Join  (cost=36.66..875.95 rows=28990 width=24) (actual time=1.086..13.066 rows=28990.00 loops=1)
+        Hash Cond: (m.date_key = d.date_key)
+        Buffers: shared hit=485
+        ->  Seq Scan on mv_daily_location_activity m  (cost=0.00..762.90 rows=28990 width=20) (actual time=0.042..2.280 rows=28990.00 loops=1)
+              Buffers: shared hit=473
+        ->  Hash  (cost=22.96..22.96 rows=1096 width=12) (actual time=1.029..1.030 rows=1096.00 loops=1)
+              Buckets: 2048  Batches: 1  Memory Usage: 64kB
+              Buffers: shared hit=12
+              ->  Seq Scan on dim_date d  (cost=0.00..22.96 rows=1096 width=12) (actual time=0.023..0.530 rows=1096.00 loops=1)
+                    Buffers: shared hit=12
+Planning:
+  Buffers: shared hit=9
+Planning Time: 0.384 ms
+Execution Time: 22.134 ms
