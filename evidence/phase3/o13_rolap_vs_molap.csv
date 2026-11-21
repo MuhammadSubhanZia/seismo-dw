@@ -1,0 +1,18 @@
+region,magnitude_class,rolap_events,molap_events,rolap_energy,molap_energy,identical
+Country / Territory,Moderate,11583,11583,1019064.4,1019064.4,True
+Country / Territory,Strong,1476,1476,2362501.7,2362501.7,True
+Country / Territory,Light,824,824,3034.2,3034.2,True
+Country / Territory,Minor,199,199,48.6,48.6,True
+Country / Territory,Major,102,102,6063919.2,6063919.2,True
+Country / Territory,Great,13,13,36315612.9,36315612.9,True
+Oceanic / Remote,Moderate,615,615,74703.3,74703.3,True
+Oceanic / Remote,Strong,152,152,235887.7,235887.7,True
+Oceanic / Remote,Major,10,10,857978.7,857978.7,True
+Oceanic / Remote,Minor,4,4,0.7,0.7,True
+Oceanic / Remote,Light,3,3,18.7,18.7,True
+United States,Minor,6852,6852,1199.3,1199.3,True
+United States,Light,3700,3700,8155.1,8155.1,True
+United States,Moderate,496,496,31977.3,31977.3,True
+United States,Strong,63,63,137174.2,137174.2,True
+United States,Major,6,6,238801.8,238801.8,True
+Unknown,Moderate,1,1,42.5,42.5,True

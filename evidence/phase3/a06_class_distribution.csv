@@ -1,0 +1,7 @@
+magnitude_class,magnitude_range,events,share_of_events_pct,share_of_energy_pct
+Minor,< 3.0,19989,24.82,0.00
+Light,3.0-3.9,13551,16.83,0.01
+Moderate,4.0-4.9,41538,51.58,1.00
+Strong,5.0-5.9,5084,6.31,2.31
+Major,6.0-6.9,336,0.42,5.59
+Great,7.0+,39,0.05,91.09

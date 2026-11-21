@@ -1,0 +1,11 @@
+rank,location_label,location_type,events,avg_magnitude,max_magnitude
+1,"Alaska, United States",United States,19931,3.00,7.30
+2,Russia,Country / Territory,5410,4.49,8.80
+3,Indonesia,Country / Territory,4802,4.51,7.80
+4,Japan,Country / Territory,3634,4.50,7.60
+5,"California, United States",United States,3261,2.93,7.00
+6,"Puerto Rico, United States",United States,2793,3.04,5.60
+7,Philippines,Country / Territory,2684,4.56,7.80
+8,Fiji,Country / Territory,2262,4.40,6.60
+9,Papua New Guinea,Country / Territory,2033,4.55,6.90
+10,Tonga,Country / Territory,1622,4.57,7.50

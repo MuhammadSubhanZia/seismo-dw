@@ -1,0 +1,4 @@
+depth_class,events,avg_magnitude,median_magnitude,p90_magnitude,stddev_magnitude,avg_felt_reports
+Shallow,63347,3.79,4.10,4.80,0.889,18.72
+Intermediate,13853,4.04,4.20,4.80,0.738,1.46
+Deep,3337,4.36,4.30,4.70,0.343,0.10

@@ -1,0 +1,19 @@
+row_type,region,channel,events,energy_tnt_tons
+Region x Channel,Country / Territory,National / Global,43462,342420710
+Region x Channel,Country / Territory,Regional,2124,35351
+Region x Channel,Oceanic / Remote,National / Global,2705,11397046
+Region x Channel,Oceanic / Remote,Regional,2,1
+Region x Channel,United States,Regional,15732,626355
+Region x Channel,United States,National / Global,14977,2159207
+Region x Channel,United States,Volcano Observatory,1533,26450
+Region x Channel,United States,Unknown,1,15
+Region x Channel,Unknown,National / Global,1,43
+Region total (all channels),Country / Territory,(all channels),45586,342456061
+Region total (all channels),Oceanic / Remote,(all channels),2707,11397047
+Region total (all channels),United States,(all channels),32243,2812027
+Region total (all channels),Unknown,(all channels),1,43
+Channel total (all regions),(all regions),National / Global,61145,355977006
+Channel total (all regions),(all regions),Regional,17858,661707
+Channel total (all regions),(all regions),Volcano Observatory,1533,26450
+Channel total (all regions),(all regions),Unknown,1,15
+GRAND TOTAL,(all regions),(all channels),80537,356665178

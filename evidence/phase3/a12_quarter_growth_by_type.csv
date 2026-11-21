@@ -1,0 +1,37 @@
+location_type,year,quarter_label,events,qoq_growth_pct
+Country / Territory,2024,Q1,3545,
+Country / Territory,2024,Q2,3750,5.78
+Country / Territory,2024,Q3,3180,-15.20
+Country / Territory,2024,Q4,3266,2.70
+Country / Territory,2025,Q1,3858,18.13
+Country / Territory,2025,Q2,3570,-7.47
+Country / Territory,2025,Q3,6341,77.62
+Country / Territory,2025,Q4,3879,-38.83
+Country / Territory,2026,Q1,3614,-6.83
+Country / Territory,2026,Q2,4191,15.97
+Country / Territory,2026,Q3,4281,2.15
+Country / Territory,2026,Q4,2111,-50.69
+Oceanic / Remote,2024,Q1,237,
+Oceanic / Remote,2024,Q2,276,16.46
+Oceanic / Remote,2024,Q3,175,-36.59
+Oceanic / Remote,2024,Q4,216,23.43
+Oceanic / Remote,2025,Q1,232,7.41
+Oceanic / Remote,2025,Q2,301,29.74
+Oceanic / Remote,2025,Q3,240,-20.27
+Oceanic / Remote,2025,Q4,246,2.50
+Oceanic / Remote,2026,Q1,204,-17.07
+Oceanic / Remote,2026,Q2,190,-6.86
+Oceanic / Remote,2026,Q3,260,36.84
+Oceanic / Remote,2026,Q4,130,-50.00
+United States,2024,Q1,2546,
+United States,2024,Q2,2402,-5.66
+United States,2024,Q3,2538,5.66
+United States,2024,Q4,3022,19.07
+United States,2025,Q1,2592,-14.23
+United States,2025,Q2,2302,-11.19
+United States,2025,Q3,2996,30.15
+United States,2025,Q4,2728,-8.95
+United States,2026,Q1,3200,17.30
+United States,2026,Q2,3013,-5.84
+United States,2026,Q3,3438,14.11
+United States,2026,Q4,1466,-57.36

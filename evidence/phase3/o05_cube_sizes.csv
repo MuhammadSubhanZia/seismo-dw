@@ -1,0 +1,3 @@
+cube,output_rows
+2-D cube: region x channel,18
+3-D cube: region x channel x magnitude class,96

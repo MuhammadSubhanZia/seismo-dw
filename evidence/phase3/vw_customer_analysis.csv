@@ -1,0 +1,298 @@
+location_key,location_label,country,state_province,location_type,events,total_energy_tnt_tons,avg_magnitude,max_magnitude,strong_events,felt_reports,active_months,first_event_date,last_event_date,recency_days,r_score,f_score,m_score,rfm_code,activity_segment,share_of_events_pct,energy_rank
+1161,Russia,Russia,N/A,Country / Territory,5410,254201476.08291748,4.492,8.80,637,329,35,2024-01-01,2026-11-21,0,5,5,5,555,1 Critical hotspot,6.717,1
+1151,Philippines,Philippines,N/A,Country / Territory,2684,12289047.989418833,4.558,7.80,310,4231,35,2024-01-01,2026-11-20,1,5,5,5,555,1 Critical hotspot,3.333,2
+1095,Japan,Japan,N/A,Country / Territory,3634,12176698.491425904,4.504,7.60,354,5816,35,2024-01-01,2026-11-21,0,5,5,5,555,1 Critical hotspot,4.512,3
+1090,Indonesia,Indonesia,N/A,Country / Territory,4802,12130325.641461123,4.506,7.80,515,2215,35,2024-01-01,2026-11-19,2,5,5,5,555,1 Critical hotspot,5.963,4
+1053,Drake Passage,Drake Passage,N/A,Oceanic / Remote,75,5757008.063637598,4.848,7.60,21,61,18,2024-05-06,2026-09-25,57,3,4,5,345,2 Persistent activity,0.093,5
+1148,Panama,Panama,N/A,Country / Territory,287,5673142.284530619,4.658,7.70,51,2706,35,2024-01-07,2026-11-17,4,5,5,5,555,1 Critical hotspot,0.356,6
+1126,Myanmar,Myanmar,N/A,Country / Territory,232,5559068.9871569015,4.472,7.70,18,3036,35,2024-01-08,2026-11-15,6,5,5,5,555,1 Critical hotspot,0.288,7
+1209,Tonga,Tonga,N/A,Country / Territory,1622,4567207.953205434,4.573,7.50,249,239,35,2024-01-01,2026-11-20,1,5,5,5,555,1 Critical hotspot,2.014,8
+1264,Vanuatu,Vanuatu,N/A,Country / Territory,1400,4010413.077501703,4.613,7.30,222,633,35,2024-01-01,2026-11-21,0,5,5,5,555,1 Critical hotspot,1.738,9
+1036,Cayman Islands,Cayman Islands,N/A,Country / Territory,20,3791662.7433288367,4.590,7.60,3,500,9,2024-05-05,2026-07-28,116,3,3,5,335,3 High-energy episodic,0.025,10
+1265,Venezuela,Venezuela,N/A,Country / Territory,112,3733771.874694868,4.565,7.50,10,2149,30,2024-01-07,2026-10-02,50,3,4,5,345,2 Persistent activity,0.139,11
+1041,Chile,Chile,N/A,Country / Territory,1621,2725174.9486998804,4.362,7.40,105,3436,35,2024-01-01,2026-11-21,0,5,5,5,555,1 Critical hotspot,2.013,12
+1180,Southern Drake Passage,Southern Drake Passage,N/A,Oceanic / Remote,1,2681688.466304888,7.500,7.50,1,15,1,2025-08-22,2025-08-22,456,1,1,5,115,3 High-energy episodic,0.001,13
+1202,Taiwan,Taiwan,N/A,Country / Territory,651,2358851.795045168,4.519,7.40,94,3336,35,2024-01-03,2026-11-06,15,4,5,5,455,1 Critical hotspot,0.808,14
+1220,"Alaska, United States",United States,Alaska,United States,19931,2187799.624909864,3.005,7.30,166,42337,35,2024-01-01,2026-11-21,0,5,5,5,555,1 Critical hotspot,24.748,15
+1149,Papua New Guinea,Papua New Guinea,N/A,Country / Territory,2033,2103927.1951768594,4.551,6.90,286,463,35,2024-01-03,2026-11-20,1,5,5,5,555,1 Critical hotspot,2.524,16
+1043,Colombia,Colombia,N/A,Country / Territory,322,1985986.2026848944,4.455,7.40,15,2447,35,2024-01-07,2026-11-13,8,4,5,5,455,1 Critical hotspot,0.400,17
+1118,Mexico,Mexico,N/A,Country / Territory,1242,1834646.386825146,3.985,7.30,91,4931,35,2024-01-03,2026-11-21,0,5,5,5,555,1 Critical hotspot,1.542,18
+1150,Peru,Peru,N/A,Country / Territory,683,1550085.7373161886,4.515,7.20,76,1291,35,2024-01-04,2026-11-21,0,5,5,5,555,1 Critical hotspot,0.848,19
+1042,China,China,N/A,Country / Territory,917,1191760.9060088731,4.485,7.00,90,894,35,2024-01-07,2026-11-21,0,5,5,5,555,1 Critical hotspot,1.139,20
+1107,Macquarie Island,Macquarie Island,N/A,Country / Territory,169,1186105.9993810505,4.716,7.00,43,5,27,2024-01-14,2026-10-31,21,4,5,5,455,1 Critical hotspot,0.210,21
+1120,Mid-Atlantic Ridge,Mid-Atlantic Ridge,N/A,Oceanic / Remote,682,1164632.3769954857,4.749,6.80,161,42,35,2024-01-02,2026-11-14,7,4,5,5,455,1 Critical hotspot,0.847,22
+1065,Fiji,Fiji,N/A,Country / Territory,2262,697206.6677437179,4.398,6.60,119,21,35,2024-01-01,2026-11-20,1,5,5,5,555,1 Critical hotspot,2.809,23
+1181,Southern Tibetan Plateau,Southern Tibetan Plateau,N/A,Country / Territory,53,681208.3872971409,4.504,7.10,8,919,2,2024-12-28,2025-01-24,666,1,4,5,145,2 Persistent activity,0.066,24
+1110,Malaysia,Malaysia,N/A,Country / Territory,6,674552.3573229575,4.983,7.10,2,66,6,2025-07-22,2026-10-06,46,3,2,5,325,3 High-energy episodic,0.007,25
+1223,"California, United States",United States,California,United States,3261,496069.6586374009,2.928,7.00,7,547717,35,2024-01-01,2026-11-21,0,5,5,5,555,1 Critical hotspot,4.049,26
+1084,Hubbard Glacier,Hubbard Glacier,N/A,Country / Territory,1,476879.13837688405,7.000,7.00,1,1058,1,2025-12-06,2025-12-06,350,1,1,5,115,3 High-energy episodic,0.001,27
+1193,South Sandwich Islands,South Sandwich Islands,N/A,Country / Territory,829,468403.4956788308,4.683,6.40,186,6,35,2024-01-01,2026-11-19,2,5,5,5,555,1 Critical hotspot,1.029,28
+1131,New Zealand,New Zealand,N/A,Country / Territory,609,460662.40862886875,4.501,6.70,74,1273,35,2024-01-02,2026-11-20,1,5,5,5,555,1 Critical hotspot,0.756,29
+1098,Kermadec Islands,Kermadec Islands,N/A,Country / Territory,954,440413.11346811126,4.589,6.30,148,19,35,2024-01-02,2026-11-17,4,5,5,5,555,1 Critical hotspot,1.185,30
+1134,Northern Mariana Islands,Northern Mariana Islands,N/A,Country / Territory,589,397761.5731992234,4.335,6.80,36,235,35,2024-01-01,2026-11-13,8,4,5,5,455,1 Critical hotspot,0.731,31
+1208,Timor-Leste,Timor-Leste,N/A,Country / Territory,556,389381.23356554314,4.407,6.80,34,102,35,2024-01-04,2026-11-21,0,5,5,5,555,1 Critical hotspot,0.690,32
+1159,Reykjanes Ridge,Reykjanes Ridge,N/A,Oceanic / Remote,147,380985.96918715374,4.606,6.90,25,4,30,2024-01-03,2026-11-21,0,5,5,5,555,1 Critical hotspot,0.183,33
+1100,Kuril Islands,Kuril Islands,N/A,Country / Territory,218,339238.3216844134,4.462,6.80,21,6,34,2024-01-04,2026-10-20,32,4,5,5,455,1 Critical hotspot,0.271,34
+1175,Solomon Islands,Solomon Islands,N/A,Country / Territory,569,336712.7700480294,4.582,6.40,91,69,35,2024-01-04,2026-11-17,4,5,5,5,555,1 Critical hotspot,0.707,35
+1057,East Pacific Rise,East Pacific Rise,N/A,Oceanic / Remote,236,325739.3948699919,4.780,6.60,66,16,35,2024-01-05,2026-11-19,2,5,5,5,555,1 Critical hotspot,0.293,36
+1046,Cuba,Cuba,N/A,Country / Territory,24,293627.77488865325,4.754,6.80,7,6088,9,2024-06-10,2026-06-15,159,2,4,5,245,2 Persistent activity,0.030,37
+1011,Argentina,Argentina,N/A,Country / Territory,792,235782.86584544426,4.445,6.40,55,393,35,2024-01-01,2026-11-20,1,5,5,5,555,1 Critical hotspot,0.983,38
+1129,New Caledonia,New Caledonia,N/A,Country / Territory,228,232278.21193928889,4.611,6.70,34,16,33,2024-01-19,2026-11-07,14,4,5,5,455,1 Critical hotspot,0.283,39
+1144,Pacific-Antarctic Ridge,Pacific-Antarctic Ridge,N/A,Oceanic / Remote,137,229728.35856144747,4.869,6.30,50,6,32,2024-01-07,2026-11-18,3,5,4,5,545,1 Critical hotspot,0.170,40
+1001,Afghanistan,Afghanistan,N/A,Country / Territory,519,214834.79448907252,4.338,6.40,36,808,35,2024-01-02,2026-11-21,0,5,5,5,555,1 Critical hotspot,0.644,41
+1031,Brazil,Brazil,N/A,Country / Territory,14,206193.19268121486,4.750,6.60,4,19,10,2024-01-20,2026-04-27,208,2,3,5,235,3 High-energy episodic,0.017,42
+1178,southeast Indian Ridge,southeast Indian Ridge,N/A,Oceanic / Remote,113,198360.20034934807,4.673,6.60,26,2,30,2024-01-04,2026-11-10,11,4,4,5,445,1 Critical hotspot,0.140,43
+1002,Africa,Africa,N/A,Country / Territory,97,177225.43559422911,4.622,6.60,14,0,30,2024-01-03,2026-10-21,31,4,4,5,445,1 Critical hotspot,0.120,44
+1034,Canada,Canada,N/A,Country / Territory,250,174337.64375291014,3.678,6.50,15,18065,35,2024-01-03,2026-11-21,0,5,5,5,555,1 Critical hotspot,0.310,45
+1171,Scotia Sea,Scotia Sea,N/A,Oceanic / Remote,46,166308.6407187905,4.713,6.60,9,0,23,2024-01-12,2026-11-19,2,5,4,5,545,1 Critical hotspot,0.057,46
+1267,Wallis and Futuna,Wallis and Futuna,N/A,Country / Territory,118,147563.61455054453,4.452,6.60,10,0,34,2024-01-11,2026-10-20,32,3,4,5,345,2 Persistent activity,0.147,47
+1074,Greece,Greece,N/A,Country / Territory,906,140032.94447806367,4.340,6.20,34,3632,35,2024-01-05,2026-11-20,1,5,5,5,555,1 Critical hotspot,1.125,48
+1055,Easter Island,Easter Island,N/A,Country / Territory,132,135050.66227179836,4.808,6.40,42,1,34,2024-01-03,2026-10-29,23,4,4,5,445,1 Critical hotspot,0.164,49
+1213,Turkey,Turkey,N/A,Country / Territory,305,124021.26753809338,4.362,6.20,25,3116,35,2024-01-08,2026-11-09,12,4,5,5,455,1 Critical hotspot,0.379,50
+1079,Guam,Guam,N/A,Country / Territory,414,114315.7590475298,4.465,6.00,41,976,35,2024-01-06,2026-11-18,3,5,5,5,555,1 Critical hotspot,0.514,51
+1088,Indian-Antarctic Ridge,Indian-Antarctic Ridge,N/A,Oceanic / Remote,159,106208.4048936729,4.590,6.20,26,2,33,2024-01-04,2026-11-14,7,4,5,5,455,1 Critical hotspot,0.197,52
+1080,Guatemala,Guatemala,N/A,Country / Territory,254,105485.87560377296,4.370,6.20,20,1244,35,2024-01-07,2026-11-21,0,5,5,5,555,1 Critical hotspot,0.315,53
+1060,El Salvador,El Salvador,N/A,Country / Territory,212,104982.43757645728,4.444,6.20,19,676,35,2024-01-01,2026-11-13,8,4,5,5,455,1 Critical hotspot,0.263,54
+1106,Loyalty Islands,Loyalty Islands,N/A,Country / Territory,196,98295.08157889315,4.630,6.30,31,7,34,2024-01-10,2026-11-20,1,5,5,5,555,1 Critical hotspot,0.243,55
+1078,Guadeloupe,Guadeloupe,N/A,Country / Territory,55,97938.23734125077,4.536,6.50,5,167,16,2024-05-09,2026-08-23,90,3,4,5,345,2 Persistent activity,0.068,56
+1121,Mid-Indian Ridge,Mid-Indian Ridge,N/A,Oceanic / Remote,353,97682.00592099183,4.639,5.80,50,2,35,2024-01-09,2026-11-10,11,4,5,5,455,1 Critical hotspot,0.438,57
+1199,Svalbard and Jan Mayen,Svalbard and Jan Mayen,N/A,Country / Territory,69,93191.07126544708,4.451,6.50,6,8,23,2024-01-01,2026-11-01,20,4,4,5,445,1 Critical hotspot,0.086,58
+1194,South Shetland Islands,South Shetland Islands,N/A,Country / Territory,17,88976.59385599884,4.818,6.50,5,0,8,2024-01-02,2026-04-10,225,2,3,5,235,3 High-energy episodic,0.021,59
+1087,India,India,N/A,Country / Territory,393,83968.31668476167,4.479,6.00,40,2871,35,2024-01-01,2026-11-14,7,4,5,4,454,1 Critical hotspot,0.488,60
+1021,Banda Sea,Banda Sea,N/A,Oceanic / Remote,177,80427.28705426838,4.435,6.40,15,24,35,2024-01-01,2026-11-02,19,4,5,4,454,1 Critical hotspot,0.220,61
+1058,Ecuador,Ecuador,N/A,Country / Territory,204,78932.6951887628,4.306,6.30,19,533,35,2024-01-06,2026-11-19,2,5,5,4,554,1 Critical hotspot,0.253,62
+1020,Balleny Islands,Balleny Islands,N/A,Country / Territory,80,74815.91559252585,4.873,5.90,34,0,30,2024-01-04,2026-11-11,10,4,4,4,444,1 Critical hotspot,0.099,63
+1249,"Oregon, United States",United States,Oregon,United States,375,68714.10630890152,3.311,6.00,14,1344,35,2024-01-04,2026-11-18,3,5,5,4,554,1 Critical hotspot,0.466,64
+1044,Costa Rica,Costa Rica,N/A,Country / Territory,110,68535.93659169362,4.485,6.20,13,1148,33,2024-01-12,2026-11-15,6,4,4,4,444,1 Critical hotspot,0.137,65
+1062,Ethiopia,Ethiopia,N/A,Country / Territory,384,67176.3513483849,4.459,5.90,21,996,25,2024-05-12,2026-11-17,4,5,5,4,554,1 Critical hotspot,0.477,66
+1093,Italy,Italy,N/A,Country / Territory,104,59396.18737530793,4.200,6.20,8,509,31,2024-01-26,2026-11-17,4,5,4,4,544,1 Critical hotspot,0.129,67
+1119,Micronesia,Micronesia,N/A,Country / Territory,96,51846.94757618177,4.652,6.00,16,16,31,2024-01-21,2026-11-04,17,4,4,4,444,1 Critical hotspot,0.119,68
+1116,Mauritius - Reunion,Mauritius - Reunion,N/A,Country / Territory,19,50569.91875263543,4.768,6.30,5,0,13,2024-06-27,2026-08-04,109,3,3,4,334,3 High-energy episodic,0.024,69
+1183,Southwest Indian Ridge,Southwest Indian Ridge,N/A,Oceanic / Remote,94,50030.99120426092,4.635,6.20,11,2,32,2024-01-01,2026-11-08,13,4,4,4,444,1 Critical hotspot,0.117,70
+1091,Iran,Iran,N/A,Country / Territory,469,46980.013818817715,4.339,5.60,21,268,35,2024-01-08,2026-11-17,4,5,5,4,554,1 Critical hotspot,0.582,71
+1155,Prince Edward Islands,Prince Edward Islands,N/A,Country / Territory,30,44450.501703171125,4.793,6.20,9,0,15,2024-02-29,2026-08-27,86,3,4,4,344,2 Persistent activity,0.037,72
+1269,West Chile Rise,West Chile Rise,N/A,Oceanic / Remote,99,37541.057659492886,4.689,5.70,23,1,33,2024-01-31,2026-11-18,3,5,4,4,544,1 Critical hotspot,0.123,73
+1035,Carlsberg Ridge,Carlsberg Ridge,N/A,Oceanic / Remote,116,32059.715248184246,4.557,5.60,17,2,32,2024-01-06,2026-11-20,1,5,4,4,544,1 Critical hotspot,0.144,74
+1013,Ascension Island,Ascension Island,N/A,Country / Territory,74,31695.941093059337,4.773,5.60,15,0,28,2024-01-25,2026-10-21,31,4,4,4,444,1 Critical hotspot,0.092,75
+1146,Pakistan,Pakistan,N/A,Country / Territory,140,31488.97644046027,4.459,5.70,17,439,33,2024-02-01,2026-11-01,20,4,4,4,444,1 Critical hotspot,0.174,76
+1132,Nicaragua,Nicaragua,N/A,Country / Territory,187,31316.31001680554,4.453,5.60,11,228,35,2024-01-02,2026-11-07,14,4,5,4,454,1 Critical hotspot,0.232,77
+1152,Philippine Islands,Philippine Islands,N/A,Country / Territory,2,30149.075005393905,5.300,6.20,1,14,2,2025-06-24,2026-01-16,309,2,1,4,214,3 High-energy episodic,0.002,78
+1203,Tajikistan,Tajikistan,N/A,Country / Territory,238,29799.30438468773,4.326,5.80,10,111,35,2024-01-03,2026-11-18,3,5,5,4,554,1 Critical hotspot,0.296,79
+1158,Revilla Gigedo Islands,Revilla Gigedo Islands,N/A,Country / Territory,26,26902.465541374102,4.681,5.80,9,6,15,2024-05-29,2026-06-09,165,2,4,4,244,2 Persistent activity,0.032,80
+1226,"Hawaii, United States",United States,Hawaii,United States,1583,26571.459978889798,2.870,5.96,3,23409,35,2024-01-01,2026-11-21,0,5,5,4,554,1 Critical hotspot,1.966,81
+1052,Dominican Republic,Dominican Republic,N/A,Country / Territory,750,26026.552198471985,3.586,5.85,4,3311,35,2024-01-03,2026-11-19,2,5,5,4,554,1 Critical hotspot,0.931,82
+1270,Xizang,Xizang,N/A,Country / Territory,76,22677.461094929058,4.492,5.90,7,2,26,2024-03-20,2026-11-11,10,4,4,4,444,1 Critical hotspot,0.094,83
+1086,Iceland,Iceland,N/A,Country / Territory,72,20134.438394305354,4.538,5.40,14,25,26,2024-01-03,2026-11-12,9,4,4,4,444,1 Critical hotspot,0.089,84
+1030,Bouvet Island,Bouvet Island,N/A,Country / Territory,20,20102.52262122446,4.825,5.90,6,0,14,2024-01-15,2026-10-24,28,4,3,4,434,3 High-energy episodic,0.025,85
+1102,Kyrgyzstan,Kyrgyzstan,N/A,Country / Territory,108,18759.38414560663,4.355,5.80,6,252,28,2024-01-22,2026-11-09,12,4,4,4,444,1 Critical hotspot,0.134,86
+1028,Bolivia,Bolivia,N/A,Country / Territory,116,17632.797496697345,4.404,5.70,6,23,33,2024-01-07,2026-11-17,4,5,4,4,544,1 Critical hotspot,0.144,87
+1009,Antigua and Barbuda,Antigua and Barbuda,N/A,Country / Territory,13,16143.719161674388,4.492,6.00,2,228,9,2024-05-08,2026-05-16,189,2,3,4,234,3 High-energy episodic,0.016,88
+1143,Owen Fracture Zone,Owen Fracture Zone,N/A,Oceanic / Remote,39,16011.342980369145,4.510,5.90,5,1,22,2024-02-26,2026-11-17,4,5,4,4,544,1 Critical hotspot,0.048,89
+1176,Somalia,Somalia,N/A,Country / Territory,37,15581.928699304273,4.495,5.90,4,1,21,2024-03-01,2026-11-16,5,5,4,4,544,1 Critical hotspot,0.046,90
+1189,South Indian Ocean,South Indian Ocean,N/A,Oceanic / Remote,42,14257.8129475342,4.619,5.70,5,0,23,2024-02-05,2026-11-04,17,4,4,4,444,1 Critical hotspot,0.052,91
+1064,Federated States of Micronesia,Federated States of Micronesia,N/A,Country / Territory,11,13421.250475831057,4.845,5.90,3,0,10,2024-02-27,2026-11-14,7,4,3,4,434,3 High-energy episodic,0.014,92
+1076,Greenland Sea,Greenland Sea,N/A,Oceanic / Remote,30,13302.170726852373,4.487,5.70,3,1,15,2024-05-21,2026-08-13,100,3,4,4,344,2 Persistent activity,0.037,93
+1241,"Nevada, United States",United States,Nevada,United States,759,13228.465198069327,2.958,5.71,3,26364,35,2024-01-09,2026-11-18,3,5,5,4,554,1 Critical hotspot,0.942,94
+1211,Tristan da Cunha,Tristan da Cunha,N/A,Country / Territory,11,12677.360613567906,5.027,5.60,5,0,9,2024-02-24,2026-08-01,112,3,3,4,334,3 High-energy episodic,0.014,95
+1113,Mariana Islands,Mariana Islands,N/A,Country / Territory,133,12648.994712822605,4.363,5.20,6,3,34,2024-01-06,2026-11-08,13,4,4,4,444,1 Critical hotspot,0.165,96
+1127,Nepal,Nepal,N/A,Country / Territory,92,12010.05649817826,4.380,5.40,8,376,23,2024-01-07,2026-10-25,27,4,4,4,444,1 Critical hotspot,0.114,97
+1154,Portugal,Portugal,N/A,Country / Territory,63,11566.288019123449,4.492,5.30,8,3492,23,2024-01-14,2026-10-29,23,4,4,4,444,1 Critical hotspot,0.078,98
+1172,Sea of Okhotsk,Sea of Okhotsk,N/A,Oceanic / Remote,8,11158.839267116762,4.488,5.90,1,1,8,2024-02-29,2026-11-05,16,4,3,4,434,3 High-energy episodic,0.010,99
+1272,Yemen,Yemen,N/A,Country / Territory,57,10822.380445080667,4.526,5.30,8,2,24,2024-02-03,2026-10-28,24,4,4,4,444,1 Critical hotspot,0.071,100
+1075,Greenland,Greenland,N/A,Country / Territory,32,10342.55864262785,4.425,5.80,2,4,15,2024-01-27,2026-02-03,291,2,4,4,244,2 Persistent activity,0.040,101
+1040,Chagos Archipelago,Chagos Archipelago,N/A,Country / Territory,43,10125.067580432027,4.591,5.50,5,10,24,2024-01-09,2026-10-21,31,4,4,4,444,1 Critical hotspot,0.053,102
+1164,Saint Helena,Saint Helena,N/A,Country / Territory,21,9514.124357873292,4.843,5.50,8,0,15,2024-02-13,2026-11-11,10,4,3,4,434,3 High-energy episodic,0.026,103
+1251,"Puerto Rico, United States",United States,Puerto Rico,United States,2793,9026.890890655504,3.035,5.60,2,2237,35,2024-01-01,2026-11-21,0,5,5,4,554,1 Critical hotspot,3.468,104
+1014,Australia,Australia,N/A,Country / Territory,71,8736.891278615023,4.228,5.50,3,3981,28,2024-01-07,2026-10-27,25,4,4,4,444,1 Critical hotspot,0.088,105
+1262,U.S. Virgin Islands,U.S. Virgin Islands,N/A,Country / Territory,1070,8696.033155024561,3.379,5.63,1,569,35,2024-01-01,2026-11-21,0,5,5,4,554,1 Critical hotspot,1.329,106
+1204,Tanzania,Tanzania,N/A,Country / Territory,55,8113.826886735752,4.509,5.30,5,62,20,2024-01-20,2026-11-19,2,5,4,4,544,1 Critical hotspot,0.068,107
+1122,Mongolia,Mongolia,N/A,Country / Territory,20,7032.6793466884055,4.530,5.50,5,84,13,2024-03-02,2026-05-08,197,2,3,4,234,3 High-energy episodic,0.025,108
+1185,South Atlantic Ocean,South Atlantic Ocean,N/A,Oceanic / Remote,22,6813.349719810312,4.773,5.20,6,0,14,2024-03-24,2026-09-17,65,3,3,4,334,3 High-energy episodic,0.027,109
+1198,Svalbard,Svalbard,N/A,Country / Territory,38,6608.674683601801,4.355,5.50,2,0,23,2024-02-15,2026-09-28,54,3,4,4,344,2 Persistent activity,0.047,110
+1016,Azerbaijan,Azerbaijan,N/A,Country / Territory,23,6264.453266400451,4.465,5.60,1,19,16,2024-01-19,2026-10-01,51,3,3,4,334,3 High-energy episodic,0.029,111
+1173,Severnaya Zemlya,Severnaya Zemlya,N/A,Country / Territory,29,5855.9053682133635,4.483,5.20,5,0,17,2024-01-17,2026-08-17,96,3,4,4,344,2 Persistent activity,0.036,112
+1061,Eritrea,Eritrea,N/A,Country / Territory,13,5747.3506354994815,4.600,5.50,3,1,6,2024-03-14,2026-11-09,12,4,3,4,434,3 High-energy episodic,0.016,113
+1169,Samoa,Samoa,N/A,Country / Territory,23,5588.13242035043,4.657,5.30,3,11,16,2024-01-30,2026-11-02,19,4,4,4,444,1 Critical hotspot,0.029,114
+1083,Honduras,Honduras,N/A,Country / Territory,40,4943.099167127892,4.438,5.20,1,146,20,2024-01-06,2026-08-25,88,3,4,4,344,2 Persistent activity,0.050,115
+1023,Barbados,Barbados,N/A,Country / Territory,5,4901.737329028003,4.860,5.60,2,31,5,2024-04-30,2026-05-30,175,2,2,4,224,3 High-energy episodic,0.006,116
+1038,Central America,Central America,N/A,Country / Territory,36,4492.863663081584,4.481,5.00,3,0,21,2024-01-07,2026-09-05,77,3,4,4,344,2 Persistent activity,0.045,117
+1071,Galapagos Triple Junction,Galapagos Triple Junction,N/A,Oceanic / Remote,17,4429.405258226063,4.629,5.20,3,0,10,2024-01-11,2026-11-18,3,5,3,4,534,3 High-energy episodic,0.021,118
+1027,Bhutan,Bhutan,N/A,Country / Territory,6,4211.877851410251,4.583,5.60,1,100,5,2024-09-06,2026-09-21,61,3,2,3,323,5 Low activity,0.007,119
+1137,North Island of New Zealand,North Island of New Zealand,N/A,Country / Territory,31,4160.4280362910995,4.516,5.10,2,0,13,2024-01-22,2026-08-27,86,3,4,3,343,2 Persistent activity,0.038,120
+1056,east central Pacific Ocean,east central Pacific Ocean,N/A,Oceanic / Remote,5,4114.582117689325,4.660,5.60,1,0,4,2024-04-08,2026-11-14,7,4,2,3,423,4 Recently active,0.006,121
+1115,Mauritius,Mauritius,N/A,Country / Territory,32,4077.0338910787186,4.509,5.10,2,12,17,2024-03-21,2026-11-03,18,4,4,3,443,2 Persistent activity,0.040,122
+1255,"Texas, United States",United States,Texas,United States,928,4011.556478319505,2.841,5.10,4,13923,35,2024-01-01,2026-11-20,1,5,5,3,553,2 Persistent activity,1.152,123
+1187,South Georgia Island,South Georgia Island,N/A,Country / Territory,11,3959.3308297154435,4.745,5.30,3,0,8,2024-05-10,2026-11-19,2,5,3,3,533,4 Recently active,0.014,124
+1047,Cyprus,Cyprus,N/A,Country / Territory,21,3802.134667258435,4.390,5.30,2,402,7,2024-09-03,2025-12-12,344,1,3,3,133,6 Dormant,0.026,125
+1070,Galapagos Islands,Galapagos Islands,N/A,Country / Territory,19,3680.657432334943,4.537,5.30,2,0,8,2024-06-17,2026-10-01,51,3,3,3,333,5 Low activity,0.024,126
+1170,Saudi Arabia,Saudi Arabia,N/A,Country / Territory,36,3454.0815552196914,4.369,5.20,1,14,13,2024-02-15,2025-12-16,340,1,4,3,143,2 Persistent activity,0.045,127
+1096,Kazakhstan,Kazakhstan,N/A,Country / Territory,35,3175.5950537243684,4.314,5.20,1,75,19,2024-01-27,2026-09-28,54,3,4,3,343,2 Persistent activity,0.043,128
+1160,Romania,Romania,N/A,Country / Territory,20,3148.198621748411,4.380,5.30,2,1775,15,2024-01-15,2026-11-18,3,5,3,3,533,4 Recently active,0.025,129
+1017,Azores-Cape St. Vincent Ridge,Azores-Cape St. Vincent Ridge,N/A,Oceanic / Remote,2,2920.6942024425553,5.150,5.50,1,9,2,2025-07-25,2025-08-16,462,1,1,3,113,6 Dormant,0.002,130
+1244,"New Mexico, United States",United States,New Mexico,United States,854,2872.406567960084,2.855,5.40,1,3026,35,2024-01-01,2026-11-15,6,5,5,3,553,2 Persistent activity,1.060,131
+1022,Bangladesh,Bangladesh,N/A,Country / Territory,9,2593.201281739843,4.411,5.40,2,1531,6,2024-04-20,2026-06-22,152,2,3,3,233,6 Dormant,0.011,132
+1195,Spain,Spain,N/A,Country / Territory,17,2322.6635278948434,4.135,5.20,2,298,10,2024-09-04,2026-09-25,57,3,3,3,333,5 Low activity,0.021,133
+1108,Madagascar,Madagascar,N/A,Country / Territory,7,2302.1139516139974,4.729,5.30,1,12,7,2024-09-18,2026-03-13,253,2,3,3,233,6 Dormant,0.009,134
+1008,Anguilla,Anguilla,N/A,Country / Territory,62,2299.4592545402033,3.820,5.20,2,59,23,2024-01-06,2026-10-31,21,4,4,3,443,2 Persistent activity,0.077,135
+1050,Djibouti,Djibouti,N/A,Country / Territory,9,2252.016663172418,4.356,5.40,1,18,5,2024-01-25,2026-07-25,119,3,3,3,333,5 Low activity,0.011,136
+1266,Vietnam,Vietnam,N/A,Country / Territory,34,2238.8114203894797,4.282,5.10,1,90,22,2024-02-07,2026-10-18,34,3,4,3,343,2 Persistent activity,0.042,137
+1214,Turkmenistan,Turkmenistan,N/A,Country / Territory,14,2175.9872791060584,4.479,5.10,2,1,12,2024-02-09,2026-04-26,209,2,3,3,233,6 Dormant,0.017,138
+1029,Bosnia and Herzegovina,Bosnia and Herzegovina,N/A,Country / Territory,12,2165.3306686105925,4.083,5.40,1,270,10,2024-01-21,2026-05-28,177,2,3,3,233,6 Dormant,0.015,139
+1089,Indian Ocean Triple Junction,Indian Ocean Triple Junction,N/A,Oceanic / Remote,18,1993.4369302318978,4.522,4.90,0,0,13,2024-04-25,2026-08-27,86,3,3,3,333,5 Low activity,0.022,140
+1135,North Atlantic Ocean,North Atlantic Ocean,N/A,Oceanic / Remote,14,1953.1359742919772,4.514,4.90,0,0,10,2024-02-25,2026-10-14,38,3,3,3,333,5 Low activity,0.017,141
+1268,Western Caribbean Sea,Western Caribbean Sea,N/A,Oceanic / Remote,1,1898.4900447521163,5.400,5.40,1,3,1,2025-03-11,2025-03-11,620,1,1,3,113,6 Dormant,0.001,142
+1184,South Africa,South Africa,N/A,Country / Territory,14,1823.7082958861643,4.236,5.20,1,468,11,2024-01-04,2026-10-07,45,3,3,3,333,5 Low activity,0.017,143
+1177,southeast central Pacific Ocean,southeast central Pacific Ocean,N/A,Oceanic / Remote,3,1667.3838481127793,5.000,5.20,2,0,3,2024-01-17,2026-06-16,158,2,2,3,223,6 Dormant,0.004,144
+1063,Falkland Islands,Falkland Islands,N/A,Country / Territory,6,1601.7670743011254,4.717,5.10,2,0,4,2024-03-10,2025-10-23,394,1,2,3,123,6 Dormant,0.007,145
+1197,Sumatra,Sumatra,N/A,Country / Territory,9,1522.9260031402196,4.444,5.20,1,1,9,2024-01-17,2026-11-14,7,4,3,3,433,4 Recently active,0.011,146
+1049,Democratic Republic of the Congo,Democratic Republic of the Congo,N/A,Country / Territory,14,1507.5687180824652,4.479,5.00,1,1,11,2024-01-02,2026-11-13,8,4,3,3,433,4 Recently active,0.017,147
+1067,Franz Josef Land,Franz Josef Land,N/A,Country / Territory,5,1460.2806211228021,4.600,5.20,1,0,5,2024-01-18,2026-11-10,11,4,2,3,423,4 Recently active,0.006,148
+1153,Poland,Poland,N/A,Country / Territory,27,1451.2728881094251,4.081,4.90,0,19,22,2024-01-03,2026-10-29,23,4,4,3,443,2 Persistent activity,0.034,149
+1114,Martinique,Martinique,N/A,Country / Territory,9,1407.1953911274932,4.500,5.10,1,81,7,2024-07-04,2026-09-20,62,3,3,3,333,5 Low activity,0.011,150
+1025,Beaufort Sea,Beaufort Sea,N/A,Oceanic / Remote,5,1396.331087434882,3.900,5.30,1,0,4,2024-07-04,2026-09-17,65,3,2,3,323,5 Low activity,0.006,151
+1141,Norwegian Sea,Norwegian Sea,N/A,Oceanic / Remote,12,1385.0909957661713,4.425,5.00,1,0,9,2024-01-10,2026-10-22,30,4,3,3,433,4 Recently active,0.015,152
+1124,Morocco,Morocco,N/A,Country / Territory,14,1358.8909517632176,4.329,5.10,1,500,14,2024-01-02,2026-11-18,3,5,3,3,533,4 Recently active,0.017,153
+1201,Syria,Syria,N/A,Country / Territory,5,1356.6440802420873,4.600,5.20,1,152,3,2024-08-12,2026-08-13,100,3,2,3,323,5 Low activity,0.006,154
+1206,Tibetan Plateau,Tibetan Plateau,N/A,Country / Territory,3,1349.1390758385992,4.833,5.20,1,2,1,2025-01-06,2025-01-09,681,1,2,3,123,6 Dormant,0.004,155
+1005,Algeria,Algeria,N/A,Country / Territory,8,1336.7679938046392,4.625,5.00,1,58,7,2024-02-14,2026-06-28,146,2,3,3,233,6 Dormant,0.010,156
+1212,Tunisia,Tunisia,N/A,Country / Territory,11,1295.4055783235065,4.436,5.10,1,6,8,2024-03-29,2026-01-13,312,2,3,3,233,6 Dormant,0.014,157
+1018,Azores Islands,Azores Islands,N/A,Country / Territory,10,1275.3812847067597,4.560,4.90,0,3,8,2024-04-04,2025-12-11,345,1,3,3,133,6 Dormant,0.012,158
+1261,Uzbekistan,Uzbekistan,N/A,Country / Territory,15,1190.7304030218086,4.400,4.90,0,9,10,2024-03-04,2026-06-24,150,2,3,3,233,6 Dormant,0.019,159
+1210,Trinidad and Tobago,Trinidad and Tobago,N/A,Country / Territory,5,1188.903264284208,4.500,5.20,1,26,5,2024-05-21,2026-07-20,124,3,2,3,323,5 Low activity,0.006,160
+1192,South Pacific Ocean,South Pacific Ocean,N/A,Oceanic / Remote,2,1120.7020769405176,4.950,5.20,1,0,2,2024-01-11,2026-09-18,64,3,1,3,313,5 Low activity,0.002,161
+1033,Burundi,Burundi,N/A,Country / Territory,3,1078.8033068289803,4.667,5.20,1,22,3,2025-01-04,2026-04-13,222,2,2,3,223,6 Dormant,0.004,162
+1139,North Pacific Ocean,North Pacific Ocean,N/A,Oceanic / Remote,6,1069.1326959985804,4.517,5.00,1,0,5,2024-04-13,2026-01-27,298,2,2,3,223,6 Dormant,0.007,163
+1112,Malta,Malta,N/A,Country / Territory,6,1004.0750228807472,4.333,5.10,1,15,5,2025-01-01,2025-10-20,397,1,2,3,123,6 Dormant,0.007,164
+1274,Zimbabwe,Zimbabwe,N/A,Country / Territory,6,952.3891477747773,4.567,4.90,0,6,3,2024-12-08,2025-03-07,624,1,2,3,123,6 Dormant,0.007,165
+1068,French Southern Territories,French Southern Territories,N/A,Country / Territory,1,951.4989735982278,5.200,5.20,1,1,1,2024-10-26,2024-10-26,756,1,1,3,113,6 Dormant,0.001,166
+1142,Oman,Oman,N/A,Country / Territory,12,908.683510191855,4.425,4.80,0,0,7,2024-04-28,2026-06-19,155,2,3,3,233,6 Dormant,0.015,167
+1196,Sudan,Sudan,N/A,Country / Territory,12,880.548685187377,4.375,4.80,0,0,6,2024-06-07,2026-08-01,112,3,3,3,333,5 Low activity,0.015,168
+1072,Georgia,Georgia,N/A,Country / Territory,16,855.5226509482069,4.049,4.90,0,91,10,2024-01-02,2026-09-08,74,3,3,3,333,5 Low activity,0.020,169
+1390,Namibia,Namibia,N/A,Country / Territory,2,814.4837140515388,4.950,5.00,1,5,2,2026-10-21,2026-11-07,14,4,1,3,413,4 Recently active,0.002,170
+1007,Angola,Angola,N/A,Country / Territory,4,806.2361511947221,4.500,5.10,1,3,4,2024-04-26,2026-07-08,136,3,2,3,323,5 Low activity,0.005,171
+1003,Albania,Albania,N/A,Country / Territory,22,798.1350317968106,4.186,4.60,0,139,14,2024-01-13,2026-09-08,74,3,3,3,333,5 Low activity,0.027,172
+1260,"Wyoming, United States",United States,Wyoming,United States,584,744.5138850123041,3.087,4.65,0,4919,35,2024-01-04,2026-11-12,9,4,5,3,453,2 Persistent activity,0.725,173
+1248,"Oklahoma, United States",United States,Oklahoma,United States,136,720.0775970517401,2.893,5.06,1,36549,31,2024-01-13,2026-11-15,6,4,4,3,443,2 Persistent activity,0.169,174
+1094,Jamaica,Jamaica,N/A,Country / Territory,8,691.5765446412179,4.150,5.00,1,265,8,2024-05-02,2026-05-13,192,2,3,3,233,6 Dormant,0.010,175
+1059,Egypt,Egypt,N/A,Country / Territory,4,627.0392309871454,4.500,5.00,1,453,3,2024-09-19,2026-08-03,110,3,2,3,323,5 Low activity,0.005,176
+1227,"Idaho, United States",United States,Idaho,United States,263,617.7774302734936,2.849,4.90,0,4033,33,2024-01-19,2026-11-15,6,4,5,3,453,2 Persistent activity,0.327,177
+1147,Palau,Palau,N/A,Country / Territory,7,605.0047607590844,4.443,4.70,0,0,7,2024-01-03,2026-04-10,225,2,3,2,232,6 Dormant,0.009,178
+1145,Pacific Ocean,Pacific Ocean,N/A,Oceanic / Remote,3,597.7980959912217,4.733,4.80,0,0,2,2024-02-05,2025-01-20,670,1,2,2,122,6 Dormant,0.004,179
+1092,Iraq,Iraq,N/A,Country / Territory,21,581.1997990785843,4.095,4.40,0,14,13,2024-01-25,2026-08-01,112,3,3,2,332,5 Low activity,0.026,180
+1215,Uganda,Uganda,N/A,Country / Territory,7,573.7705018083658,4.457,4.70,0,53,6,2024-08-03,2026-05-31,174,2,3,2,232,6 Dormant,0.009,181
+1216,Ukraine,Ukraine,N/A,Country / Territory,7,493.936888176459,4.286,4.80,0,1,6,2025-01-12,2026-09-22,60,3,3,2,332,5 Low activity,0.009,182
+1109,Malawi,Malawi,N/A,Country / Territory,6,476.7313540828992,4.467,4.60,0,6,5,2024-05-04,2026-01-23,302,2,2,2,222,6 Dormant,0.007,183
+1282,Antarctica,Antarctica,N/A,Country / Territory,3,457.67562880608796,4.567,4.90,0,0,1,2026-02-04,2026-02-20,274,2,2,2,222,6 Dormant,0.004,184
+1233,"Louisiana, United States",United States,Louisiana,United States,38,436.68914767211066,2.966,4.90,0,2348,12,2024-01-09,2026-09-25,57,3,4,2,342,2 Persistent activity,0.047,185
+1125,Mozambique,Mozambique,N/A,Country / Territory,4,431.3832972778635,4.475,4.80,0,0,4,2024-05-14,2026-05-03,202,2,2,2,222,6 Dormant,0.005,186
+1048,Davis Strait,Davis Strait,N/A,Oceanic / Remote,5,417.70051750245216,4.380,4.80,0,0,4,2024-04-16,2025-12-08,348,1,2,2,122,6 Dormant,0.006,187
+1045,Croatia,Croatia,N/A,Country / Territory,11,400.9116041745511,4.055,4.60,0,58,8,2024-02-23,2026-05-25,180,2,3,2,232,6 Dormant,0.014,188
+1285,Arafura Sea,Arafura Sea,N/A,Oceanic / Remote,1,337.6045756746547,4.900,4.90,0,0,1,2026-01-13,2026-01-13,312,2,1,2,212,6 Dormant,0.001,189
+1412,Pitcairn Islands,Pitcairn Islands,N/A,Country / Territory,1,337.6045756746547,4.900,4.90,0,0,1,2026-06-03,2026-06-03,171,2,1,2,212,6 Dormant,0.001,189
+1105,Lomonosov Ridge,Lomonosov Ridge,N/A,Oceanic / Remote,1,337.6045756746547,4.900,4.90,0,0,1,2024-09-28,2024-09-28,784,1,1,2,112,6 Dormant,0.001,189
+1010,Arctic Ocean,Arctic Ocean,N/A,Oceanic / Remote,3,331.49162500365776,4.533,4.70,0,0,3,2024-06-02,2025-03-01,630,1,2,2,122,6 Dormant,0.004,192
+1104,Libya,Libya,N/A,Country / Territory,8,323.7467410466759,4.225,4.50,0,1,7,2024-07-27,2026-09-27,55,3,3,2,332,5 Low activity,0.010,193
+1136,North Indian Ocean,North Indian Ocean,N/A,Oceanic / Remote,3,314.04106519327786,4.533,4.70,0,0,3,2024-05-26,2026-09-26,56,3,2,2,322,5 Low activity,0.004,194
+1174,Socotra,Socotra,N/A,Country / Territory,5,310.89426354732467,4.360,4.60,0,0,5,2024-03-03,2026-09-23,59,3,2,2,322,5 Low activity,0.006,195
+1271,Xizang-Qinghai border,Xizang-Qinghai border,N/A,Country / Territory,5,291.24812498135265,4.340,4.60,0,0,4,2025-01-30,2026-04-11,224,2,2,2,222,6 Dormant,0.006,196
+1258,"Washington, United States",United States,Washington,United States,140,273.8063846084614,2.935,4.50,0,36448,34,2024-01-05,2026-11-21,0,5,4,2,542,2 Persistent activity,0.174,197
+1256,"Utah, United States",United States,Utah,United States,140,271.0443872855134,2.950,4.47,0,16383,35,2024-01-10,2026-11-19,2,5,5,2,552,2 Persistent activity,0.174,198
+1032,Burma,Burma,N/A,Country / Territory,3,264.62458556687517,4.500,4.60,0,3,1,2025-03-28,2025-03-28,603,1,2,2,122,6 Dormant,0.004,199
+1117,Mayotte,Mayotte,N/A,Country / Territory,3,247.09095694663955,4.467,4.60,0,4,3,2024-08-27,2026-10-26,26,4,2,2,422,4 Recently active,0.004,200
+1243,"New Jersey, United States",United States,New Jersey,United States,9,246.10686197198368,3.100,4.80,0,215566,3,2024-04-05,2025-08-05,473,1,3,2,132,6 Dormant,0.011,201
+1006,American Samoa,American Samoa,N/A,Country / Territory,4,239.97746347103615,4.000,4.60,0,0,3,2024-01-05,2025-10-30,387,1,2,2,122,6 Dormant,0.005,202
+1168,Saint Vincent and the Grenadines,Saint Vincent and the Grenadines,N/A,Country / Territory,1,239.0057361376673,4.800,4.80,0,3,1,2025-10-03,2025-10-03,414,1,1,2,112,6 Dormant,0.001,203
+1302,Broken Ridge,Broken Ridge,N/A,Oceanic / Remote,1,239.0057361376673,4.800,4.80,0,0,1,2026-03-08,2026-03-08,258,2,1,2,212,6 Dormant,0.001,203
+1334,French Polynesia,French Polynesia,N/A,Country / Territory,1,239.0057361376673,4.800,4.80,0,0,1,2026-10-24,2026-10-24,28,4,1,2,412,4 Recently active,0.001,203
+1207,Timor,Timor,N/A,Country / Territory,1,239.0057361376673,4.800,4.80,0,1,1,2025-08-18,2025-08-18,460,1,1,2,112,6 Dormant,0.001,203
+1273,Zambia,Zambia,N/A,Country / Territory,3,233.0064099429749,4.367,4.70,0,0,2,2024-02-02,2026-02-10,284,2,2,2,222,6 Dormant,0.004,207
+1190,South Island of New Zealand,South Island of New Zealand,N/A,Country / Territory,3,222.3240482270846,4.433,4.60,0,0,2,2024-02-19,2024-12-16,705,1,2,2,122,6 Dormant,0.004,208
+1012,Armenia,Armenia,N/A,Country / Territory,6,215.88209486236752,4.067,4.40,0,41,6,2024-05-30,2025-11-02,384,1,2,2,122,6 Dormant,0.007,209
+1163,Saint Eustatius and Saba,Saint Eustatius and Saba,N/A,Country / Territory,10,211.72544443500684,3.809,4.40,0,0,9,2024-08-06,2026-09-02,80,3,3,2,332,5 Low activity,0.012,210
+1182,southwestern Atlantic Ocean,southwestern Atlantic Ocean,N/A,Oceanic / Remote,3,209.91118976043185,4.400,4.60,0,0,3,2024-03-03,2024-10-23,759,1,2,2,122,6 Dormant,0.004,211
+1140,Norway,Norway,N/A,Country / Territory,4,195.36110710570452,4.225,4.50,0,105,3,2025-01-12,2026-08-19,94,3,2,2,322,5 Low activity,0.005,212
+1165,Saint Kitts and Nevis,Saint Kitts and Nevis,N/A,Country / Territory,3,190.8421165731686,3.900,4.70,0,3,3,2025-03-23,2026-10-18,34,3,2,2,322,5 Low activity,0.004,213
+1097,Kenya,Kenya,N/A,Country / Territory,2,179.82215028160365,4.500,4.60,0,185,2,2024-06-22,2024-07-16,858,1,1,2,112,6 Dormant,0.002,214
+1037,Celebes Sea,Celebes Sea,N/A,Oceanic / Remote,3,169.80623117623344,4.367,4.50,0,0,3,2024-08-21,2025-09-17,430,1,2,2,122,6 Dormant,0.004,215
+1077,Grenada,Grenada,N/A,Country / Territory,3,169.80623117623344,4.367,4.50,0,2,3,2024-03-19,2025-09-17,430,1,2,2,122,6 Dormant,0.004,215
+1345,Guinea,Guinea,N/A,Country / Territory,1,169.20310334228975,4.700,4.70,0,0,1,2026-06-11,2026-06-11,163,2,1,2,212,6 Dormant,0.001,217
+1166,Saint Lucia,Saint Lucia,N/A,Country / Territory,3,141.3724617866374,4.300,4.40,0,0,3,2024-05-14,2026-08-02,111,3,2,2,322,5 Low activity,0.004,218
+1426,Santa Cruz Islands,Santa Cruz Islands,N/A,Country / Territory,2,141.08803237109126,4.350,4.60,0,0,2,2026-02-12,2026-05-13,192,2,1,2,212,6 Dormant,0.002,219
+1123,Montenegro,Montenegro,N/A,Country / Territory,4,138.9190756252974,4.200,4.40,0,16,4,2024-04-03,2025-10-29,388,1,2,2,122,6 Dormant,0.005,220
+1505,Western Australia,Western Australia,N/A,Country / Territory,2,134.86686617478273,4.300,4.60,0,0,2,2026-05-30,2026-08-11,102,3,1,2,312,5 Low activity,0.002,221
+1082,Haiti,Haiti,N/A,Country / Territory,5,128.43621343829878,4.120,4.30,0,5,5,2024-12-06,2026-09-11,71,3,2,2,322,5 Low activity,0.006,222
+1099,Kosovo,Kosovo,N/A,Country / Territory,2,127.30433323075248,4.400,4.50,0,55,2,2024-12-12,2026-02-10,284,2,1,2,212,6 Dormant,0.002,223
+1388,Mozambique Channel,Mozambique Channel,N/A,Country / Territory,2,127.30433323075248,4.400,4.50,0,0,2,2026-03-28,2026-06-29,145,2,1,2,212,6 Dormant,0.002,223
+1054,D'Entrecasteaux Islands,D'Entrecasteaux Islands,N/A,Country / Territory,4,120.2850509623361,4.150,4.40,0,0,3,2025-02-19,2026-04-25,210,2,2,2,222,6 Dormant,0.005,225
+1039,Chad,Chad,N/A,Country / Territory,2,120.07105313143319,4.400,4.40,0,0,1,2025-05-24,2025-05-29,541,1,1,2,112,6 Dormant,0.002,226
+1111,Maldives,Maldives,N/A,Country / Territory,1,119.78662371588706,4.600,4.60,0,0,1,2024-05-27,2024-05-27,908,1,1,2,112,6 Dormant,0.001,227
+1188,South Georgia Rise,South Georgia Rise,N/A,Oceanic / Remote,1,119.78662371588706,4.600,4.60,0,0,1,2025-06-18,2025-06-18,521,1,1,2,112,6 Dormant,0.001,227
+1130,New Siberian Islands,New Siberian Islands,N/A,Country / Territory,1,119.78662371588706,4.600,4.60,0,0,1,2024-09-29,2024-09-29,783,1,1,2,112,6 Dormant,0.001,227
+1103,Laos,Laos,N/A,Country / Territory,3,117.6176669700932,4.233,4.40,0,1,3,2025-11-12,2026-10-23,29,4,2,2,422,4 Recently active,0.004,230
+1239,"Montana, United States",United States,Montana,United States,104,114.09806874769062,2.915,4.20,0,2455,33,2024-01-01,2026-11-18,3,5,4,2,542,2 Persistent activity,0.129,231
+1162,Rwanda,Rwanda,N/A,Country / Territory,2,102.53742451119754,4.350,4.40,0,8,2,2025-04-05,2025-11-01,385,1,2,2,122,6 Dormant,0.002,232
+1051,Dominica,Dominica,N/A,Country / Territory,2,90.12456604454478,4.300,4.40,0,0,2,2025-03-26,2025-07-06,503,1,1,2,112,6 Dormant,0.002,233
+1369,Lebanon,Lebanon,N/A,Country / Territory,3,85.10471525588936,4.167,4.30,0,11,3,2026-01-10,2026-09-10,72,3,2,2,322,5 Low activity,0.004,234
+1348,Guyana,Guyana,N/A,Country / Territory,1,84.80243528527153,4.500,4.50,0,0,1,2026-01-08,2026-01-08,317,2,1,2,212,6 Dormant,0.001,235
+1156,Qatar,Qatar,N/A,Country / Territory,4,78.98446842450826,4.075,4.10,0,11,1,2025-03-09,2025-03-31,600,1,2,2,122,6 Dormant,0.005,236
+1101,Kuwait,Kuwait,N/A,Country / Territory,2,72.59093742430913,4.250,4.30,0,5,2,2025-03-15,2026-05-05,200,2,2,1,221,6 Dormant,0.002,237
+1167,Saint Pierre and Miquelon,Saint Pierre and Miquelon,N/A,Country / Territory,2,72.59093742430913,4.250,4.30,0,0,2,2024-01-12,2026-06-30,144,3,2,2,322,5 Low activity,0.002,237
+1069,Gabon,Gabon,N/A,Country / Territory,2,72.59093742430913,4.250,4.30,0,0,2,2025-01-09,2026-06-20,154,2,2,1,221,6 Dormant,0.002,237
+1224,"Colorado, United States",United States,Colorado,United States,63,70.61736190141063,2.898,4.10,0,870,26,2024-01-30,2026-11-18,3,5,4,1,541,2 Persistent activity,0.078,240
+1263,Vancouver Island,Vancouver Island,N/A,Country / Territory,3,66.47069059292805,4.100,4.20,0,2,3,2024-02-11,2025-04-21,579,1,2,1,121,6 Dormant,0.004,241
+1284,Arabian Sea,Arabian Sea,N/A,Oceanic / Remote,1,60.035526565716594,4.400,4.40,0,0,1,2026-09-08,2026-09-08,74,3,1,1,311,5 Low activity,0.001,242
+1191,South Korea,South Korea,N/A,Country / Territory,1,60.035526565716594,4.400,4.40,0,189,1,2024-06-11,2024-06-11,893,1,1,1,111,6 Dormant,0.001,242
+1312,Cook Islands,Cook Islands,N/A,Country / Territory,1,60.035526565716594,4.400,4.40,0,0,1,2026-02-19,2026-02-19,275,2,1,1,211,6 Dormant,0.001,242
+1200,Switzerland,Switzerland,N/A,Country / Territory,4,57.69261904493546,3.800,4.20,0,17,4,2024-05-09,2026-04-26,209,2,2,1,221,6 Dormant,0.005,245
+1015,Austria,Austria,N/A,Country / Territory,4,48.52458009123343,3.700,4.20,0,48,4,2024-02-01,2026-10-09,43,3,2,1,321,5 Low activity,0.005,246
+1205,Thailand,Thailand,N/A,Country / Territory,2,45.169281937723845,4.100,4.20,0,5,2,2025-06-02,2026-06-14,160,2,1,1,211,6 Dormant,0.002,247
+1231,"Kansas, United States",United States,Kansas,United States,89,42.86788925495603,2.784,3.70,0,846,26,2024-01-04,2026-10-15,37,3,4,1,341,2 Persistent activity,0.111,248
+1358,Israel,Israel,N/A,Country / Territory,2,42.60281731040841,4.100,4.10,0,14,2,2026-01-15,2026-11-11,10,4,1,1,411,4 Recently active,0.002,249
+1186,South Australia,South Australia,N/A,Country / Territory,1,42.50189794548095,4.300,4.30,0,0,1,2024-03-28,2024-03-28,968,1,1,1,111,6 Dormant,0.001,250
+1217,United Arab Emirates,United Arab Emirates,N/A,Country / Territory,1,42.50189794548095,4.300,4.30,0,12,1,2025-11-04,2025-11-04,382,1,1,1,111,6 Dormant,0.001,250
+1024,Bay of Bengal,Bay of Bengal,N/A,Country / Territory,1,42.50189794548095,4.300,4.30,0,0,1,2024-10-29,2024-10-29,753,1,1,1,111,6 Dormant,0.001,250
+1225,"Florida, United States",United States,Florida,United States,3,36.432230611427286,3.933,4.00,0,278,2,2024-02-08,2026-07-28,116,3,2,1,321,5 Low activity,0.004,253
+1085,Hungary,Hungary,N/A,Country / Territory,2,36.38165111409986,4.050,4.10,0,2,2,2025-07-05,2025-10-21,396,1,1,1,111,6 Dormant,0.002,254
+1254,"Tennessee, United States",United States,Tennessee,United States,19,31.19241047017019,2.758,4.10,0,46348,17,2024-01-23,2026-11-02,19,4,3,1,431,4 Recently active,0.024,255
+1238,"Missouri, United States",United States,Missouri,United States,28,29.248640737130746,2.841,4.00,0,2617,21,2024-02-20,2026-08-04,109,3,4,1,341,2 Persistent activity,0.035,256
+1066,France,France,N/A,Country / Territory,6,28.53586246708664,3.317,4.10,0,167,4,2024-09-14,2026-01-12,313,2,2,1,221,6 Dormant,0.007,257
+1240,"Nebraska, United States",United States,Nebraska,United States,14,23.735666481730394,2.786,4.10,0,1951,8,2024-03-06,2026-05-11,194,2,3,1,231,6 Dormant,0.017,258
+1221,"Arizona, United States",United States,Arizona,United States,33,21.832087546450687,2.833,3.70,0,144,14,2024-04-26,2026-04-07,228,2,4,1,241,2 Persistent activity,0.041,259
+1138,North Korea,North Korea,N/A,Country / Territory,1,21.301408655204206,4.100,4.10,0,0,1,2025-03-24,2025-03-24,607,1,1,1,111,6 Dormant,0.001,260
+1019,Bahamas,Bahamas,N/A,Country / Territory,1,21.301408655204206,4.100,4.10,0,0,1,2025-02-05,2025-02-05,654,1,1,1,111,6 Dormant,0.001,260
+1218,United Kingdom,United Kingdom,N/A,Country / Territory,3,15.256172587322805,3.600,3.90,0,350,3,2025-10-20,2026-04-16,219,2,2,1,221,6 Dormant,0.004,262
+1026,Bermuda,Bermuda,N/A,Country / Territory,1,15.080242458895656,4.000,4.00,0,0,1,2025-10-30,2025-10-30,387,1,1,1,111,6 Dormant,0.001,263
+1429,Serbia,Serbia,N/A,Country / Territory,1,15.080242458895656,4.000,4.00,0,22,1,2026-05-05,2026-05-05,200,2,1,1,211,6 Dormant,0.001,263
+1157,Queen Charlotte Islands,Queen Charlotte Islands,N/A,Country / Territory,1,15.080242458895656,4.000,4.00,0,0,1,2024-08-05,2024-08-05,838,1,1,1,111,6 Dormant,0.001,263
+1228,"Illinois, United States",United States,Illinois,United States,8,12.977019810091122,3.064,3.80,0,4377,7,2024-03-05,2026-07-08,136,3,3,1,331,5 Low activity,0.010,266
+1347,Gulf of America,Gulf of America,N/A,Oceanic / Remote,1,10.675994076265814,3.900,3.90,0,3,1,2026-03-30,2026-03-30,236,2,1,1,211,6 Dormant,0.001,267
+1431,Slovakia,Slovakia,N/A,Country / Territory,1,10.675994076265814,3.900,3.90,0,120,1,2026-02-21,2026-02-21,273,2,1,1,211,6 Dormant,0.001,267
+1253,"South Dakota, United States",United States,South Dakota,United States,7,10.089060053098065,2.971,3.70,0,494,7,2024-04-04,2026-01-09,316,2,3,1,231,6 Dormant,0.009,269
+1081,Gulf of Alaska,Gulf of Alaska,N/A,Oceanic / Remote,20,8.727715947164562,2.800,3.60,0,0,14,2024-04-09,2026-10-24,28,4,3,1,431,4 Recently active,0.025,270
+1004,Aleutian Islands,Aleutian Islands,N/A,Country / Territory,11,8.68995763966989,3.018,3.60,0,0,9,2024-02-08,2026-10-07,45,3,3,1,331,5 Low activity,0.014,271
+1234,"Maine, United States",United States,Maine,United States,4,7.966635607110646,2.900,3.80,0,43935,4,2024-07-28,2025-08-26,452,1,2,1,121,6 Dormant,0.005,272
+1128,Netherlands,Netherlands,N/A,Country / Territory,1,7.558025000402436,3.800,3.80,0,0,1,2025-11-14,2025-11-14,372,1,1,1,111,6 Dormant,0.001,273
+1247,"Ohio, United States",United States,Ohio,United States,16,5.4523036695860805,2.822,3.15,0,4218,10,2024-01-05,2026-03-05,261,2,3,1,231,6 Dormant,0.020,274
+1236,"Minnesota, United States",United States,Minnesota,United States,13,3.653041811669003,2.754,3.30,0,0,10,2024-01-05,2026-08-24,89,3,3,1,331,5 Low activity,0.016,275
+1252,"South Carolina, United States",United States,South Carolina,United States,12,2.8404643145452613,2.740,3.04,0,5757,8,2024-03-09,2026-02-26,268,2,3,1,231,6 Dormant,0.015,276
+1073,Germany,Germany,N/A,Country / Territory,1,2.6816884663048883,3.500,3.50,0,64,1,2024-06-27,2024-06-27,877,1,1,1,111,6 Dormant,0.001,277
+1317,Denmark,Denmark,N/A,Country / Territory,1,2.6816884663048883,3.500,3.50,0,225,1,2026-05-20,2026-05-20,185,2,1,1,211,6 Dormant,0.001,277
+1245,"New York, United States",United States,New York,United States,5,1.9218417339280072,2.760,3.30,0,1004,5,2024-06-29,2026-04-26,209,2,2,1,221,6 Dormant,0.006,279
+1230,"Iowa, United States",United States,Iowa,United States,3,1.9057095975396627,2.933,3.30,0,0,1,2025-06-25,2025-06-25,514,1,2,1,121,6 Dormant,0.004,280
+1222,"Arkansas, United States",United States,Arkansas,United States,6,1.4920751962035337,2.750,3.06,0,127,5,2024-01-04,2025-08-01,477,1,2,1,121,6 Dormant,0.007,281
+1232,"Kentucky, United States",United States,Kentucky,United States,5,1.2536798518194445,2.738,3.09,0,441,5,2024-01-28,2026-01-04,321,2,2,1,221,6 Dormant,0.006,282
+1219,"Alabama, United States",United States,Alabama,United States,2,0.7676704126960386,2.815,3.10,0,17,2,2025-05-23,2026-04-27,208,2,1,1,211,6 Dormant,0.002,283
+1257,"Virginia, United States",United States,Virginia,United States,2,0.6308250397598771,2.865,2.96,0,3757,2,2025-01-14,2025-05-06,564,1,1,1,111,6 Dormant,0.002,284
+1237,"Mississippi, United States",United States,Mississippi,United States,2,0.5616815736621555,2.750,3.00,0,26,2,2024-11-28,2025-03-15,616,1,1,1,111,6 Dormant,0.002,285
+1259,"Wisconsin, United States",United States,Wisconsin,United States,2,0.4224070109599249,2.700,2.90,0,244,2,2024-01-07,2024-08-02,841,1,2,1,121,6 Dormant,0.002,286
+1795,Southeastern Alaska,Southeastern Alaska,N/A,Country / Territory,1,0.33760457567465335,2.900,2.90,0,0,1,2026-10-25,2026-10-25,27,4,1,1,411,4 Recently active,0.001,287
+1246,"North Carolina, United States",United States,North Carolina,United States,2,0.3300424899949999,2.690,2.73,0,1618,2,2025-08-14,2026-03-24,242,2,1,1,211,6 Dormant,0.002,288
+1250,"Pennsylvania, United States",United States,Pennsylvania,United States,2,0.32380817142293883,2.650,2.80,0,38,2,2024-09-11,2025-06-10,529,1,1,1,111,6 Dormant,0.002,289
+1179,Southern Alaska,Southern Alaska,N/A,Country / Territory,1,0.16920310334228975,2.700,2.70,0,0,1,2025-03-01,2025-03-01,630,1,1,1,111,6 Dormant,0.001,290
+1478,"Michigan, United States",United States,Michigan,United States,1,0.16920310334228975,2.700,2.70,0,222,1,2026-05-04,2026-05-04,201,2,1,1,211,6 Dormant,0.001,290
+1133,Northern California,Northern California,N/A,Country / Territory,1,0.16920310334228975,2.700,2.70,0,0,1,2025-09-05,2025-09-05,442,1,1,1,111,6 Dormant,0.001,290
+1242,"New Hampshire, United States",United States,New Hampshire,United States,1,0.11978662371588707,2.600,2.60,0,122,1,2024-06-18,2024-06-18,886,1,1,1,111,6 Dormant,0.001,293
+1487,"North Dakota, United States",United States,North Dakota,United States,1,0.11978662371588707,2.600,2.60,0,0,1,2026-08-13,2026-08-13,100,3,1,1,311,5 Low activity,0.001,293
+1229,"Indiana, United States",United States,Indiana,United States,1,0.11179138176080261,2.580,2.58,0,68,1,2025-08-09,2025-08-09,469,1,1,1,111,6 Dormant,0.001,295
+1297,Blue Origin New Glenn rocket explosion,Blue Origin New Glenn rocket explosion,N/A,Country / Territory,1,0.08480243528527152,2.500,2.50,0,6,1,2026-05-29,2026-05-29,176,2,1,1,211,6 Dormant,0.001,296
+1235,"Maryland, United States",United States,Maryland,United States,1,0.08480243528527152,2.500,2.50,0,1228,1,2025-10-27,2025-10-27,390,1,1,1,111,6 Dormant,0.001,296

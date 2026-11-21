@@ -1,0 +1,16 @@
+row_type,region,channel,magnitude_class,events
+GRAND TOTAL,(all),(all),(all),80537
+Channel total,(all),National / Global,(all),61145
+Region total,Country / Territory,(all),(all),45586
+Magnitude-class total,(all),(all),Moderate,41538
+Region total,United States,(all),(all),32243
+Magnitude-class total,(all),(all),Minor,19989
+Channel total,(all),Regional,(all),17858
+Magnitude-class total,(all),(all),Light,13551
+Magnitude-class total,(all),(all),Strong,5084
+Region total,Oceanic / Remote,(all),(all),2707
+Channel total,(all),Volcano Observatory,(all),1533
+Magnitude-class total,(all),(all),Major,336
+Magnitude-class total,(all),(all),Great,39
+Channel total,(all),Unknown,(all),1
+Region total,Unknown,(all),(all),1

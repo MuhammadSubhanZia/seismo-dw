@@ -1,0 +1,60 @@
+row_type,region,category,product,events,energy_tnt_tons
+Product row,Country / Territory,Accidental Explosion,Minor,1,0.1
+Category subtotal,Country / Territory,Accidental Explosion,(all products),1,0.1
+Product row,Country / Territory,Earthquake,Minor,559,122.6
+Product row,Country / Territory,Earthquake,Light,2268,9946.7
+Product row,Country / Territory,Earthquake,Moderate,38025,3236464.2
+Product row,Country / Territory,Earthquake,Strong,4395,7024603.4
+Product row,Country / Territory,Earthquake,Major,295,17502670.6
+Product row,Country / Territory,Earthquake,Great,34,314680907.7
+Category subtotal,Country / Territory,Earthquake,(all products),45576,342454715.1
+Product row,Country / Territory,Explosion,Minor,1,0.1
+Product row,Country / Territory,Explosion,Moderate,1,15.1
+Category subtotal,Country / Territory,Explosion,(all products),2,15.2
+Product row,Country / Territory,Landslide,Light,1,10.7
+Product row,Country / Territory,Landslide,Moderate,2,367.7
+Product row,Country / Territory,Landslide,Strong,1,951.5
+Category subtotal,Country / Territory,Landslide,(all products),4,1329.9
+Product row,Country / Territory,Mining Explosion,Minor,1,0.3
+Category subtotal,Country / Territory,Mining Explosion,(all products),1,0.3
+Product row,Country / Territory,Quarry Blast,Minor,1,0.1
+Category subtotal,Country / Territory,Quarry Blast,(all products),1,0.1
+Product row,Country / Territory,Volcanic Eruption,Light,1,0.5
+Category subtotal,Country / Territory,Volcanic Eruption,(all products),1,0.5
+Region subtotal,Country / Territory,(all categories),(all products),45586,342456061.2
+Product row,Oceanic / Remote,Earthquake,Minor,17,3.1
+Product row,Oceanic / Remote,Earthquake,Light,9,39.9
+Product row,Oceanic / Remote,Earthquake,Moderate,2148,251113.6
+Product row,Oceanic / Remote,Earthquake,Strong,504,805913.1
+Product row,Oceanic / Remote,Earthquake,Major,26,1971813.1
+Product row,Oceanic / Remote,Earthquake,Great,3,8368164.2
+Category subtotal,Oceanic / Remote,Earthquake,(all products),2707,11397047.0
+Region subtotal,Oceanic / Remote,(all categories),(all products),2707,11397047.0
+Product row,United States,Earthquake,Minor,19235,3471.9
+Product row,United States,Earthquake,Light,10864,23444.8
+Product row,United States,Earthquake,Moderate,1361,87782.8
+Product row,United States,Earthquake,Strong,183,408341.6
+Product row,United States,Earthquake,Major,15,465606.0
+Product row,United States,Earthquake,Great,2,1820907.2
+Category subtotal,United States,Earthquake,(all products),31660,2809554.2
+Product row,United States,Experimental Explosion,Light,2,21.4
+Category subtotal,United States,Experimental Explosion,(all products),2,21.4
+Product row,United States,Explosion,Minor,8,1.3
+Category subtotal,United States,Explosion,(all products),8,1.3
+Product row,United States,Ice Quake,Minor,7,1.5
+Product row,United States,Ice Quake,Light,2,1.3
+Category subtotal,United States,Ice Quake,(all products),9,2.8
+Product row,United States,Landslide,Strong,1,1898.5
+Category subtotal,United States,Landslide,(all products),1,1898.5
+Product row,United States,Mine Collapse,Light,1,2.7
+Category subtotal,United States,Mine Collapse,(all products),1,2.7
+Product row,United States,Mining Explosion,Minor,154,34.1
+Product row,United States,Mining Explosion,Light,398,508.5
+Category subtotal,United States,Mining Explosion,(all products),552,542.5
+Product row,United States,Other Event,Minor,2,0.2
+Product row,United States,Other Event,Light,5,3.4
+Category subtotal,United States,Other Event,(all products),7,3.6
+Product row,United States,Quarry Blast,Minor,3,0.4
+Category subtotal,United States,Quarry Blast,(all products),3,0.4
+Region subtotal,United States,(all categories),(all products),32243,2812027.4
+GRAND TOTAL,(all regions),(all categories),(all products),80536,356665135.6
