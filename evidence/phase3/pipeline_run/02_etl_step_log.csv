@@ -1,0 +1,131 @@
+step_id,batch_id,step_name,target_table,rows_processed,rows_inserted,rows_updated,rows_rejected,note,logged_at
+1,1,clean_reference,project_staging.stg_us_state,52,52,0,0,,2026-11-21 20:05:53.196934+05:00
+2,1,load_dimension,project_dw.dim_magnitude_type,0,0,0,0,reference members,2026-11-21 20:05:53.204697+05:00
+3,1,load_dimension,project_dw.dim_magnitude_type,0,0,0,0,inferred members,2026-11-21 20:05:53.206266+05:00
+4,1,load_dimension,project_dw.dim_network,0,0,0,0,SCD2: inferred members completed in place,2026-11-21 20:05:53.217240+05:00
+5,1,load_dimension,project_dw.dim_network,0,0,0,0,"SCD2: reference members - 0 new code(s), 0 new version(s), 0 version(s) expired",2026-11-21 20:05:53.219374+05:00
+6,1,load_dimension,project_dw.dim_network,0,0,0,0,inferred members,2026-11-21 20:05:53.219756+05:00
+7,1,clean_reference,project_staging.stg_us_state,52,0,0,0,,2026-11-21 20:05:53.272233+05:00
+8,2,clean_reference,project_staging.stg_country_alias,6,6,0,0,,2026-11-21 20:05:53.275022+05:00
+9,2,load_dimension,project_dw.dim_magnitude_type,0,0,0,0,reference members,2026-11-21 20:05:53.278526+05:00
+10,2,load_dimension,project_dw.dim_magnitude_type,0,0,0,0,inferred members,2026-11-21 20:05:53.280093+05:00
+11,2,load_dimension,project_dw.dim_network,0,0,0,0,SCD2: inferred members completed in place,2026-11-21 20:05:53.290989+05:00
+12,2,load_dimension,project_dw.dim_network,0,0,0,0,"SCD2: reference members - 0 new code(s), 0 new version(s), 0 version(s) expired",2026-11-21 20:05:53.294172+05:00
+13,2,load_dimension,project_dw.dim_network,0,0,0,0,inferred members,2026-11-21 20:05:53.294574+05:00
+14,3,clean_reference,project_staging.stg_seismic_network,18,18,0,0,,2026-11-21 20:05:53.344053+05:00
+15,1,clean_reference,project_staging.stg_us_state,52,0,0,0,,2026-11-21 20:05:53.349017+05:00
+16,2,clean_reference,project_staging.stg_country_alias,6,0,0,0,,2026-11-21 20:05:53.350782+05:00
+17,3,load_dimension,project_dw.dim_magnitude_type,0,0,0,0,reference members,2026-11-21 20:05:53.354642+05:00
+18,3,load_dimension,project_dw.dim_magnitude_type,0,0,0,0,inferred members,2026-11-21 20:05:53.356244+05:00
+19,3,load_dimension,project_dw.dim_network,0,0,0,0,SCD2: inferred members completed in place,2026-11-21 20:05:53.365912+05:00
+20,3,load_dimension,project_dw.dim_network,18,18,0,0,"SCD2: reference members - 18 new code(s), 0 new version(s), 0 version(s) expired",2026-11-21 20:05:53.368455+05:00
+21,3,load_dimension,project_dw.dim_network,0,0,0,0,inferred members,2026-11-21 20:05:53.368837+05:00
+22,3,clean_reference,project_staging.stg_seismic_network,18,0,0,0,,2026-11-21 20:05:53.417757+05:00
+23,4,clean_reference,project_staging.stg_magnitude_type,16,16,0,0,,2026-11-21 20:05:53.420779+05:00
+24,1,clean_reference,project_staging.stg_us_state,52,0,0,0,,2026-11-21 20:05:53.424324+05:00
+25,2,clean_reference,project_staging.stg_country_alias,6,0,0,0,,2026-11-21 20:05:53.426755+05:00
+26,4,load_dimension,project_dw.dim_magnitude_type,16,16,0,0,reference members,2026-11-21 20:05:53.433566+05:00
+27,4,load_dimension,project_dw.dim_magnitude_type,0,0,0,0,inferred members,2026-11-21 20:05:53.436102+05:00
+28,4,load_dimension,project_dw.dim_network,0,0,0,0,SCD2: inferred members completed in place,2026-11-21 20:05:53.445666+05:00
+29,4,load_dimension,project_dw.dim_network,18,0,0,0,"SCD2: reference members - 0 new code(s), 0 new version(s), 0 version(s) expired",2026-11-21 20:05:53.450998+05:00
+30,4,load_dimension,project_dw.dim_network,0,0,0,0,inferred members,2026-11-21 20:05:53.451424+05:00
+31,5,clean_events,project_staging.stg_seismic_event,54439,54439,0,0,"validation rejects=0, in-batch duplicates=0",2026-11-21 20:06:56.595314+05:00
+32,5,load_dimension,project_dw.dim_date,1096,1096,0,0,,2026-11-21 20:06:57.799197+05:00
+33,5,load_dimension,project_dw.dim_magnitude_class,6,6,0,0,,2026-11-21 20:06:57.811994+05:00
+34,5,load_dimension,project_dw.dim_depth_class,3,3,0,0,,2026-11-21 20:06:57.819348+05:00
+35,5,load_dimension,project_dw.dim_event_type,9,9,0,0,,2026-11-21 20:06:57.868435+05:00
+36,5,load_dimension,project_dw.dim_magnitude_type,16,0,0,0,reference members,2026-11-21 20:06:57.876584+05:00
+37,5,load_dimension,project_dw.dim_magnitude_type,0,0,0,0,inferred members,2026-11-21 20:06:57.963861+05:00
+38,5,load_dimension,project_dw.dim_network,0,0,0,0,SCD2: inferred members completed in place,2026-11-21 20:06:58.030579+05:00
+39,5,load_dimension,project_dw.dim_network,18,0,0,0,"SCD2: reference members - 0 new code(s), 0 new version(s), 0 version(s) expired",2026-11-21 20:06:58.037378+05:00
+40,5,load_dimension,project_dw.dim_network,0,1,0,0,inferred members,2026-11-21 20:06:58.070971+05:00
+41,5,load_dimension,project_dw.dim_location,274,274,0,0,,2026-11-21 20:06:58.169546+05:00
+42,5,load_fact,project_dw.fact_seismic_event,54439,54438,0,1,"inserted=54438, updated (newer version)=0, soft-deleted=0, aliases deactivated=0, unchanged (same/older version)=0, rejected=1",2026-11-21 20:07:05.714423+05:00
+43,5,load_fact,project_dw.fact_location_monthly_snapshot,54438,6576,0,0,periodic snapshot rebuilt (dense month x location),2026-11-21 20:07:05.929417+05:00
+44,5,load_fact,project_dw.fact_network_location_coverage,54438,3262,0,0,factless coverage fact rebuilt,2026-11-21 20:07:06.132262+05:00
+45,5,data_quality,project_staging.dq_check_result,40,0,0,0,PASS=33 FAIL=0 INFO=7,2026-11-21 20:07:09.567879+05:00
+46,6,clean_events,project_staging.stg_seismic_event,25533,25533,0,0,"validation rejects=0, in-batch duplicates=0",2026-11-21 20:07:46.621772+05:00
+47,6,load_dimension,project_dw.dim_date,1096,0,0,0,,2026-11-21 20:07:47.390243+05:00
+48,6,load_dimension,project_dw.dim_magnitude_class,6,0,0,0,,2026-11-21 20:07:47.397811+05:00
+49,6,load_dimension,project_dw.dim_depth_class,3,0,0,0,,2026-11-21 20:07:47.402894+05:00
+50,6,load_dimension,project_dw.dim_event_type,7,2,0,0,,2026-11-21 20:07:47.454096+05:00
+51,6,load_dimension,project_dw.dim_magnitude_type,16,0,0,0,reference members,2026-11-21 20:07:47.468225+05:00
+52,6,load_dimension,project_dw.dim_magnitude_type,0,0,0,0,inferred members,2026-11-21 20:07:47.516696+05:00
+53,6,load_dimension,project_dw.dim_network,0,0,0,0,SCD2: inferred members completed in place,2026-11-21 20:07:47.538866+05:00
+54,6,load_dimension,project_dw.dim_network,18,0,0,0,"SCD2: reference members - 0 new code(s), 0 new version(s), 0 version(s) expired",2026-11-21 20:07:47.545462+05:00
+55,6,load_dimension,project_dw.dim_network,0,0,0,0,inferred members,2026-11-21 20:07:47.584711+05:00
+56,6,load_dimension,project_dw.dim_location,236,22,0,0,,2026-11-21 20:07:47.670071+05:00
+57,6,load_fact,project_dw.fact_seismic_event,25533,25533,0,0,"inserted=25533, updated (newer version)=0, soft-deleted=0, aliases deactivated=0, unchanged (same/older version)=0, rejected=0",2026-11-21 20:07:51.517976+05:00
+58,6,load_fact,project_dw.fact_location_monthly_snapshot,79971,10360,0,0,periodic snapshot rebuilt (dense month x location),2026-11-21 20:07:51.816172+05:00
+59,6,load_fact,project_dw.fact_network_location_coverage,79971,4710,0,0,factless coverage fact rebuilt,2026-11-21 20:07:52.150475+05:00
+60,6,data_quality,project_staging.dq_check_result,40,0,0,0,PASS=33 FAIL=0 INFO=7,2026-11-21 20:07:56.154020+05:00
+61,7,clean_events,project_staging.stg_seismic_event,932,931,0,1,"validation rejects=1, in-batch duplicates=0",2026-11-21 20:07:57.692873+05:00
+62,7,load_dimension,project_dw.dim_date,1096,0,0,0,,2026-11-21 20:07:57.758165+05:00
+63,7,load_dimension,project_dw.dim_magnitude_class,6,0,0,0,,2026-11-21 20:07:57.764250+05:00
+64,7,load_dimension,project_dw.dim_depth_class,3,0,0,0,,2026-11-21 20:07:57.767937+05:00
+65,7,load_dimension,project_dw.dim_event_type,2,0,0,0,,2026-11-21 20:07:57.804733+05:00
+66,7,load_dimension,project_dw.dim_magnitude_type,16,0,0,0,reference members,2026-11-21 20:07:57.809727+05:00
+67,7,load_dimension,project_dw.dim_magnitude_type,0,0,0,0,inferred members,2026-11-21 20:07:57.833568+05:00
+68,7,load_dimension,project_dw.dim_network,0,0,0,0,SCD2: inferred members completed in place,2026-11-21 20:07:57.841218+05:00
+69,7,load_dimension,project_dw.dim_network,18,0,0,0,"SCD2: reference members - 0 new code(s), 0 new version(s), 0 version(s) expired",2026-11-21 20:07:57.844321+05:00
+70,7,load_dimension,project_dw.dim_network,0,0,0,0,inferred members,2026-11-21 20:07:57.871466+05:00
+71,7,load_dimension,project_dw.dim_location,93,0,0,0,,2026-11-21 20:07:57.902796+05:00
+72,7,load_fact,project_dw.fact_seismic_event,931,4,0,65,"inserted=4, updated (newer version)=0, soft-deleted=0, aliases deactivated=0, unchanged (same/older version)=862, rejected=65",2026-11-21 20:07:58.242129+05:00
+73,7,load_fact,project_dw.fact_location_monthly_snapshot,79975,10360,0,0,periodic snapshot rebuilt (dense month x location),2026-11-21 20:07:58.413920+05:00
+74,7,load_fact,project_dw.fact_network_location_coverage,79975,4710,0,0,factless coverage fact rebuilt,2026-11-21 20:07:58.563319+05:00
+75,7,data_quality,project_staging.dq_check_result,40,0,0,0,PASS=33 FAIL=0 INFO=7,2026-11-21 20:08:02.709887+05:00
+76,8,clean_events,project_staging.stg_seismic_event,2593,2593,0,0,"validation rejects=0, in-batch duplicates=0",2026-11-21 20:08:05.377593+05:00
+77,8,load_dimension,project_dw.dim_date,1096,0,0,0,,2026-11-21 20:08:05.443711+05:00
+78,8,load_dimension,project_dw.dim_magnitude_class,6,0,0,0,,2026-11-21 20:08:05.447510+05:00
+79,8,load_dimension,project_dw.dim_depth_class,3,0,0,0,,2026-11-21 20:08:05.451087+05:00
+80,8,load_dimension,project_dw.dim_event_type,3,0,0,0,,2026-11-21 20:08:05.484077+05:00
+81,8,load_dimension,project_dw.dim_magnitude_type,16,0,0,0,reference members,2026-11-21 20:08:05.490788+05:00
+82,8,load_dimension,project_dw.dim_magnitude_type,0,0,0,0,inferred members,2026-11-21 20:08:05.515734+05:00
+83,8,load_dimension,project_dw.dim_network,0,0,0,0,SCD2: inferred members completed in place,2026-11-21 20:08:05.524298+05:00
+84,8,load_dimension,project_dw.dim_network,18,0,0,0,"SCD2: reference members - 0 new code(s), 0 new version(s), 0 version(s) expired",2026-11-21 20:08:05.527124+05:00
+85,8,load_dimension,project_dw.dim_network,0,0,0,0,inferred members,2026-11-21 20:08:05.553630+05:00
+86,8,load_dimension,project_dw.dim_location,129,0,0,0,,2026-11-21 20:08:05.585855+05:00
+87,8,load_fact,project_dw.fact_seismic_event,2593,0,0,0,"inserted=0, updated (newer version)=0, soft-deleted=0, aliases deactivated=0, unchanged (same/older version)=2593, rejected=0",2026-11-21 20:08:05.941183+05:00
+88,8,load_fact,project_dw.fact_location_monthly_snapshot,79975,10360,0,0,periodic snapshot rebuilt (dense month x location),2026-11-21 20:08:06.101471+05:00
+89,8,load_fact,project_dw.fact_network_location_coverage,79975,4710,0,0,factless coverage fact rebuilt,2026-11-21 20:08:06.252360+05:00
+90,8,data_quality,project_staging.dq_check_result,40,0,0,0,PASS=33 FAIL=0 INFO=7,2026-11-21 20:08:12.071217+05:00
+91,9,clean_reference,project_staging.stg_seismic_network,18,0,2,0,,2026-11-21 20:08:12.759388+05:00
+92,4,clean_reference,project_staging.stg_magnitude_type,16,0,0,0,,2026-11-21 20:08:12.771893+05:00
+93,1,clean_reference,project_staging.stg_us_state,52,0,0,0,,2026-11-21 20:08:12.782704+05:00
+94,2,clean_reference,project_staging.stg_country_alias,6,0,0,0,,2026-11-21 20:08:12.789835+05:00
+95,9,load_dimension,project_dw.dim_magnitude_type,16,0,0,0,reference members,2026-11-21 20:08:12.800533+05:00
+96,9,load_dimension,project_dw.dim_magnitude_type,0,0,0,0,inferred members,2026-11-21 20:08:12.843038+05:00
+97,9,load_dimension,project_dw.dim_network,0,0,0,0,SCD2: inferred members completed in place,2026-11-21 20:08:12.859774+05:00
+98,9,load_dimension,project_dw.dim_network,18,2,2,0,"SCD2: reference members - 0 new code(s), 2 new version(s), 2 version(s) expired",2026-11-21 20:08:12.866392+05:00
+99,9,load_dimension,project_dw.dim_network,0,0,0,0,inferred members,2026-11-21 20:08:12.898912+05:00
+100,10,clean_events,project_staging.stg_seismic_event,935,935,0,0,"validation rejects=0, in-batch duplicates=0",2026-11-21 20:08:14.021943+05:00
+101,10,load_dimension,project_dw.dim_date,1096,0,0,0,,2026-11-21 20:08:14.114206+05:00
+102,10,load_dimension,project_dw.dim_magnitude_class,6,0,0,0,,2026-11-21 20:08:14.123920+05:00
+103,10,load_dimension,project_dw.dim_depth_class,3,0,0,0,,2026-11-21 20:08:14.131611+05:00
+104,10,load_dimension,project_dw.dim_event_type,1,0,0,0,,2026-11-21 20:08:14.191260+05:00
+105,10,load_dimension,project_dw.dim_magnitude_type,16,0,0,0,reference members,2026-11-21 20:08:14.197238+05:00
+106,10,load_dimension,project_dw.dim_magnitude_type,0,0,0,0,inferred members,2026-11-21 20:08:14.244317+05:00
+107,10,load_dimension,project_dw.dim_network,0,0,0,0,SCD2: inferred members completed in place,2026-11-21 20:08:14.261373+05:00
+108,10,load_dimension,project_dw.dim_network,18,0,0,0,"SCD2: reference members - 0 new code(s), 0 new version(s), 0 version(s) expired",2026-11-21 20:08:14.311939+05:00
+109,10,load_dimension,project_dw.dim_network,0,0,0,0,inferred members,2026-11-21 20:08:14.371111+05:00
+110,10,load_dimension,project_dw.dim_location,94,1,0,0,,2026-11-21 20:08:14.428378+05:00
+111,10,load_fact,project_dw.fact_seismic_event,935,596,329,5,"inserted=596, updated (newer version)=295, soft-deleted=0, aliases deactivated=34, unchanged (same/older version)=39, rejected=5",2026-11-21 20:08:15.079059+05:00
+112,10,load_fact,project_dw.fact_location_monthly_snapshot,80537,10395,0,0,periodic snapshot rebuilt (dense month x location),2026-11-21 20:08:15.353947+05:00
+113,10,load_fact,project_dw.fact_network_location_coverage,80537,4735,0,0,factless coverage fact rebuilt,2026-11-21 20:08:15.583649+05:00
+114,10,data_quality,project_staging.dq_check_result,40,0,0,0,PASS=33 FAIL=0 INFO=7,2026-11-21 20:08:22.388917+05:00
+115,11,clean_events,project_staging.stg_seismic_event,25533,25533,0,0,"validation rejects=0, in-batch duplicates=0",2026-11-21 20:08:50.074096+05:00
+116,11,load_dimension,project_dw.dim_date,1096,0,0,0,,2026-11-21 20:08:50.582747+05:00
+117,11,load_dimension,project_dw.dim_magnitude_class,6,0,0,0,,2026-11-21 20:08:50.587147+05:00
+118,11,load_dimension,project_dw.dim_depth_class,3,0,0,0,,2026-11-21 20:08:50.590141+05:00
+119,11,load_dimension,project_dw.dim_event_type,7,0,0,0,,2026-11-21 20:08:50.649046+05:00
+120,11,load_dimension,project_dw.dim_magnitude_type,16,0,0,0,reference members,2026-11-21 20:08:50.655533+05:00
+121,11,load_dimension,project_dw.dim_magnitude_type,0,0,0,0,inferred members,2026-11-21 20:08:50.720530+05:00
+122,11,load_dimension,project_dw.dim_network,0,0,0,0,SCD2: inferred members completed in place,2026-11-21 20:08:50.729274+05:00
+123,11,load_dimension,project_dw.dim_network,18,0,0,0,"SCD2: reference members - 0 new code(s), 0 new version(s), 0 version(s) expired",2026-11-21 20:08:50.733728+05:00
+124,11,load_dimension,project_dw.dim_network,0,0,0,0,inferred members,2026-11-21 20:08:50.793417+05:00
+125,11,load_dimension,project_dw.dim_location,236,0,0,0,,2026-11-21 20:08:50.879088+05:00
+126,11,load_fact,project_dw.fact_seismic_event,25533,0,0,34,"inserted=0, updated (newer version)=0, soft-deleted=0, aliases deactivated=0, unchanged (same/older version)=25499, rejected=34",2026-11-21 20:08:51.920237+05:00
+127,11,load_fact,project_dw.fact_location_monthly_snapshot,80537,10395,0,0,periodic snapshot rebuilt (dense month x location),2026-11-21 20:08:52.161142+05:00
+128,11,load_fact,project_dw.fact_network_location_coverage,80537,4735,0,0,factless coverage fact rebuilt,2026-11-21 20:08:52.451858+05:00
+129,11,data_quality,project_staging.dq_check_result,40,0,0,0,PASS=33 FAIL=0 INFO=7,2026-11-21 20:08:56.580853+05:00
+130,11,data_quality,project_staging.dq_check_result,40,0,0,0,PASS=33 FAIL=0 INFO=7,2026-11-21 20:09:00.618170+05:00

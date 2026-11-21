@@ -1,0 +1,41 @@
+run_id,check_code,category,check_name,target_object,expected_value,actual_value,status,details,run_started_at
+11,A01,ACCURACY,Row-count reconciliation (distinct eligible events vs fact rows),fact_seismic_event,80571,80571,PASS,expected=80571 fact=80571 difference=0,2026-11-21 20:08:57.079870+05:00
+11,A02,ACCURACY,Measure reconciliation: SUM(magnitude),fact_seismic_event,310973.10,310973.10,PASS,staging=310973.10 warehouse=310973.10 difference=0.00,2026-11-21 20:08:57.079870+05:00
+11,A03,ACCURACY,Energy reconciliation (revenue-equivalent): SUM(energy_joules),fact_seismic_event,1492287407880240000,1492287407880230000,PASS,staging=1492287407880240000 warehouse=1492287407880230000 difference=-10000,2026-11-21 20:08:57.079870+05:00
+11,A04,ACCURACY,Measure reconciliation: SUM(felt_reports),fact_seismic_event,1206239,1206239,PASS,staging=1206239 warehouse=1206239 difference=0,2026-11-21 20:08:57.079870+05:00
+11,A05,ACCURACY,Measure reconciliation: SUM(significance),fact_seismic_event,19591085,19591085,PASS,staging=19591085 warehouse=19591085 difference=0,2026-11-21 20:08:57.079870+05:00
+11,A06,ACCURACY,Inactive events match USGS deletions + superseded alias ids,fact_seismic_event.is_active,34,34,PASS,,2026-11-21 20:08:57.079870+05:00
+11,A07,ACCURACY,Fact values differ from the raw source feature they came from,raw_usgs_event -> fact_seismic_event,0,0,PASS,compares fact magnitude/depth/lat/lon/event_time with the raw GeoJSON of the loaded version,2026-11-21 20:08:57.079870+05:00
+11,A08,ACCURACY,Derived energy_joules / energy_tnt_tons recomputation errors,fact_seismic_event,0,0,PASS,Gutenberg-Richter energy relation,2026-11-21 20:08:57.079870+05:00
+11,A09,VALIDITY,"Out-of-range values (lat, lon, magnitude, depth, future time)",fact_seismic_event,0,0,PASS,"lat [-90,90], lon [-180,180], magnitude [-2,10], depth [-10,800] km, event_time <= load time",2026-11-21 20:08:57.079870+05:00
+11,C01,COMPLETENESS,Raw rows accounted for (raw = staged + rejected at staging),raw_usgs_event -> stg_seismic_event,109965,109965,PASS,raw=109965 staged=109964 staging rejects=1,2026-11-21 20:08:57.079870+05:00
+11,C02,COMPLETENESS,Missing values in required fact columns,fact_seismic_event,0,0,PASS,"event_id, all 7 surrogate keys, event_time, magnitude, depth_km, latitude, longitude, energy_joules",2026-11-21 20:08:57.079870+05:00
+11,C03,COMPLETENESS,Eligible staged events missing from the fact,stg_seismic_event -> fact_seismic_event,0,0,PASS,,2026-11-21 20:08:57.079870+05:00
+11,C04,COMPLETENESS,Missing values in source attribute: felt,raw_usgs_event,,85.83,INFO,94379 of 109965 raw rows NULL (85.83%). Handling: NULL = no DYFI reports -> felt_reports = 0,2026-11-21 20:08:57.079870+05:00
+11,C05,COMPLETENESS,Missing values in source attribute: cdi,raw_usgs_event,,85.83,INFO,94379 of 109965 raw rows NULL (85.83%). Handling: kept NULL (not measured),2026-11-21 20:08:57.079870+05:00
+11,C06,COMPLETENESS,Missing values in source attribute: mmi,raw_usgs_event,,91.88,INFO,101037 of 109965 raw rows NULL (91.88%). Handling: kept NULL (not measured),2026-11-21 20:08:57.079870+05:00
+11,C07,COMPLETENESS,Missing values in source attribute: alert,raw_usgs_event,,96.99,INFO,106655 of 109965 raw rows NULL (96.99%). Handling: NULL = no PAGER alert -> alert_level = none,2026-11-21 20:08:57.079870+05:00
+11,C08,COMPLETENESS,Missing values in source attribute: nst / gap,raw_usgs_event,,2.74,INFO,3010 of 109965 raw rows NULL (2.74%). Handling: kept NULL (network did not report),2026-11-21 20:08:57.079870+05:00
+11,C09,COMPLETENESS,Missing values in source attribute: magType,raw_usgs_event,,0.01,INFO,6 of 109965 raw rows NULL (0.01%). Handling: mapped to Unknown member (-1),2026-11-21 20:08:57.079870+05:00
+11,I01,INTEGRITY,Fact rows without matching dimension: dim_date,fact_seismic_event.date_key,0,0,PASS,LEFT JOIN anti-check,2026-11-21 20:08:57.079870+05:00
+11,I02,INTEGRITY,Fact rows without matching dimension: dim_location,fact_seismic_event.location_key,0,0,PASS,LEFT JOIN anti-check,2026-11-21 20:08:57.079870+05:00
+11,I03,INTEGRITY,Fact rows without matching dimension: dim_network,fact_seismic_event.network_key,0,0,PASS,LEFT JOIN anti-check,2026-11-21 20:08:57.079870+05:00
+11,I04,INTEGRITY,Fact rows without matching dimension: dim_magnitude_type,fact_seismic_event.magnitude_type_key,0,0,PASS,LEFT JOIN anti-check,2026-11-21 20:08:57.079870+05:00
+11,I05,INTEGRITY,Fact rows without matching dimension: dim_event_type,fact_seismic_event.event_type_key,0,0,PASS,LEFT JOIN anti-check,2026-11-21 20:08:57.079870+05:00
+11,I06,INTEGRITY,Fact rows without matching dimension: dim_magnitude_class,fact_seismic_event.magnitude_class_key,0,0,PASS,LEFT JOIN anti-check,2026-11-21 20:08:57.079870+05:00
+11,I07,INTEGRITY,Fact rows without matching dimension: dim_depth_class,fact_seismic_event.depth_class_key,0,0,PASS,LEFT JOIN anti-check,2026-11-21 20:08:57.079870+05:00
+11,I08,INTEGRITY,Declared FOREIGN KEY constraints on the fact table,fact_seismic_event,7,7,PASS,pg_constraint contype = f,2026-11-21 20:08:57.079870+05:00
+11,I09,INTEGRITY,Fact rows mapped to an Unknown (-1) member,fact_seismic_event,,1,INFO,location=1 network=0 magnitude_type=0 event_type=0,2026-11-21 20:08:57.079870+05:00
+11,K01,CONSISTENCY,Class band disagrees with magnitude or depth value,fact_seismic_event,0,0,PASS,,2026-11-21 20:08:57.079870+05:00
+11,K02,CONSISTENCY,date_key disagrees with event_time (UTC),fact_seismic_event,0,0,PASS,,2026-11-21 20:08:57.079870+05:00
+11,K03,CONSISTENCY,dim_date is contiguous and covers every event date,dim_date,1096,1096,PASS,"2024-01-01 .. 2026-12-31, 1096 rows; first event 2024-01-01, last event 2026-11-21",2026-11-21 20:08:57.079870+05:00
+11,U01,UNIQUENESS,Duplicate business keys: dim_date (full_date),dim_date (full_date),0,0,PASS,rows=1096 distinct business keys=1096,2026-11-21 20:08:57.079870+05:00
+11,U02,UNIQUENESS,Duplicate business keys: dim_location (location_code),dim_location (location_code),0,0,PASS,rows=298 distinct business keys=298,2026-11-21 20:08:57.079870+05:00
+11,U03,UNIQUENESS,"Duplicate business keys: dim_network (network_code, current versions - SCD2)","dim_network (network_code, current versions - SCD2)",0,0,PASS,rows=20 distinct business keys=20,2026-11-21 20:08:57.079870+05:00
+11,U04,UNIQUENESS,Duplicate business keys: dim_magnitude_type (magnitude_type_code),dim_magnitude_type (magnitude_type_code),0,0,PASS,rows=17 distinct business keys=17,2026-11-21 20:08:57.079870+05:00
+11,U05,UNIQUENESS,Duplicate business keys: dim_event_type (event_type_code),dim_event_type (event_type_code),0,0,PASS,rows=12 distinct business keys=12,2026-11-21 20:08:57.079870+05:00
+11,U06,UNIQUENESS,Duplicate business keys: dim_magnitude_class (magnitude_class),dim_magnitude_class (magnitude_class),0,0,PASS,rows=7 distinct business keys=7,2026-11-21 20:08:57.079870+05:00
+11,U07,UNIQUENESS,Duplicate business keys: dim_depth_class (depth_class),dim_depth_class (depth_class),0,0,PASS,rows=4 distinct business keys=4,2026-11-21 20:08:57.079870+05:00
+11,U08,UNIQUENESS,Duplicate business keys: fact_seismic_event (event_id),fact_seismic_event (event_id),0,0,PASS,rows=80571 distinct business keys=80571,2026-11-21 20:08:57.079870+05:00
+11,U09,UNIQUENESS,"Duplicate business keys: stg_seismic_event (batch_id, event_id)","stg_seismic_event (batch_id, event_id)",0,0,PASS,rows=109964 distinct business keys=109964,2026-11-21 20:08:57.079870+05:00
+11,U10,UNIQUENESS,Active fact events that are an alias id of another active event,fact_seismic_event (USGS ids association),0,0,PASS,event_id listed in the associated ids of a different active event,2026-11-21 20:08:57.079870+05:00

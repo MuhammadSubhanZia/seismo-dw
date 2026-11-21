@@ -1,0 +1,12 @@
+batch_id,source_name,source_file,load_type,is_rerun,status,rows_read,rows_duplicate,rows_rejected,rows_staged,fact_inserted,fact_updated,fact_load_note,started_at,finished_at,duration_sec
+1,ref_us_states,ref_us_states.csv,REFERENCE,False,LOADED,52,0,0,52,0,0,,2026-11-21 20:05:53.157365+05:00,2026-11-21 20:05:53.180653+05:00,0.0
+2,ref_country_aliases,ref_country_aliases.csv,REFERENCE,False,LOADED,6,0,0,6,0,0,,2026-11-21 20:05:53.261344+05:00,2026-11-21 20:05:53.267169+05:00,0.0
+3,ref_seismic_networks,ref_seismic_networks.csv,REFERENCE,False,LOADED,18,0,0,18,0,0,,2026-11-21 20:05:53.334888+05:00,2026-11-21 20:05:53.340726+05:00,0.0
+4,ref_magnitude_types,ref_magnitude_types.csv,REFERENCE,False,LOADED,16,0,0,16,0,0,,2026-11-21 20:05:53.407575+05:00,2026-11-21 20:05:53.413794+05:00,0.0
+5,usgs_events,usgs_events_2024_2025_full.geojson.gz,FULL_LOAD,False,LOADED,54439,0,1,54439,64276,0,periodic snapshot rebuilt (dense month x location),2026-11-21 20:05:53.507700+05:00,2026-11-21 20:05:58.409830+05:00,4.9
+6,usgs_events,usgs_events_2026_incremental.geojson.gz,INCREMENTAL,False,LOADED,25533,0,0,25533,40603,0,periodic snapshot rebuilt (dense month x location),2026-11-21 20:07:10.416892+05:00,2026-11-21 20:07:15.190477+05:00,4.8
+7,usgs_events,usgs_events_2026-09-26_change_feed.geojson.gz,INCREMENTAL,False,LOADED,932,0,66,931,15074,0,periodic snapshot rebuilt (dense month x location),2026-11-21 20:07:56.836767+05:00,2026-11-21 20:07:56.995163+05:00,0.2
+8,usgs_events,usgs_events_2024-12_snapshot.geojson.gz,INCREMENTAL,False,LOADED,2593,0,0,2593,15070,0,periodic snapshot rebuilt (dense month x location),2026-11-21 20:08:03.579098+05:00,2026-11-21 20:08:03.833594+05:00,0.3
+9,ref_seismic_networks,ref_seismic_networks_v2.csv,REFERENCE,False,LOADED,18,0,0,2,0,0,,2026-11-21 20:08:12.689550+05:00,2026-11-21 20:08:12.748803+05:00,0.1
+10,usgs_events,usgs_events_2026-11-21_change_feed.geojson.gz,INCREMENTAL,False,LOADED,935,0,5,935,15726,329,periodic snapshot rebuilt (dense month x location),2026-11-21 20:08:12.957643+05:00,2026-11-21 20:08:13.036805+05:00,0.1
+11,usgs_events,usgs_events_2026_incremental.geojson.gz,INCREMENTAL,True,LOADED,25533,0,34,25533,15130,0,periodic snapshot rebuilt (dense month x location),2026-11-21 20:08:23.172879+05:00,2026-11-21 20:08:26.032243+05:00,2.9

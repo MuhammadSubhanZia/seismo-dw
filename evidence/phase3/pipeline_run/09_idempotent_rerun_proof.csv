@@ -1,0 +1,9 @@
+measure,before_rerun,after_rerun,unchanged
+fact_rows,80571,80571,True
+sum_magnitude,310973.10,310973.10,True
+sum_energy_joules,1.4922874078802263e+18,1.4922874078802263e+18,True
+sum_felt_reports,1206239,1206239,True
+active_rows,80537,80537,True
+rerun_batch_id,11,11,
+fact_rows_inserted_by_rerun,,0,True
+fact_rows_updated_by_rerun,,0,True
